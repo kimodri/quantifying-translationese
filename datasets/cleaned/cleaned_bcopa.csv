@@ -1,0 +1,401 @@
+id,premise,choice1,choice2,question,label,mirrored
+1283,The boy was struggling to fall asleep.,He turned on his nightlight.,He watched a horror movie.,cause,1,1
+207,The tenants were evicted from the apartment.,They neglected to pay their rent.,They got along with their landlord.,cause,1,0
+1317,The man felt unrested in the morning.,He went camping in the woods.,He fell asleep on his couch.,cause,2,1
+1006,The politician won the election.,No one voted for him.,He ran negative campaign ads.,cause,2,1
+170,The dust came off the desk.,I removed the books from the desk.,I wiped the desk with a cloth.,cause,2,0
+194,The boy felt homesick.,He went away to camp.,He bickered with his sister.,cause,1,0
+400,The soldiers were concealed in the brush.,They were armed with rifles.,They wore camouflage uniforms.,cause,2,0
+262,The man revealed personal information to the therapist.,He trusted the therapist.,He disagreed with the therapist.,cause,1,0
+361,The patient underwent the risky medical procedure.,The procedure was costly.,Specialists recommended the procedure.,cause,2,0
+1480,The man did not lose coins in his pocket anymore.,His pocket was filled with coins.,He sewed the hole in his pocket.,cause,2,1
+317,The man was bitten by mosquitoes.,He fell asleep on his couch.,He went camping in the woods.,cause,2,0
+149,The driver pulled over to the side of the road.,He noticed a stranded vehicle.,He went through an intersection.,cause,1,0
+436,The police searched the offender's car.,They were looking for illegal drugs.,They were trying to elicit a confession.,cause,1,0
+129,The trip took a long time., The driver talked the whole way.,The driver made a wrong turn.,cause,2,0
+305,The woman refused a second beer.,She was familiar with the bartender.,She was the designated driver for the night.,cause,2,0
+1416,The defendant listened anxiously.,The courtroom broke into uproar.,The jury announced its verdict.,cause,2,1
+1200,The woman felt extremely fatigued.,She grabbed the doorknob.,She pounded on the door.,cause,2,1
+123,The inside of the train went dark.,The train travelled through a tunnel.,The train ran off the tracks.,cause,1,0
+1028,The child was not vaccinated but did not get the disease.,He received the vaccine for the disease.,He avoided exposure to the disease.,cause,2,1
+1004,The runner stretched.,She planned to run along the beach.,The forecast predicted high temperatures.,cause,1,1
+333,The woman's purse was missing.,It contained a lot of junk.,She left it unsupervised.,cause,2,0
+90,The boy read the novel aloud to his grandfather.,His grandfather was deaf.,His grandfather was blind.,cause,2,0
+76,The man closed the umbrella.,He got out of the car.,He approached the building.,cause,2,0
+1464,I took off the rubber gloves.,I was preparing to clean the bathroom.,I was preparing to wash my hands.,cause,2,1
+461,The mother called an ambulance.,Her son lost his cat.,Her son fell out of his bed.,cause,2,0
+1184,The benefactor looked extremely excited.,He supported the cause behind his donation.,He wanted to maintain his privacy.,cause,1,1
+93,The window was opaque.,The glass was stained.,The blinds were open.,cause,1,0
+1119,The boy's friends were scared.,He planned to ask the girl out.,His palms were cold and sweaty.,cause,2,1
+1316,The girl could barely see her reflection.,She felt self-conscious.,The mirror was smudged.,cause,2,1
+1396,The skier balanced only with her body.,She dropped her ski poles.,She hit a patch of ice.,cause,1,1
+1176,The father laughed at the children's television.,The children were watching cartoons.,It was bedtime for the children.,cause,1,1
+336,The rider fell to the ground.,The bull bucked the rider.,The bull chased the rider.,cause,1,0
+1104,The teenager always stayed home.,He relied on his parents.,His parents abused him.,cause,1,1
+1336,The rider ran at full speed.,The bull bucked the rider.,The bull chased the rider.,cause,2,1
+388,The boy mimicked his older brother.,The boy looked up to his older brother.,The boy wrestled with his older brother.,cause,1,0
+283,The boy was afraid to go to bed.,He watched a horror movie.,He turned on his nightlight.,cause,1,0
+454,The boy threw a temper tantrum.,He shared his toys with his brother.,His brother took his toys from him.,cause,2,0
+1043,The executive decided to hire the applicant.,The applicant failed a background check.,The applicant had experience for the job.,cause,2,1
+1237,The man hid his feet.,He got a hole in his sock.,He dropped a hammer on his foot.,cause,1,1
+273,The man took notice of the woman.,He caught a whiff of her perfume.,He had his back turned to her.,cause,1,0
+1463,I was less worried about losing the key.,I turned the key in the lock.,I made a duplicate of the key.,cause,2,1
+70,The boy tuned the radio.,The station was playing rock music.,The station was coming in with static.,cause,2,0
+1465,The animal species became populous.,Their habitat was destroyed.,Their predators went extinct.,cause,2,1
+1489,The woman contacted the maid service.,The woman needed to clean her house.,The woman planned to buy a condo.,cause,1,1
+1072,The police was hit by the suspect.,The suspect resisted arrest.,The police called for backup.,cause,2,1
+1462,Everybody in the car stopped singing along.,The car radio shut off.,A deer appeared on the road.,cause,1,1
+128,The parents left their children with a babysitter.,They made plans to celebrate their anniversary.,Their youngest child started attending preschool.,cause,1,0
+155,The woman received a diploma.,She enrolled in college.,She graduated from college.,cause,2,0
+21,The girl received a trophy.,She won a spelling bee.,She made a new friend.,cause,1,0
+1118,The student learned most mistakes.,He talked back to the teacher.,The teacher graded his homework.,cause,2,1
+1150,The patient felt happy.,The patient's family visited him.,The patient's symptoms cleared up.,cause,1,1
+1005,The guests of the party brought candles.,It was a birthday party.,It was a surprise party.,cause,1,1
+300,The man felt thankful to be alive.,He was cured of cancer.,His wife was diagnosed with cancer.,cause,1,0
+119,The boy's hands were shaking.,He planned to ask the girl out.,His palms were cold and sweaty.,cause,1,0
+445,The journalist wrote a biography about the humanitarian's life.,The humanitarian was difficult for the journalist to interview.,The journalist was intrigued by the humanitarian's work.,cause,2,0
+438,The man felt obligated to attend the event.,He promised his friend that he would go.,He turned down his friend's invitation to go.,cause,1,0
+485,The woman was arrested.,She committed assault.,She checked into rehab.,cause,1,0
+1003,The women were surprised.,The cafe reopened in a new location.,They wanted to catch up with each other.,cause,1,1
+1360,The teenager made many new friends.,He joined the basketball team.,He went through a growth spurt.,cause,1,1
+1187,The boy cut his hand in the sand.,He was building a sand castle.,He was collecting seashells in the sand.,cause,2,1
+1364,I did not worry about my computer crashing.,I backed up my files.,I downloaded a virus.,cause,1,1
+1096,The woman looked for a job.,She received a salary bonus.,Her husband got laid off.,cause,2,1
+385,The librarian located the book in the stacks.,I requested the librarian's help.,The book was checked out.,cause,1,0
+1411,The bowling ball did not knock over any bowling pins.,The man dropped the bowling ball on his foot.,The man rolled the bowling ball down the alley.,cause,1,1
+1193,The student hid his test grade from his classmates.,He received a perfect score.,He feigned interest in the class.,cause,2,1
+1300,The man felt depressed.,His wife was diagnosed with cancer.,He was cured of cancer.,cause,1,1
+1021,The girl was not lonely anymore.,She made a new friend.,She won a spelling bee.,cause,1,1
+28,The child became immune to the disease.,He received the vaccine for the disease.,He avoided exposure to the disease.,cause,1,0
+297,The man took a shower.,He opened a new bar of soap.,He was sweaty from working out.,cause,2,0
+1180,The mother suspected that her son was upset.,He refused to talk to her.,He avoided making eye contact with her.,cause,1,1
+1117,I promised to give a straight answer to the question.,The question made me uncomfortable.,I wanted to be honest.,cause,2,1
+1161,The coach gave his player a headshake.,The player got a penalty.,The player scored a point.,cause,1,1
+1210,The parents allowed their children to watch the movie.,The movie was rated R.,The movie was animated.,cause,2,1
+1394,The mother praised her daughter.,Her daughter set the kitchen table.,Her daughter burped at the kitchen table.,cause,1,1
+1417,The children rang the bell at the woman's house.,The children trampled through her garden.,The children hit a ball into her yard.,cause,2,1
+184,The benefactor requested to stay anonymous.,He supported the cause behind his donation.,He wanted to maintain his privacy.,cause,2,0
+350,Marine life diminished.,Boats sailed through the ocean.,Oil spilled into the ocean.,cause,2,0
+1493,The man saw an empty parking spot.,The parking meter expired.,He parallel parked on the street.,cause,2,1
+1385,The librarian told me that I couldn't borrow the book.,The book was checked out.,I requested the librarian's help.,cause,1,1
+1040,The woman hired a public relations consultant.,She decided to run for office.,She decided to sue her employer.,cause,1,1
+416,The judge pounded the gavel.,The jury announced its verdict.,The courtroom broke into uproar.,cause,2,0
+280,The woman's eyeglasses fogged up.,She entered the sauna.,She reclined by the pool.,cause,1,0
+243,The family postponed the barbeque.,The forecast called for storms.,It was a holiday weekend.,cause,1,0
+1352,The customer was embarassed at the cash register.,The window display caught her eye.,She left her wallet at home.,cause,2,1
+1361,The patient could not afford the medical procedure.,The procedure was costly.,Specialists recommended the procedure.,cause,1,1
+1211,The woman read the email.,The sender tried to solicit money from her.,The sender requested a response from her.,cause,2,1
+96,The woman took her family on vacation.,Her husband got laid off.,She received a salary bonus.,cause,2,0
+1267,The letters were blown from my mailbox.,The lid on the mailbox broke.,I went on vacation for two weeks.,cause,1,1
+5,The guests of the party hid behind the couch.,It was a birthday party.,It was a surprise party.,cause,2,0
+323,The scientist gained recognition.,She discovered a new species.,She received tenure at the university.,cause,1,0
+40,The woman hired a lawyer.,She decided to run for office.,She decided to sue her employer.,cause,2,0
+26,The skydiver glided safely to the ground.,She opened her parachute.,She jumped out of the plane.,cause,1,0
+420,The woman ran her finger under cold water.,She burned her finger on the toaster.,She put a diamond ring on her finger.,cause,1,0
+1387,I called several realtors.,I was hunting for a new apartment.,I was moving out of my apartment.,cause,1,1
+1090,The boy communicated with his grandfather by writing.,His grandfather was deaf.,His grandfather was blind.,cause,1,1
+1278,The woman invited her sister for coffee.,The woman looked like her sister.,The woman was close with her sister.,cause,2,1
+1240,The photo album collection was treasured.,The family reminisced over the photos.,They remained untouched for years.,cause,1,1
+334,The woman suffered amnesia.,She had an allergic reaction.,She got into a car accident.,cause,2,0
+1126,The girl threw her clothes away.,The clothes were tattered.,She outgrew the clothes.,cause,1,1
+1241,I got hooked to my conversation with the woman.,The woman was telling a funny story.,Everyone in the room was talking.,cause,1,1
+67,I learned how to play the board game.,My friend got the rules wrong.,My friend explained the rules to me.,cause,2,0
+356,The employee missed work.,Her family got in touch with her.,There was a death in her family.,cause,2,0
+1466,The man noticed that the woman likes jewelry.,The woman got her hair cut.,The woman wore a bracelet.,cause,2,1
+302,The woman felt reluctant to switch careers.,She made a lot of money in her current occupation.,She endured a lot of stress in her current occupation.,cause,1,0
+256,Cars moved to the shoulder of the road.,A screaming ambulance approached.,The traffic light turned green.,cause,1,0
+212,The police eliminated the woman from the list of suspects.,The police interrogated her.,Her alibi checked out.,cause,2,0
+180,The mother suspected that her son was lying.,He refused to talk to her.,He avoided making eye contact with her.,cause,2,0
+106,The pharmaceutical company recalled the drug.,Users got refills on their prescriptions.,Users reported dangerous side effects.,cause,2,0
+1323,The scientist continued with her ongoing research.,She received tenure at the university.,She discovered a new species.,cause,1,1
+24,The host cancelled the party.,She worried she would catch the flu.,She was certain she had the flu.,cause,2,0
+1305,The woman stayed late in the bar.,She was familiar with the bartender.,She was the designated driver for the night.,cause,1,1
+1256,Cars moved to the intersection of the road.,The traffic light turned green.,A screaming ambulance approached.,cause,1,1
+1024,The woman got vaccinated.,She was certain she had the flu.,She worried she would catch the flu.,cause,2,1
+1356,The woman reconnected with distant relatives.,Her family got in touch with her.,There was a death in her family.,cause,1,1
+150,The hospital sent the patient home.,The patient's symptoms cleared up.,The patient's family visited him.,cause,1,0
+1123,The inside of the train became destroyed.,The train ran off the tracks.,The train travelled through a tunnel.,cause,1,1
+1197,My flight got rescheduled.,Tornadoes were sighted in the area.,I was held up at airport security.,cause,2,1
+1302,The woman quit her job recently.,She made a lot of money in her current occupation.,She endured a lot of stress in her current occupation.,cause,2,1
+117,I avoided giving a straight answer to the question.,The question made me uncomfortable.,I wanted to be honest.,cause,1,0
+158,The woman covered her ears.,The woman smelled smoke.,The fire alarm blared.,cause,2,0
+1019,I recognized the caller.,The caller identified himself to me.,The caller said goodbye to me.,cause,1,1
+182,A crater formed on the moon.,A comet passed by the moon.,A comet collided with the moon.,cause,2,0
+10,The customer filed a complaint with the store manager.,The sales associate acted rude to the customer.,The sales associate undercharged the customer.,cause,1,0
+1301,The woman never used her credit card.,She received her monthly bill.,She preferred paying by cash.,cause,2,1
+1108,I replaced the floor with brand new tile.,I spilled juice on the floor.,The floor was permanently stained.,cause,2,1
+1158,The woman covered her nose.,The fire alarm blared.,The woman smelled smoke.,cause,2,1
+371,The city re-elected the mayor.,The mayor fulfilled his promises.,The city cut its budget.,cause,1,0
+108,I dabbed the floor with a paper towel.,The floor was permanently stained.,I spilled juice on the floor.,cause,2,0
+1026,The skydiver started to fall down.,She opened her parachute.,She jumped out of the plane.,cause,2,1
+65,The family took their dog to the veterinarian.,The dog injured his paw.,The dog chewed on a bone.,cause,1,0
+369,The glasses on the table spilled.,The child yanked the tablecloth.,The child drew on the table.,cause,1,0
+1106,The pharmaceutical company promoted the drug.,Users got refills on their prescriptions.,Users reported dangerous side effects.,cause,1,1
+407,I decided to stay home for the night.,My friends urged me to go out.,The forecast called for storms.,cause,2,0
+1376,The girl got yet another dog.,She was bitten by a dog.,She rescued an abandoned dog.,cause,2,1
+200,The woman felt an electric shock.,She pounded on the door.,She grabbed the doorknob.,cause,2,0
+1443,The teacher praised the pair of students.,The students both received excellent grades.,Their responses on the assignment were identical.,cause,1,1
+143,The security guard tackled the man.,The man reached into his pocket.,The man displayed a weapon.,cause,2,0
+418,The kidnappers released the hostage.,They escaped from jail.,They accepted ransom money.,cause,2,0
+241,I got distracted from my conversation with the woman.,Everyone in the room was talking.,The woman was telling a funny story.,cause,1,0
+443,The pair of students came under scrutiny by the teacher.,The students both received excellent grades.,Their responses on the assignment were identical.,cause,2,0
+412,The community learned of the man's death.,His obituary appeared in the newspaper.,His family buried him in the cemetery.,cause,1,0
+376,The girl had a phobia of dogs.,She was bitten by a dog.,She rescued an abandoned dog.,cause,1,0
+240,The photo albums collected dust in the attic.,The family reminisced over the photos.,They remained untouched for years.,cause,2,0
+340,The fussy baby calmed down.,The parents shook a rattle in front of the baby.,The parents picked out a name for the baby.,cause,1,0
+1257,The boy lost sniffed the bar of soap.,The bar emitted a fragrance.,The bar was slippery.,cause,1,1
+411,The bowling ball knocked over the bowling pins.,The man rolled the bowling ball down the alley.,The man dropped the bowling ball on his foot.,cause,1,0
+202,I jumped instinctively in fright.,I heard people chuckling in the adjacent room.,I sensed someone approaching me from behind.,cause,2,0
+1065,The dog broke his teeth.,The dog injured his paw.,The dog chewed on a bone.,cause,2,1
+360,The teenager grew taller than his father.,He went through a growth spurt.,He joined the basketball team.,cause,1,0
+1315,The doctor put an ice pack on the leg.,It was badly bruised.,It was severely infected.,cause,1,1
+1259,The celebrity took off her sunglasses.,She wanted to avoid recognition.,She wanted to thank her fans.,cause,2,1
+1182,A crater did not form on the moon.,A comet collided with the moon.,A comet passed by the moon.,cause,2,1
+1340,The parents received a birth certificate.,The parents picked out a name for the baby.,The parents shook a rattle in front of the baby.,cause,1,1
+193,The student flaunted his test grade to his classmates.,He feigned interest in the class.,He received a perfect score.,cause,2,0
+1460,The man won the competition.,The competition was sabotaged.,He intimidated his competitors.,cause,2,1
+480,The man's pocket jingled as he walked.,He sewed the hole in his pocket.,His pocket was filled with coins.,cause,2,0
+1454,The boy had someone to play with.,His brother took his toys from him.,He shared his toys with his brother.,cause,2,1
+298,The screen on the laptop went black.,The laptop's warranty expired.,The laptop's battery died.,cause,2,0
+1414,The woman acquired an additional qualification for her job.,She believed her superiors were acting unethically.,She aspired to hold an executive position in the firm.,cause,2,1
+257,The boy lost hold of the bar of soap.,The bar was slippery.,The bar emitted a fragrance.,cause,1,0
+1330,The security guard could not identify the thief.,The surveillance camera was out of focus.,He noticed some suspicious activity.,cause,1,1
+3,The women met for coffee.,The cafe reopened in a new location.,They wanted to catch up with each other.,cause,2,0
+187,The boy filled the bucket with sand.,He was building a sand castle.,He was collecting seashells in the sand.,cause,1,0
+1273,The man never noticed the woman.,He had his back turned to her.,He caught a whiff of her perfume.,cause,1,1
+330,The security guard replayed the surveillance footage.,The surveillance camera was out of focus.,He noticed some suspicious activity.,cause,2,0
+1194,The boy felt exhausted.,He bickered with his sister.,He went away to camp.,cause,1,1
+1451,I no longer broke out into a rash.,I eradicated the poison ivy from my yard.,I brushed against poison ivy in my yard.,cause,1,1
+1427,I could not enjoy the movie's beautiful soundtrack.,A tall person was sitting in front of me.,The couple behind me was whispering.,cause,2,1
+201,The man had lipstick on his cheek.,The woman made him blush.,The woman kissed him.,cause,2,0
+118,The student received detention.,He talked back to the teacher.,The teacher graded his homework.,cause,1,0
+1036,The man got up earlier.,He wanted to shut off the alarm clock.,He wanted to iron his pants before work.,cause,2,1
+1128,The parents left their children with a teacher.,They made plans to celebrate their anniversary.,Their youngest child started attending preschool.,cause,2,1
+1415,The player could not see the ball.,Her opponent tried to intercept it.,Her teammate threw it to her.,cause,1,1
+176,The father shut off the children's television.,It was bedtime for the children.,The children were watching cartoons.,cause,1,0
+1288,I enjoyed my chewing gum.,The gum lost its flavor.,I blew a bubble with the gum.,cause,2,1
+301,The woman wrote a check to the gas company.,She received her monthly bill.,She preferred paying by cash.,cause,1,0
+1207,The tenants lease for the apartment was extended.,They got along with their landlord.,They neglected to pay their rent.,cause,1,1
+1350,New countries were discovered.,Oil spilled into the ocean.,Boats sailed through the ocean.,cause,2,1
+1388,The boy broke his arm.,The boy looked up to his older brother.,The boy wrestled with his older brother.,cause,2,1
+460,The man lost the competition.,The competition was sabotaged.,He intimidated his competitors.,cause,1,0
+1105,I passed the job interview.,I anticipated the interviewer's questions.,The interviewer asked difficult questions.,cause,1,1
+364,The computer crashed.,I downloaded a virus.,I backed up my files.,cause,1,0
+1129,The trip was a fun time.,The driver talked the whole way.,The driver made a wrong turn.,cause,1,1
+387,I packed up my belongings.,I was hunting for a new apartment.,I was moving out of my apartment.,cause,2,0
+1262,The man withheld personal information from the therapist.,He trusted the therapist.,He disagreed with the therapist.,cause,2,1
+11,The woman repaired her faucet.,The faucet was leaky.,The faucet was turned off.,cause,1,0
+1050,The children bumped their heads on the ceiling.,They jumped on the bed.,They had a pillow fight.,cause,1,1
+36,The man urgently leaped out of bed.,He wanted to iron his pants before work.,He wanted to shut off the alarm clock.,cause,2,0
+282,The host of the trivia show called on the contestant for an answer.,The contestant rang the buzzer.,The contestant was in the lead.,cause,1,0
+237,The man broke his toe.,He got a hole in his sock.,He dropped a hammer on his foot.,cause,2,0
+352,The customer came into the boutique.,The window display caught her eye.,She left her wallet at home.,cause,1,0
+1206,The company sold more products.,Its products received positive consumer reviews.,Some of its products were manufactured defectively.,cause,1,1
+316,The girl stared at herself in the mirror.,She felt self-conscious.,The mirror was smudged.,cause,1,0
+85,The service at the restaurant was slow.,The restaurant was crowded.,There were many empty tables.,cause,1,0
+1155,The woman aimed for a diploma.,She enrolled in college.,She graduated from college.,cause,1,1
+378,The patient went into a coma.,He suffered brain damage.,He suffered emotional trauma.,cause,1,0
+1298,The manufacturer wouldn't fix the screen on the laptop after it went black.,The laptop's warranty expired.,The laptop's battery died.,cause,1,1
+396,The skier slipped on the slope.,She dropped her ski poles.,She hit a patch of ice.,cause,2,0
+1069,The shop was very popular.,The shop was undergoing renovation.,The owner was helping customers.,cause,2,1
+1145,The army won the battle.,They were outnumbered.,They stormed the city.,cause,2,1
+172,The teacher caught the student chewing gum.,The student spit out the gum.,The gum stuck to the student's shoe.,effect,1,0
+1494,The woman became senile.,Photographers followed her.,Her family avoided her.,effect,2,1
+1261,The police officer pulled the celebrity by the wrist.,The celebrity offered the officer a bribe.,The celebrity sued the police officer.,effect,2,1
+115,The speaker disarmed her debate opponent.,The speaker congratulated her opponent.,The speaker won the debate.,effect,2,0
+1296,A group of teenagers helped organizing the party.,The host of the party kicked them out.,The host of the party invited them in.,effect,2,1
+1286,My daughter suffered an panic attack.,I encouraged her to take deep breaths.,I took her to the emergency room.,effect,1,1
+1063,The boaters caught a nice current.,Their boat drifted to shore.,Their boat was rescued.,effect,1,1
+389,The girl desired her parent's approval.,She ran away from home.,She obeyed her parent's rules.,effect,2,0
+1293,The documents were loose.,I paper clipped them together.,I kept them in a secure place.,effect,1,1
+41,The tenant misplaced his keys to his apartment.,His landlord unlocked the door.,His landlord repaired the door.,effect,1,0
+188,The woman upgraded her computer hardware.,She deleted old files on the computer.,She installed new software on the computer.,effect,2,0
+1328,My friend had to go for a health checkup.,I brought her a card and flowers.,I dropped her off at the hospital.,effect,2,1
+1486,The woman went to the polling station.,She casted a vote in the election.,She discovered the outcome of the election.,effect,1,1
+1103,The child punched the stack of blocks.,The stack towered over the boy's head.,The blocks scattered all over the rug.,effect,1,1
+220,The detective flashed his badge to the police officer.,The police officer confiscated the detective's badge.,The police officer let the detective enter the crime scene.,effect,2,0
+132,The cowgirl threw her lasso towards the horse.,The lasso grabbed onto the horse.,The horse trotted into the barn.,effect,1,0
+1281,The shopper won a discount on the cost of the item.,He decided to buy it.,He checked its price tag.,effect,1,1
+192,The bureau drawers were cluttered.,I locked the drawers shut.,I threw away unnecessary contents.,effect,2,0
+1092,The photographer could not see the child's face.,The photographer quickly changed the child's pose.,The photographer quickly snapped the child's photo.,effect,1,1
+1020,The woman's ring got dirty.,The ring went down the drain.,The woman polished the ring.,effect,2,1
+1488,The couple had a big fight.,They took some time apart.,They planned a wedding.,effect,1,1
+486,The woman read the newspaper.,She casted a vote in the election.,She discovered the outcome of the election.,effect,2,0
+1474,There was a big flood last autumn.,Leaves fell from the trees.,People evacuated their homes.,effect,2,1
+1173,The host served nothing to his guests.,His guests went hungry.,His guests were gracious.,effect,1,1
+1171,The motorcyclist let go of the throttle.,The motorcycle coasted to a halt.,The motorcycle shot forward.,effect,1,1
+208,The man woke up with a toothache.,He missed an appointment with the dentist.,He made an appointment with the dentist.,effect,2,0
+1253,The man stepped in the mud.,He got his suit altered.,He got his shoes shined.,effect,2,1
+1172,The teacher threw the chewing gum at the student.,The student spit out the gum.,The gum stuck to the student's shoe.,effect,2,1
+1075,The time was earlier than I thought.,The clock showed the wrong time.,I took extra time to get ready.,effect,2,1
+113,I received a package in the mail.,I took the package to the post office.,The package triggered my curiosity.,effect,2,0
+141,I held the door for the woman entering behind me.,The woman thanked me.,The door slammed shut.,effect,1,0
+218,The student's answer on the exam was incorrect.,The teacher subtracted points off the student's grade.,The teacher added bonus points to the student's grade.,effect,1,0
+289,The boy painted a picture for his mother.,His mother sold the picture to a gallery.,His mother hung the picture on the wall.,effect,2,0
+1013,The frozen pond thawed in the spring.,People brought boats to the pond.,People skated on the pond.,effect,1,1
+410,The man drank heavily at the party.,He had a headache the next day.,He had a runny nose the next day.,effect,1,0
+186,The doctor x-rayed the patient's arm.,He put the patient's arm in a cast.,He discovered that the patient's arm was broken.,effect,2,0
+1403,The woman won the lottery.,She received her pension.,She paid off her mortgage.,effect,2,1
+447,The woman's hair fell in her face.,She lathered shampoo into her hair.,She pulled her hair back with a clip.,effect,2,0
+127,Several witnesses of the crime testified against the suspect.,The suspect was acquitted.,The suspect was convicted.,effect,2,0
+1012,The elderly woman made a phone call.,The woman's daughter came over to clean her house.,The woman's daughter moved in to take care of her.,effect,1,1
+355,The putrid odor filled the room.,I clamped my hand over my nose.,I put the rubber gloves on.,effect,1,0
+313,The woman was summoned for jury duty.,She contacted her lawyer.,She cancelled her appointments.,effect,2,0
+1289,The mother no longer needed her son's picture.,His mother sold the picture to a gallery.,His mother hung the picture on the wall.,effect,1,1
+284,The woman wanted to be a doctor.,She visited the hospital.,She went to medical school.,effect,2,0
+1439,The bride made a wishlist.,The wedding guests brought gifts.,She called the wedding off.,effect,1,1
+1084,I got angry while reading the book.,I ripped out the next page.,I turned to the next page.,effect,1,1
+221,The girl wanted to make her mother happy.,The girl picked a flower for her mother.,The girl ate the cookies her mother baked.,effect,1,0
+55,The man signed the document.,The transaction was voided.,The transaction became official.,effect,2,0
+185,The woman felt ashamed of scar on her face.,She hid the scar with makeup.,She explained the scar to strangers.,effect,1,0
+254,The clouds looked dark.,I brought my umbrella to work.,I brought my laptop to work.,effect,1,0
+1224,The man discovered his enemy uncovered incriminating evidence against him.,The man avoided his enemy.,The man blackmailed his enemy.,effect,1,1
+1115,The speaker was defeated by her debate opponent.,The speaker won the debate.,The speaker congratulated her opponent.,effect,2,1
+1476,I opened the door of the wagon.,The objects in the wagon fell out.,The wagon wheels spun forward.,effect,1,1
+475,The politician was convicted of fraud.,He campaigned for re-election.,He was removed from office.,effect,2,0
+133,The group overlooked the woman's faux pas.,The woman apologized.,The woman was relieved.,effect,2,0
+260,My grandmother passed away.,My family held a reunion.,My family held a funeral.,effect,2,0
+75,The clock stopped ticking.,I took extra time to get ready.,The clock showed the wrong time.,effect,2,0
+425,The man confessed his love for the woman.,The woman envied him.,The woman rejected him.,effect,2,0
+1452,I already received a copy of the new magazine.,I stopped receiving new issues.,I discarded the new issue.,effect,2,1
+474,The seasons changed from summer to autumn.,Leaves fell from the trees.,People evacuated their homes.,effect,1,0
+1239,A gas tank burst in the hall of the school.,The principal called off classes for the day.,The principal suspended the students involved.,effect,1,1
+1238,The man had a dead conscience.,He manipulated his friend.,He admitted his indiscretion.,effect,1,1
+1153,The parents recognized their daughter's interest in sports.,They encouraged her to become an artist.,They taught her how to ride a bike.,effect,2,1
+258,The button on my shirt fell off.,I sewed the button back on.,I glued the button back on.,effect,1,0
+1113,I received someone's package in the mail.,I took the package to the post office.,The package triggered my curiosity.,effect,1,1
+33,The police aimed their weapons at the fugitive.,The fugitive fell to the ground.,The fugitive dropped his gun.,effect,2,0
+110,I was confused by the professor's lecture.,I asked the professor questions.,I paid attention to the professor.,effect,1,0
+171,The motorcyclist twisted the throttle.,The motorcycle shot forward.,The motorcycle coasted to a halt.,effect,1,0
+1014,The offender was poor.,She was sent back to jail.,She stole money from a church.,effect,2,1
+1318,The woman's brother did not like the gift.,Her brother unwrapped the gift.,Her brother refused to accept the gift.,effect,2,1
+1220,The detective flashed his fake badge to the police officer.,The police officer confiscated the detective's badge.,The police officer let the detective enter the crime scene.,effect,1,1
+1447,The woman began to wash her hair.,She lathered shampoo into her hair.,She pulled her hair back with a clip.,effect,1,1
+1444,The student enjoyed cooking.,He brought his lunch to school.,He left his assignment at home.,effect,1,1
+1114,The surfer saw the wave.,She paddled her board into the ocean.,The wave carried her to the shore.,effect,1,1
+312,The woman had an infection.,She washed her hands.,She took antibiotics.,effect,2,0
+1498,The airline went bankrupt.,They cancelled my flight.,They offered me compensation.,effect,1,1
+357,The magnet attracted the paperclip.,The paperclip dropped from the magnet.,The paperclip stuck to the magnet.,effect,2,0
+101,The teacher took roll.,She identified the students that were absent.,She gave her students a pop quiz.,effect,1,0
+358,The gardener pulled the weeds.,The weeds produced seeds.,The weeds came out of the soil.,effect,2,0
+137,The skunk sprayed the dog.,The dog emitted a foul smell.,The skunk roamed the woods.,effect,1,0
+1276,The man wanted to get peace with his enemy.,The man declared a truce with his enemy.,The man framed his enemy for a crime.,effect,1,1
+1033,The police shot the fugitive.,The fugitive fell to the ground.,The fugitive dropped his gun.,effect,1,1
+1039,The seamstress guided the thread through the eye of the needle.,The thread went through the fabric.,The thread wrapped around the needle.,effect,2,1
+1260,My grandmother passed by.,My family held a reunion.,My family held a funeral.,effect,1,1
+1217,The company was seeking highly specialized talent.,It moved its headquarters to a suburban location.,It increased its marketing efforts for new products.,effect,1,1
+1351,I touched the ice cube.,The ice cube stuck to my fingers.,The ice cube vanished.,effect,1,1
+351,I ran the ice cube under warm water.,The ice cube vanished.,The ice cube stuck to my fingers.,effect,1,0
+1258,The button on my laptop fell off.,I sewed the button back on.,I glued the button back on.,effect,2,1
+242,I put coins in the washing machine at the laundromat.,I ran out of laundry detergent.,The machine powered on.,effect,2,0
+191,The woman had a religious awakening.,She began going to church.,She began travelling abroad.,effect,1,0
+1221,The girl wanted to make her mother happy for her effort.,The girl picked a flower for her mother.,The girl ate the cookies her mother baked.,effect,2,1
+383,The man wanted to save money.,He cut back on making frivolous purchases.,He withdrew money from his savings account.,effect,1,0
+1034,The patient said his leg felt numb.,The nurse tested his reflexes.,The nurse gave him an IV.,effect,1,1
+1225,The girl wanted to get on top of the slide.,She glided down the slide.,She crawled up the slide.,effect,2,1
+1127,No witnesses of the crime testified against the suspect.,The suspect was convicted.,The suspect was acquitted.,effect,2,1
+252,The boy pushed his sister.,They played hide and seek.,His sister tattled on him.,effect,2,0
+34,The patient was dehydrated.,The nurse gave him an IV.,The nurse tested his reflexes.,effect,1,0
+390,The truck crashed into the motorcycle on the bridge.,The motorcyclist died.,The bridge collapsed.,effect,1,0
+54,The cook stirred the ingredients in the bowl.,The ingredients blended together.,The ingredients melted.,effect,1,0
+1401,The man flushed repeatedly.,The toilet filled with water.,Water flowed from the spout.,effect,1,1
+1215,The fortune teller's revelations were false.,Many customers asked for refunds.,She received many returning customers.,effect,1,1
+228,The car looked filthy.,He owner took it in for a paint job.,The owner took it to the car wash.,effect,2,0
+338,The scientist conducted an experiment.,She fabricated her data.,She validated her theory.,effect,2,0
+1188,The woman wanted to sell her computer hardware.,She installed new software on the computer.,She deleted old files on the computer.,effect,2,1
+1483,The jewelry thieves were never caught.,The stolen jewelry was returned to its owners.,The cost of the stolen jewelry was calculated.,effect,2,1
+1098,The woman felt dizzy.,She was reminded of her childhood.,She remembered to take her medication.,effect,2,1
+1219,The girl demonstrated poor etiquette.,She threw away her napkin after eating.,She put her napkin on her lap before eating.,effect,1,1
+1029,The grape juice was boiled.,The juice evaporated.,The juice turned to wine.,effect,1,1
+14,The offender violated parole.,She was sent back to jail.,She stole money from a church.,effect,1,0
+473,The teacher assigned homework to the students.,The students passed notes.,The students groaned.,effect,2,0
+324,The car stopped at the crosswalk.,The pedestrian crossed the road.,The pedestrian waited on the sidewalk.,effect,1,0
+1140,It was night in a quiet neighborhood.,The security alarm went off.,The homeowners were asleep.,effect,2,1
+1052,The homeowners liked their neighbors.,They built a fence around their property.,They hosted a barbeque in their backyard.,effect,2,1
+1037,The papers were important.,I put them into alphabetical order.,I made photocopies of them.,effect,2,1
+1429,The girl was thirsty.,Her father took away her dessert.,Her father told her to drink her milk.,effect,2,1
+446,The man defied the authorities of the church.,He was excommunicated from the church.,He donated money to the church.,effect,1,0
+92,The photographer got the child to smile.,The photographer quickly snapped the child's photo.,The photographer quickly changed the child's pose.,effect,1,0
+1255,The passenger on the airplane made a distracting noise.,The airplane crashed.,The pilot made an error.,effect,2,1
+22,The woman's date wanted to look like a gentleman.,He opened the door for her.,He asked her if she liked sushi.,effect,1,0
+1313,The woman wanted a divorce. ,She cancelled her appointments.,She contacted her lawyer.,effect,2,1
+399,The man's watch was broken.,He waited at the bus stop.,He asked a stranger for the time.,effect,2,0
+1130,The producted was replaced.,The product became outdated.,Consumers recognized the product.,effect,1,1
+1227,The child obeyed her parents.,Her parents hugged her.,Her parents punished her.,effect,1,1
+61,The man threw his empty can onto the street.,He was fined for littering.,He was jumped from behind.,effect,1,0
+444,The student was in a rush to get to school on time.,He left his assignment at home.,He brought his lunch to school.,effect,1,0
+159,The archeologist dug up the site.,She read about the site's history.,She excavated ancient artifacts.,effect,2,0
+1234,The school principal effected the honor code.,Students were expelled from school.,Students protested the decision.,effect,1,1
+1284,The woman wanted to see a doctor.,She went to medical school.,She visited the hospital.,effect,2,1
+1377,I made a resolution to become fitter.,I attended a yoga class.,I bought fruits and vegetables.,effect,1,1
+1475,The politician was very popular.,He was removed from office.,He campaigned for re-election.,effect,2,1
+1252,The boy found his sister.,They played hide and seek.,His sister tattled on him.,effect,1,1
+140,A burglar broke into the house.,The homeowners were asleep.,The security alarm went off.,effect,2,0
+1111,The book was deemed appropriate for children.,Teachers required students to read it.,Schools banned it from its libraries.,effect,1,1
+1446,The man is a long-time member of the church.,He donated money to the church.,He was excommunicated from the church.,effect,1,1
+142,The mirror in the bathroom fogged up.,The girl applied her makeup.,The girl turned on the fan.,effect,2,0
+1142,The mirror in the bathroom cleared up.,The girl turned on the fan.,The girl applied her makeup.,effect,2,1
+321,The man needed coins to fill the parking meter.,He begged people on the street for loose change.,He searched under his car seats for loose change.,effect,2,0
+111,The book was deemed inappropriate for children.,Schools banned it from its libraries.,Teachers required students to read it.,effect,1,0
+39,The seamstress pushed the threaded needle into the fabric.,The thread went through the fabric.,The thread wrapped around the needle.,effect,1,0
+60,The crowd gave the band a standing ovation.,The band reappeared on the stage.,The band signed autographs.,effect,1,0
+1374,The man dealt well with the tragedy.,He refused to talk about it.,He got over it easily.,effect,2,1
+1110,I was interested in the professor's lecture.,I paid attention to the professor.,I asked the professor questions.,effect,1,1
+406,I doubted the salesman's pitch.,I turned his offer down.,He persuaded me to buy the product.,effect,1,0
+222,The toddler started crying.,Her parents took away her toy.,Her parents gave her a toy.,effect,2,0
+1191,The woman wanted to change her environment.,She began travelling abroad.,She began going to church.,effect,1,1
+296,A group of teenagers crashed the party.,The host of the party kicked them out.,The host of the party invited them in.,effect,1,0
+134,The girl came across an unfamiliar word in her textbook.,She looked the term up in the dictionary.,She chucked the textbook across the room.,effect,1,0
+1425,The man showed his new car to the woman.,The woman rejected him.,The woman envied him.,effect,2,1
+1392,The swimmer did not win the race.,Her team lost the meet.,She received a gold medal.,effect,1,1
+429,The girl refused to eat her vegetables.,Her father told her to drink her milk.,Her father took away her dessert.,effect,2,0
+224,The man uncovered incriminating evidence against his enemy.,The man avoided his enemy.,The man blackmailed his enemy.,effect,2,0
+1477,The lobbyist persuaded the president that the bill was bad for business.,The president vetoed the bill.,The legislature passed the bill.,effect,1,1
+326,My knees buckled on the stairs.,I caught myself on the railing.,The railing came loose from the wall.,effect,1,0
+1319,Most members were unable to join.,The meeting was postponed.,The meeting commenced.,effect,1,1
+341,I put ice cubes in the hot soup.,The soup became thick.,The soup cooled down.,effect,2,0
+318,The woman presented her brother with a gift.,Her brother unwrapped the gift.,Her brother refused to accept the gift.,effect,1,0
+1196,The boy yelled his reply to his mother.,His mother told him to speak up.,His mother told him to whisper.,effect,2,1
+1060,The crowd waited for the rock band at the airport.,The band signed autographs.,The band reappeared on the stage.,effect,1,1
+452,My subscription to the magazine expired.,I discarded the new issue.,I stopped receiving new issues.,effect,2,0
+402,The girl found a bug in her cereal.,She lost her appetite.,She poured milk in the bowl.,effect,1,0
+1321,The poor man recently lost his job.,He searched under his car seats for loose change.,He begged people on the street for loose change.,effect,2,1
+173,The host served dinner to his guests.,His guests were gracious.,His guests went hungry.,effect,1,0
+1406,I salesman's pitch was very good.,He persuaded me to buy the product.,I turned his offer down.,effect,1,1
+286,My daughter suffered an allergy attack.,I took her to the emergency room.,I encouraged her to take deep breaths.,effect,1,0
+1186,The doctor discovered the patient's arm was broken.,He discovered that the patient's arm was broken.,He put the patient's arm in a cast.,effect,2,1
+472,The tree branch landed in the river.,The river's current became stronger.,The branch moved downstream.,effect,2,0
+1484,Political violence finally ended in the nation.,Many citizens relocated to the capitol.,Many citizens took refuge in other territories.,effect,1,1
+453,The detective revealed an anomaly in the case.,He scrapped his theory.,He finalized his theory.,effect,1,0
+238,The man had an attack of conscience.,He manipulated his friend.,He admitted his indiscretion.,effect,2,0
+423,I put my hands under the running faucet.,The water splashed in my face.,The soap rinsed off my hands.,effect,2,0
+1312,The woman was about to cook.,She took antibiotics.,She washed her hands.,effect,2,1
+225,The girl pushed herself off the top of the slide.,She glided down the slide.,She crawled up the slide.,effect,1,0
+1308,The woman worried whether she would be late.,The woman took her sweater off.,The woman glanced at her watch.,effect,2,1
+12,The elderly woman suffered a stroke.,The woman's daughter came over to clean her house.,The woman's daughter moved in to take care of her.,effect,2,0
+1185,The woman was questioned about the scar on her face.,She hid the scar with makeup.,She explained the scar to strangers.,effect,2,1
+1254,The cloud computer was blocked.,I brought my umbrella to work.,I brought my laptop to work.,effect,2,1
+1322,The customer had enough money for the souvenir.,He bargained with the vendor.,The vender sold it to him.,effect,2,1
+189,The girl performed in a dance recital.,Her parents came to watch the recital.,Her parents showed her how to dance.,effect,1,0
+1389,The girl hated her parents.,She obeyed her parent's rules.,She ran away from home.,effect,2,1
+477,The lobbyist persuaded the legislature to support the bill.,The president vetoed the bill.,The legislature passed the bill.,effect,2,0
+1192,The buerau drawers were opened.,I threw away unnecessary contents.,I locked the drawers shut.,effect,2,1
+114,The surfer caught the wave.,She paddled her board into the ocean.,The wave carried her to the shore.,effect,2,0
+52,The homeowners disliked their nosy neighbors.,They built a fence around their property.,They hosted a barbeque in their backyard.,effect,1,0
+1132,The cowgirl missed her lasso towards the horse.,The horse trotted into the barn.,The lasso grabbed onto the horse.,effect,1,1
+421,The student misspelled the word.,The teacher dismissed her.,The teacher corrected her.,effect,2,0
+1162,I tossed the ball forward.,The ball hit the ceiling.,The ball rolled across the ground.,effect,2,1
+1397,The man wanted to make a note.,The man retrieved a pen from his pocket.,The man put his glasses on.,effect,1,1
+281,The shopper wondered about the cost of the item.,He decided to buy it.,He checked its price tag.,effect,2,0
+1208,The man woke up late.,He missed an appointment with the dentist.,He made an appointment with the dentist.,effect,1,1
+261,The police officer pulled over the celebrity.,The celebrity sued the police officer.,The celebrity offered the officer a bribe.,effect,2,0
+329,The DJ turned the music on.,People began to dance.,People left the party.,effect,1,0
+1073,The authorities brought on the case many years later.,They withheld the victim's name from the public.,The victim struggled to recall details about the crime.,effect,2,1
+1469,An old coal mine was turned into a beautiful park.,Environmentalists started a petition.,Environmentalists produced a documentary.,effect,2,1
+1107,The man looked at his list.,He realized he was early.,He realized he forgot something.,effect,2,1
+1355,I got ready to clean the room.,I put the rubber gloves on.,I clamped my hand over my nose.,effect,1,1
+1133,The group was offended by the woman's faux pas.,The woman apologized.,The woman was relieved.,effect,1,1
+272,The woman betrayed her friend.,Her friend cut off contact with her.,Her friend sent her a greeting card.,effect,1,0
+112,The man begged for forgiveness.,The woman joked around with him.,The woman took pity on him.,effect,2,0
+1228,The car looked keyed.,He owner took it in for a paint job.,The owner took it to the car wash.,effect,1,1
+27,The toddler became cranky.,Her mother fixed her hair into pigtails.,Her mother put her down for a nap.,effect,2,0
