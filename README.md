@@ -21,6 +21,7 @@ The core objective is to quantitatively measure the presence and extent of **Tra
 ---
 
 ## 🗓️ Next Steps & Assigned Tasks
+Before translation, each entry must be tokenized (per sentence) and only then translate.
 
 | # | Task | Assigned To | MT Tool | Target Due Date | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
