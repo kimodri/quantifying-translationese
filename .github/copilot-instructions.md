@@ -1,0 +1,23 @@
+# Copilot Instructions
+
+- Purpose: support the study on translationese bias in Filipino by cleaning English benchmarks, translating them with multiple MT providers, and later analyzing word order.
+- Branching: never push to main; create feature branches like `feat/<name>/<task>` per README.
+- Data layout: raw data (expected under datasets/raw), cleaned subsets in datasets/cleaned, provider outputs in datasets/translated/<provider>, notebooks grouped under data-processing/ and data-translation/.
+- Working dirs: notebooks rely on relative paths (e.g., data-processing notebooks read ../datasets/...; translation notebooks read ../../datasets/...), so run from the notebook’s own folder.
+- Cleaning—PAWS: see data-processing/clean_paws.ipynb; filter sentences by character length 20–2000, stratify 200 samples for label 1 and 200 for label 0 (random_state=42), keep first four columns, write cleaned_paws.csv without index.
+- Cleaning—Balanced COPA: see data-processing/clean_bcopa.ipynb; length-filter premise/choice1/choice2 to 20–2000 chars, sample 200 rows each for question types cause/effect (random_state=42), keep first seven columns, save cleaned_bcopa.csv.
+- Cleaning—XNLI: see data-processing/clean_xnli.ipynb; restrict to English rows, add length columns, filter 20–2000 chars, sample 200 each for neutral/contradiction/entailment (random_state=42), drop length helpers, save cleaned_xnli.csv.
+- Cleaning—XL-Sum: see data-processing/clean_xlsum.ipynb; uses pyspark, builds SparkSession with native libs disabled, filters summary/text lengths 20–2000, deterministic shuffle via rand(seed=42), take 100 rows, drop helper columns, convert to pandas, save cleaned_xlsum.csv.
+- Length checks everywhere are character counts, not tokens; keep this consistent when adding datasets.
+- Translation—Google example: data-translation/google/translate_paws.ipynb defines google_translate using requests to https://translation.googleapis.com/language/translate/v2 with payload q list, target "tl", format "text".
+- Secrets: load_dotenv is used; set GOOGLE_KEY in .env (do not commit keys). API params passed via ?key=..., payload as JSON list.
+- Rate limits: existing notebook chunks translations manually (commented slices of 100). Follow that pattern for new providers and large inputs.
+- Translation inputs: read cleaned CSV, convert relevant columns to Python lists (e.g., sentence1/sentence2), translate, then replace columns with results.
+- Translation outputs: keep original columns/ordering/ids/labels; save CSV without index under datasets/translated/<provider>/ with provider-specific name (e.g., google_translated_bcopa.csv, google_translated_paws.csv).
+- Error handling: google_translate already prints unexpected response structures; mimic that pattern when adding providers to catch non-JSON or schema changes.
+- Reproducibility: sampling uses random_state=42 (pandas) and rand(seed=42) (Spark). Maintain seeds for comparable subsets across runs/providers.
+- Dependencies: pandas + numpy for most cleaning; pyspark for XL-Sum; requests + python-dotenv for Google translations. Ensure env has these before running notebooks.
+- File sizes: PAWS and BCOPA cleaned sets are 400 rows; XNLI has 600 rows after sampling; XL-Sum is 100 rows. Use these as sanity checks after pipeline changes.
+- Outputs in datasets/translated/google match cleaned schemas but Filipino text; verify that no index column is added before committing.
+- When adding new MT providers, mirror the structure of data-translation/google/translate_paws.ipynb and place outputs in a provider subfolder to keep results organized.
+- Respect the project objective: translations should target Filipino (tl) and preserve source structure for later word-order analysis.
