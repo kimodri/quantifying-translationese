@@ -3,3 +3,6 @@
 .venv/
 *.jsonl
 raw/
+# Virtual Environment
+venv/
+venv\
