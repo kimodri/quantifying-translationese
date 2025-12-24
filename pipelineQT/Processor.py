@@ -1,6 +1,9 @@
 from Errors import IncorrectDatasetError, NoDatasetError, UnexpectedFileError
 import os, textwrap
 import pandas as pd
+import platform
+import requests
+from tqdm import tqdm
 
 class Processor:
     
@@ -14,15 +17,81 @@ class Processor:
         # Don't initialize Spark until needed
         self.spark = None
 
-    def _get_spark(self):
-        """Lazy initialization of Spark session"""
-        if self.spark is None:
+    def _check_pyspark_requirements(self):
+        """Check if PySpark and Java are available"""
+        issues = []
+        
+        # Check PySpark
+        try:
             from pyspark.sql import SparkSession
-            self.spark = (
-                SparkSession.builder
-                .config("spark.hadoop.io.native.lib.available", "false")
-                .getOrCreate()
-            )
+        except ImportError:
+            issues.append("PySpark is not installed. Install with: pip install pyspark>=3.2.0")
+        except AttributeError:
+            if platform.system() == 'Windows':
+                issues.append("PySpark does not work natively on Windows. Use WSL, Linux, or macOS.")
+            else:
+                issues.append("PySpark installation is corrupted. Reinstall with: pip install --force-reinstall pyspark>=3.2.0")
+        
+        # Check Java
+        import subprocess
+        try:
+            result = subprocess.run(['java', '-version'], 
+                                  capture_output=True, 
+                                  text=True, 
+                                  timeout=5)
+            if result.returncode != 0:
+                issues.append("Java is not properly configured.")
+        except FileNotFoundError:
+            issues.append("Java JDK 8 or 11+ is not installed. Download from: https://adoptium.net/")
+        except Exception as e:
+            issues.append(f"Could not verify Java installation: {e}")
+        
+        return issues
+
+    def _get_spark(self):
+        """Lazy initialization of Spark session with comprehensive error handling"""
+        if self.spark is None:
+            # Check all requirements first
+            issues = self._check_pyspark_requirements()
+            
+            if issues:
+                error_msg = textwrap.dedent("""
+                Cannot process XL-Sum dataset. The following requirements are missing:
+                
+                """)
+                for i, issue in enumerate(issues, 1):
+                    error_msg += f"{i}. {issue}\n"
+                
+                error_msg += textwrap.dedent("""
+                
+                XL-Sum Processing Requirements:
+                ================================
+                - Java JDK 8 or 11+ (system requirement)
+                - PySpark 3.2.0+ (Python package)
+                - Linux, macOS, or WSL (Windows Subsystem for Linux)
+                
+                Alternative Options:
+                ====================
+                If you cannot install these requirements:
+                1. Process XL-Sum on Google Colab (free, has all requirements)
+                2. Use a cloud VM (AWS, Azure, GCP)
+                3. Ask a colleague with Linux/Mac to process it for you
+                
+                Note: PAWS, BCOPA, and XNLI work on all platforms without these requirements.
+                """)
+                
+                raise RuntimeError(error_msg)
+            
+            try:
+                from pyspark.sql import SparkSession
+                self.spark = (
+                    SparkSession.builder
+                    .config("spark.hadoop.io.native.lib.available", "false")
+                    .getOrCreate()
+                )
+            except Exception as e:
+                raise RuntimeError(f"Failed to initialize Spark session: {e}")
+        
         return self.spark
 
     def process(self, **kwargs):
@@ -51,6 +120,42 @@ class Processor:
             # Call the function with the CORRECT arguments
             # Passing 'key' explicitly to match your definitions
             dispatch[key](source_path, key, sample)
+    
+    def get_xlsum_100(self):
+
+        url = "https://github.com/kimodri/quantifying-translationese/releases/download/v1-dataset/cleaned_xlsum.csv"
+        filename = url.split("/")[-1]
+        destination_path = os.path.join(self.clean_dir, filename)
+
+        print(f"Downloading {filename}...")
+        try:
+            # stream=True is important for large files so they don't load into RAM at once
+            response = requests.get(url, stream=True)
+            response.raise_for_status() # Errors if link is broken (404)
+
+            total_size = int(response.headers.get('content-length', 0))
+            block_size = 1024 # 1KB chunks
+
+            with open(destination_path, 'wb') as file, tqdm(
+                desc=filename,
+                total=total_size,
+                unit='iB',
+                unit_scale=True,
+                unit_divisor=1024,
+            ) as bar:
+                for data in response.iter_content(block_size):
+                    size = file.write(data)
+                    bar.update(size)
+            
+            print(f"Download complete: {destination_path}")
+            return destination_path
+
+        except requests.exceptions.HTTPError as err:
+            print(f"HTTP Error: {err}")
+            if response.status_code == 404:
+                print("Check if the Repository is Public. Private repos require authentication.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
 
     @staticmethod
     def _check_extension(source_path, expected_ext, dataset):
@@ -67,7 +172,7 @@ class Processor:
 
         self._check_extension(source_path, 'csv', 'PAWS')
         
-        destination_path = os.path.join(self.clean_dir, f"{key}.csv")
+        destination_path = os.path.join(self.clean_dir, f"cleaned_{key}.csv")
         df_paws = pd.read_csv(source_path)
 
         df_paws['sentence1_length'] = df_paws['sentence1'].apply(len)
@@ -92,7 +197,7 @@ class Processor:
 
         self._check_extension(source_path, 'csv', 'Balanced COPA')
 
-        destination_path = os.path.join(self.clean_dir, f"{key}.csv")
+        destination_path = os.path.join(self.clean_dir, f"cleaned_{key}.csv")
         df_bcopa = pd.read_csv(source_path)
 
         df_bcopa['premise_length'] = df_bcopa['premise'].apply(len)
@@ -115,6 +220,19 @@ class Processor:
     
 
     def _clean_xlsum(self, source_path, key, sample):
+        """
+        Clean XL-Sum dataset.
+        
+        Requirements:
+        - Java JDK 8 or 11+
+        - PySpark 3.2.0+
+        - Linux, macOS, or WSL
+        
+        Args:
+            source_path: Path to the JSON file
+            key: Dataset key
+            sample: Number of samples to extract
+        """
         # Import PySpark only when this method is called
         import pyspark.sql.functions as F
         from pyspark.sql.functions import rand
@@ -122,7 +240,7 @@ class Processor:
 
         self._check_extension(source_path, 'json', 'XL-Sum') 
         destination_path = os.path.join(self.clean_dir, f"{key}.csv")
-    
+
         schema = StructType([
             StructField("text", StringType(), False),
             StructField("summary", StringType(), False)
@@ -139,20 +257,22 @@ class Processor:
             ((F.col("summary_len") <= 2000) & (F.col("text_len") <= 2000))
         )
 
-        # Add a temporary column with a random number, setting a fixed seed
-        df_shuffled = df_xlsum.withColumn("rand_sort_key", rand(seed=42))
+        # Reproducible sampling
+        df_shuffled = df_xlsum.withColumn("rand_sort_key", rand(seed=self.random_seed))
         df_sorted = df_shuffled.orderBy("rand_sort_key")
         df_reproducible = df_sorted.limit(sample)
         df_reproducible = df_reproducible.drop("rand_sort_key", "summary_len", "text_len")
 
         pdf = df_reproducible.toPandas()
         pdf.to_csv(destination_path, index=False)
+        
+        print(f"Successfully processed {sample} samples to {destination_path}")
 
     def _clean_xnli(self, source_path, key, sample):
 
         self._check_extension(source_path, 'tsv', 'XNLI')
         
-        destination_path = os.path.join(self.clean_dir, f"{key}.csv")
+        destination_path = os.path.join(self.clean_dir, f"cleaned_{key}.csv")
         
         df_xnli = pd.read_csv(source_path, sep="\t")
 
@@ -187,6 +307,8 @@ class Processor:
 def main():
     p = Processor()
     p.process(xnli=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xnli.tsv", 200))
+    # p.process(xlsum=("datasets/raw/xlsum.json", 1000))  # Requires Java + PySpark + Unix
+    p.get_xlsum_100()
 
 if __name__ == "__main__":
     main()
