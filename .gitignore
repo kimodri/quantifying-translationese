@@ -3,3 +3,5 @@
 .venv/
 *.jsonl
 raw/
+__pycache__/
+datasets_sample/
