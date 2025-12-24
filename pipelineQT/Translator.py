@@ -1,8 +1,11 @@
-import os, requests, time
+import os, requests, time, textwrap
 from pathlib import Path
 from typing import List
 import pandas as pd
+from Errors import MissingKeysError, ExtraKeysError, NoDatasetError
 
+#TODO:
+# Handle XL-Sum differenly, XL-Sum is not even here yet
 
 class Translator:
     def __init__(self, translate_dir="../datasets_sample_translated/"):
@@ -13,55 +16,6 @@ class Translator:
     def google_translate(self, key, **kwargs):
         pass 
 
-    def azure_translate(self, key, **kwargs):
-        pass
-
-    @staticmethod
-    def _load_azure_creds(key: str = None, region: str = None, endpoint: str = None):
-        """
-        Resolves Azure credentials.
-        Priority:
-        1. Passed arguments (variables)
-        2. Environment variables (os.getenv)
-        3. Local fallback file (../azure_key.txt)
-        """
-        # 1. Set default endpoint if not provided (Argument > Env Var > Default)
-        endpoint = endpoint or os.getenv("AZURE_TRANSLATOR_ENDPOINT", "https://api.cognitive.microsofttranslator.com")
-
-        # 2. If key/region are NOT passed as arguments, try Environment Variables
-        if not key:
-            key = os.getenv("AZURE_TRANSLATOR_KEY")
-        if not region:
-            region = os.getenv("AZURE_TRANSLATOR_REGION")
-
-        # 3. If key/region are STILL missing, look in the fallback file
-        # This will only run if key or region are still None
-        key_file = Path("../azure_key.txt")
-        if (not key or not region) and key_file.exists():
-            try:
-                content = key_file.read_text()
-                for raw_line in content.splitlines():
-                    line = raw_line.strip()
-                    if not line or line.startswith("#"):
-                        continue
-                    # Only overwrite if we still don't have the value
-                    if line.startswith("API_KEY") and not key:
-                        key = line.split("=", 1)[1].strip().strip("\"' ")
-                    if line.startswith("API_REGION") and not region:
-                        region = line.split("=", 1)[1].strip().strip("\"' ")
-            except Exception as e:
-                print(f"Warning: Could not read credentials file: {e}")
-
-        # 4. Final Validation
-        if not key or not region:
-            raise ValueError(
-                "Missing Azure Credentials. Please provide them as arguments, "
-                "set AZURE_TRANSLATOR_KEY/REGION in environment variables, "
-                "or ensure ../azure_key.txt exists."
-            )
-
-        return key, region, endpoint
-    
     @staticmethod
     def _azure_translate(texts: List[str], key: str, region: str, endpoint: str) -> List[str]:
         """Translate a list of texts to Filipino using Azure Translator."""
@@ -95,12 +49,64 @@ class Translator:
             print(response_json)
             raise
     
+    def azure_translate(self, key: dict, chunk_size: int = 20, **kwargs) -> List[str]:
+
+        if not kwargs:
+            raise NoDatasetError(textwrap.dedent("""
+                Specify the datasets to be downloaded.
+                Accepted: 'paws', 'bcopa', 'xnli', 'xlsum'
+            """))
+
+        # Check if the user inputs complete credentials
+        required_keys = {'key', 'region', 'endpoint'}
+        missing = required_keys - key.keys()
+        if missing:
+            raise(MissingKeysError(
+                f"Error: Missing keys: {missing}"
+            ))
+
+        # Check for extra keys
+        extra = key.keys() - required_keys
+        if extra:
+            raise(ExtraKeysError(
+                f"Error: Unexpected keys: {extra}"
+            ))        
+        
+        # Check for the datasets
+        for key in kwargs.keys():
+            if key == "paws":
+                pass
+            elif key == "bcopa":
+                pass
+            elif key == "xnli":
+                pass
+            else:
+                
 
 
 
+        results = []
 
-
-
+        for start in range(0, len(texts), chunk_size):
+            chunk = texts[start : start + chunk_size]
+            attempt = 0
+            while True:
+                try:
+                    translated = self._azure_translate(chunk, key["key"], key["region"], key["endpoint"])
+                    break
+                except RuntimeError as err:
+                    err_text = str(err)
+                    if "429" in err_text or "request limits" in err_text:
+                        backoff = min(60, 5 * (attempt + 1))
+                        print(f"Hit rate limit; sleeping {backoff}s then retrying (attempt {attempt + 1})...")
+                        time.sleep(backoff)
+                        attempt += 1
+                        if attempt >= 5:
+                            raise
+                    else:
+                        raise
+            results.extend(translated)
+        return results
 
     def deepl_translate(self, key, **kwargs):
         pass 
