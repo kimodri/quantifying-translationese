@@ -1,8 +1,4 @@
 from Errors import IncorrectDatasetError, NoDatasetError, UnexpectedFileError
-# from pyspark.sql import SparkSession   
-# import pyspark.sql.functions as F
-# from pyspark.sql.functions import rand
-# from pyspark.sql.types import *  
 import os, textwrap
 import pandas as pd
 
@@ -15,12 +11,19 @@ class Processor:
         if not os.path.exists(self.clean_dir):
             os.makedirs(self.clean_dir)
         
-        # Initialize Spark once
-        # self.spark = (
-        #     SparkSession.builder
-        #     .config("spark.hadoop.io.native.lib.available", "false")
-        #     .getOrCreate()
-        # )
+        # Don't initialize Spark until needed
+        self.spark = None
+
+    def _get_spark(self):
+        """Lazy initialization of Spark session"""
+        if self.spark is None:
+            from pyspark.sql import SparkSession
+            self.spark = (
+                SparkSession.builder
+                .config("spark.hadoop.io.native.lib.available", "false")
+                .getOrCreate()
+            )
+        return self.spark
 
     def process(self, **kwargs):
         if not kwargs:
@@ -33,7 +36,7 @@ class Processor:
         dispatch = {
             'paws': self._clean_paws,
             'bcopa': self._clean_bcopa,
-            # 'xlsum': self._clean_xlsum,
+            'xlsum': self._clean_xlsum,
             'xnli': self._clean_xnli
         }
 
@@ -111,48 +114,43 @@ class Processor:
         df_result.iloc[:, 0:7].to_csv(destination_path, index=False)
     
 
-    # def _clean_xlsum(self, source_path, key, sample):
+    def _clean_xlsum(self, source_path, key, sample):
+        # Import PySpark only when this method is called
+        import pyspark.sql.functions as F
+        from pyspark.sql.functions import rand
+        from pyspark.sql.types import StructType, StructField, StringType
 
-    #     self._check_extension(source_path, 'json', 'XL-Sum') 
-    #     destination_path = os.path.join(self.clean_dir, f"{key}.csv")
+        self._check_extension(source_path, 'json', 'XL-Sum') 
+        destination_path = os.path.join(self.clean_dir, f"{key}.csv")
     
-    #     Processor._check_extension(source_path, 'tsv', 'XL-Sum')
+        schema = StructType([
+            StructField("text", StringType(), False),
+            StructField("summary", StringType(), False)
+        ])
 
-    #     schema = StructType([
-    #         StructField("text", StringType(), False),
-    #         StructField("summary", StringType(), False)
-    #     ])
+        spark = self._get_spark()
+        df_xlsum = spark.read.schema(schema).json(source_path)
 
-    #     df_xlsum = self.spark.read.schema(schema).json(source_path)
+        df_xlsum = df_xlsum.withColumn("summary_len", F.length("summary"))
+        df_xlsum = df_xlsum.withColumn("text_len", F.length("text"))
 
+        df_xlsum = df_xlsum.filter(
+            ((F.col("summary_len") >= 20) & (F.col("text_len") >= 20)) &
+            ((F.col("summary_len") <= 2000) & (F.col("text_len") <= 2000))
+        )
 
-    #     df_xlsum = df_xlsum.withColumn("summary_len", F.length("summary"))
-    #     df_xlsum = df_xlsum.withColumn("text_len", F.length("text"))
+        # Add a temporary column with a random number, setting a fixed seed
+        df_shuffled = df_xlsum.withColumn("rand_sort_key", rand(seed=42))
+        df_sorted = df_shuffled.orderBy("rand_sort_key")
+        df_reproducible = df_sorted.limit(sample)
+        df_reproducible = df_reproducible.drop("rand_sort_key", "summary_len", "text_len")
 
-    #     df_xlsum = df_xlsum.filter(
-    #         ((F.col("summary_len") >= 20) & (F.col("text_len") >= 20)) &
-    #         ((F.col("summary_len") <= 2000) & (F.col("text_len") <= 2000))
-    #     )
-
-    #     # Add a temporary column with a random number, setting a fixed seed
-    #     # This step ensures the shuffle order is the same every run.
-    #     df_shuffled = df_xlsum.withColumn("rand_sort_key", rand(seed=42))
-
-    #     # Sort the DataFrame by the random key
-    #     df_sorted = df_shuffled.orderBy("rand_sort_key")
-
-    #     # Take exactly n-sample rows
-    #     df_reproducible = df_sorted.limit(sample)
-
-    #     # (Optional but good practice) Drop the temporary column
-    #     df_reproducible = df_reproducible.drop("rand_sort_key", "summary_len", "text_len")
-
-    #     pdf = df_reproducible.toPandas()
-    #     pdf.to_csv(destination_path, index=False)
+        pdf = df_reproducible.toPandas()
+        pdf.to_csv(destination_path, index=False)
 
     def _clean_xnli(self, source_path, key, sample):
 
-        self._check_extension(source_path, 'tsv', 'XNLI') # Fixed Label
+        self._check_extension(source_path, 'tsv', 'XNLI')
         
         destination_path = os.path.join(self.clean_dir, f"{key}.csv")
         
