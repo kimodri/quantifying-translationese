@@ -97,7 +97,7 @@ class Processor:
     def process(self, **kwargs):
         if not kwargs:
             raise NoDatasetError(textwrap.dedent("""
-                Specify the datasets to be downloaded.
+                Specify the datasets to be cleaned.
                 Accepted: 'paws', 'bcopa', 'xnli', 'xlsum'
             """))
         
@@ -218,8 +218,63 @@ class Processor:
         df_result = pd.concat([df_cause, df_effect], ignore_index=True)
         df_result.iloc[:, 0:7].to_csv(destination_path, index=False)
     
-
     def _clean_xlsum(self, source_path, key, sample):
+        """
+            Clean XL-Sum dataset using Polars.
+
+            Behaviour mirrors the original PySpark version:
+            - reads JSON (ndjson or JSON array)
+            - keeps only rows where len(text) and len(summary) are in [20, 2000]
+            - reproducible sampling using `self.random_seed`
+            - writes result to {self.clean_dir}/{key}.csv
+        """
+        import os
+        import polars as pl
+
+        # keep same extension check as before
+        self._check_extension(source_path, "jsonl", "XL-Sum")
+        destination_path = os.path.join(self.clean_dir, f"{key}.csv")
+
+        # Robustly read NDJSON (newline-delimited) first, fallback to JSON array
+        try:
+            df = pl.read_ndjson(source_path)
+        except Exception:
+            df = pl.read_json(source_path)
+
+        # Validate required fields
+        required = {"text", "summary"}
+        if not required.issubset(set(df.columns)):
+            raise ValueError(f"XL-Sum JSON must contain columns {required}. Found: {df.columns}")
+
+       # compute lengths in a version-compatible way
+        str_ns = pl.col("summary").str
+        if hasattr(str_ns, "len_chars"):
+            summary_len_expr = pl.col("summary").str.len_chars().alias("summary_len")
+            text_len_expr = pl.col("text").str.len_chars().alias("text_len")
+        elif hasattr(str_ns, "lengths"):
+            # older polars
+            summary_len_expr = pl.col("summary").str.lengths().alias("summary_len")
+            text_len_expr = pl.col("text").str.lengths().alias("text_len")
+        else:
+            # worst-case fallback (slower): apply Python len
+            summary_len_expr = pl.col("summary").apply(lambda s: len(s) if s is not None else 0).alias("summary_len")
+            text_len_expr = pl.col("text").apply(lambda s: len(s) if s is not None else 0).alias("text_len")
+
+        df = df.with_columns([summary_len_expr, text_len_expr])
+        df = df.filter(
+            (pl.col("summary_len") >= 20) & (pl.col("text_len") >= 20) &
+            (pl.col("summary_len") <= 2000) & (pl.col("text_len") <= 2000)
+        )
+
+        # sample reproducibly
+        n = min(int(sample), df.height)
+        df_sample = df.sample(n=n, seed=self.random_seed)
+
+        # drop helper columns once and write csv
+        df_sample = df_sample.drop(["summary_len", "text_len"])
+        df_sample.write_csv(destination_path)
+
+    def _clean_xlsum_spark(self, source_path, key, sample):
         """
         Clean XL-Sum dataset.
         
@@ -306,9 +361,11 @@ class Processor:
 
 def main():
     p = Processor()
-    p.process(xnli=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xnli.tsv", 200))
+    # p.process(xnli=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xnli.tsv", 200))
     # p.process(xlsum=("datasets/raw/xlsum.json", 1000))  # Requires Java + PySpark + Unix
-    p.get_xlsum_100()
+    # p.get_xlsum_100()
+    # p.process(xnli=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xnli.tsv", 200))
+    p.process(xlsum=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xlsum.jsonl", 100))
 
 if __name__ == "__main__":
     main()
