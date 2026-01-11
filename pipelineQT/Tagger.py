@@ -2,6 +2,7 @@ import calamancy, os, textwrap
 import pandas as pd
 from Errors import FileNameError, NoDatasetError, IncorrectDatasetError
 from collections import Counter
+import json
 
 class Tagger:
 
@@ -17,7 +18,7 @@ class Tagger:
         if "sentencizer" not in self.nlp.pipe_names:
             self.nlp.add_pipe("sentencizer", first=True)
 
-    def __call__(self, **kwargs):
+    def __call__(self, is_csv, **kwargs):
         
         if not kwargs:
             raise NoDatasetError(textwrap.dedent("""
@@ -40,13 +41,21 @@ class Tagger:
             if key not in dispatch:
                 raise IncorrectDatasetError(f"{key} is not a valid dataset.")
             
-            source_path = args[0]
+            source_path = args
             
             # Call the function and capture the return dictionary
-            dataset_output = dispatch[key](source_path, key)
+            dataset_output = dispatch[key](source_path, key, is_csv=is_csv)
             
             # Add to the master dictionary with the dataset name as the key
             all_results[key] = dataset_output
+
+        values = list(kwargs.values())
+        print(values)
+        value_name = values[0].split("/")[-1].split("_")[0]
+        destination_path = os.path.join(self.tag_dir, f"{value_name}result.json")
+
+        with open(destination_path, "w", encoding="utf-8") as f:
+            json.dump(all_results, f, indent=4, ensure_ascii=False)
 
         return all_results
 
@@ -61,11 +70,12 @@ class Tagger:
 
     @staticmethod
     def validate_filename(filename: str):
-        valid_prefixes = ("google", "azure", "deepl", "opus")
-        if not filename.startswith(valid_prefixes):
-            raise FileNameError(
-                f"Invalid filename '{filename}'. It must start with one of: {', '.join(valid_prefixes)}"
-            )
+        pass
+        # valid_prefixes = ("google", "azure", "deepl", "opus", "bing")
+        # if not filename.startswith(valid_prefixes):
+        #     raise FileNameError(
+        #         f"Invalid filename '{filename}'. It must start with one of: {', '.join(valid_prefixes)}"
+        #     )
         
     def _get_sentence_form(self, text: str) -> int:
         # Handle non-string inputs (NaNs) just in case
@@ -84,6 +94,7 @@ class Tagger:
                 return 2 # Ambiguous
 
     def tag_bcopa(self, source, filename, is_csv=False):
+        print(f"DEBUG: The path being read is: '{source}'")
         self.validate_filename(filename)
         destination_path = os.path.join(self.tag_dir, f"{filename}.csv")
         
@@ -148,7 +159,7 @@ class Tagger:
         df_xlsum['sentences_list'] = df_xlsum['text'].apply(self._get_sentences_calamancy) 
         
         # BUG FIX: Changed == to =
-        df_xlsum['summarize_form'] = df_xlsum['summarize'].apply(self._get_sentence_form)
+        df_xlsum['summary_form'] = df_xlsum['summary'].apply(self._get_sentence_form)
 
         # Get all the sentences
         all_sentences = [sent for sublist in df_xlsum['sentences_list'] for sent in sublist]
@@ -157,53 +168,19 @@ class Tagger:
         df_xlsum.drop(columns=['sentences_list'], inplace=True)
 
         tags_text = [self._get_sentence_form(sentence) for sentence in all_sentences]
-        tags_summarize = df_xlsum['summarize_form'].to_list()
+        tags_summarize = df_xlsum['summary_form'].to_list()
 
         if is_csv == False: # Kept consistent with other functions, assumed intentional
             df_xlsum.to_csv(destination_path, index=False)
             
         return {
             "tags_text": self.get_counts(tags_text),
-            "tags_summarize": self.get_counts(tags_summarize)
+            "tags_summary": self.get_counts(tags_summarize)
         }
 
 if __name__ == "__main__":
-    pass
-
-
-
-
-    # import calamancy
-
-    # 1. Load the model
-    # Ensure you have installed it first: pip install tl_calamancy_md
-    # try:
-    #     nlp = calamancy.load("tl_calamancy_md")
-    # except OSError:
-    #     print("Model not found. Please install it using: pip install tl_calamancy_md")
-    #     # Alternatively, for the specific version you mentioned:
-    #     # pip install https://huggingface.co/flair/tl_calamancy_md/resolve/main/tl_calamancy_md-0.1.0.tar.gz
-    #     # (Note: Use the correct URL/version for your specific needs)
-    #     nlp = None
-
-    # if nlp:
-    #     # 2. Input text (Tagalog paragraph)
-    # nlp = calamancy.load("tl_calamancy_md-0.2.0")
-
-
-    # 1. Load the model
-    # nlp = calamancy.load("tl_calamancy_md")
-
-    # --- THE FIX ---
-    # We add a rule-based sentencizer at the start of the pipeline.
-    # This forces splits on '.', '!', and '?' regardless of grammar predictions.
-    # nlp.add_pipe("sentencizer", first=True) 
-    # ----------------
-
-    # text = "Magandang araw po, Gng. Mirabel! Ito ay isang pagsubok sa Calamancy. Sana gumana ito nang maayos. Ako ay nagt-trabaho sa D.O.H. A.E.S. naman ako nag-aral"
-
-    # doc = nlp(text)
-
-    # sents = [s.text for s in doc.sents]
-    # print(sents)
-                
+    tagger = Tagger()
+    print(tagger(
+        False, bcopa=r"../datasets/translated/deepl/deepl_translated_bcopa.csv", paws=r"../datasets/translated/deepl/deepl_translated_paws.csv", xnli = r"../datasets/translated/deepl/deepl_translated_xnli.csv", xlsum=r"../datasets/translated/deepl/deepl_translated_xlsum.csv"
+        
+    ))
