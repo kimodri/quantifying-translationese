@@ -1,0 +1,246 @@
+/* General reset to remove default margins */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Nav container styling */
+nav {
+    display: flex;
+    justify-content: space-between; /* This pushes the H1 and UL to opposite ends */
+    align-items: center;            /* Vertically centers the items */
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+}
+
+/* Remove default H1 margins */
+nav h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Style the link list */
+nav ul {
+    display: flex;                 /* Makes the list items horizontal */
+    list-style: none;              /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+/* Space between the individual links */
+nav li {
+    margin-left: 20px;
+}
+
+/* Link styling */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main contents */
+/* The Main Container */
+.hero-container {
+    display: flex;              /* Enables side-by-side layout */
+    justify-content: space-between; /* Pushes content to edges */
+    align-items: center;        /* Vertically centers text and button */
+    
+    padding: 4rem 5%;           /* Spacing: 4rem top/bottom, 5% left/right */
+    min-height: 60vh;           /* Makes the section tall (60% of viewport height) */
+    
+    /* Background Setup */
+    background-color: #f4f4f4;  /* Fallback color */
+    /* background-image: url('path-to-your-image.jpg'); */ /* Uncomment this later */
+    background-size: cover;     /* Ensures image covers whole area */
+    background-position: center;
+}
+
+/* The Left Side (Text) */
+.info {
+    flex-basis: 50%;            /* Takes up 50% of the width */
+    color: #333;                /* Change to white if using a dark background image */
+}
+
+.info h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.info p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* The Right Side (Button Area) */
+.quantify {
+    flex-basis: 40%;            /* Takes up 40% of the width */
+    display: flex;
+    justify-content: flex-end;  /* Aligns button to the right */
+}
+
+/* The Big Button */
+.quantify button {
+    padding: 1.5rem 3rem;       /* Big padding for a big button */
+    font-size: 1.5rem;          /* Large text */
+    font-weight: bold;
+    cursor: pointer;
+    
+    background-color: #007bff;  /* Blue accent color */
+    color: white;
+    border: none;
+    border-radius: 8px;         /* Rounded corners */
+    transition: transform 0.2s, background-color 0.2s; /* Smooth animation */
+}
+
+/* Button Hover Effect */
+.quantify button:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+    transform: scale(1.05);     /* Slightly grows on hover */
+}
+
+
+/* upload */
+/* Container for the whole page section */
+.upload-wrapper {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.page-title {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* --- The Blue Box --- */
+.upload-box {
+    background-color: #448aff; /* The bright blue color */
+    padding: 15px;             /* Space for the dashed border to sit inside */
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.upload-dashed-area {
+    border: 2px dashed rgba(255, 255, 255, 0.6); /* Semi-transparent white dash */
+    border-radius: 6px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* --- The Interactables --- */
+.upload-label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.choose-btn {
+    background-color: white;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    transition: transform 0.2s;
+}
+
+.choose-btn:hover {
+    transform: scale(1.05);
+}
+
+.drop-text {
+    color: white;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* The "Quantify" Submit Button */
+.quantify-submit-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px; /* Space between list and button */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.quantify-submit-btn:hover {
+    background-color: #218838; /* Darker green */
+    transform: scale(1.05);
+}
+
+/* Anuimations */
+nav a:hover {
+    color: #ff9900;                /* Changes color on hover */
+}
+
+/* --- Loading Overlay --- */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* The "little opacity" black background */
+    z-index: 9999; /* Ensures it sits on top of everything */
+    
+    /* Center the content */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Hidden by default */
+    display: none; 
+}
+
+/* The Wheel (Spinner) */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3; /* Light grey background ring */
+    border-top: 6px solid #3498db; /* Blue spinning part */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+/* Text below the spinner */
+.loading-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.loading-subtext {
+    color: #ddd;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* The Animation Keyframes */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

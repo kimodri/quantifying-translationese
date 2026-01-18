@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}Analysis Results{% endblock %}
+
+{% block content %}
+<div class="results-container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1>Analysis Results</h1>
+        <a href="/" style="text-decoration: none; color: #007bff; font-weight: bold;">← Analyze More Files</a>
+    </div>
+
+    {% if charts %}
+        {% for dataset_name, chart_html in charts.items() %}
+            <div class="chart-card">
+                {{ chart_html | safe }}
+                
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="no-data">
+            <p>No results found. Please check your files and try again.</p>
+        </div>
+    {% endif %}
+
+</div>
+
+<style>
+    .chart-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 20px;
+        margin-bottom: 30px;
+        border: 1px solid #eee;
+    }
+</style>
+{% endblock %}

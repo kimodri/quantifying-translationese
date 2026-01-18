@@ -167,7 +167,6 @@ class Processor:
                 textwrap.dedent(f"The expected file extension for {dataset} is: {expected_ext}")
             ))
         
-
     def _clean_paws(self, source_path, key, sample):
 
         self._check_extension(source_path, 'csv', 'PAWS')
@@ -191,7 +190,6 @@ class Processor:
 
         df_result = pd.concat([df_true, df_false], ignore_index=True)
         df_result.iloc[:, 0:4].to_csv(destination_path, index=False)
-
 
     def _clean_bcopa(self, source_path, key, sample):
 
