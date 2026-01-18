@@ -128,21 +128,6 @@ class Translator:
 
         # TODO: XLSUM
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @staticmethod
     def _azure_translate(texts: List[str], key: str, region: str, endpoint: str) -> list:
         """Translate a list of texts to Filipino using Azure Translator."""
