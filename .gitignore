@@ -7,3 +7,5 @@ __pycache__/
 datasets_sample/
 uploaded_docs/
 *.log
+translation_sample/
+translation/
