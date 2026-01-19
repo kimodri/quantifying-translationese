@@ -1,4 +1,4 @@
-from Errors import IncorrectDatasetError, NoDatasetError, UnexpectedFileError
+from .Errors import IncorrectDatasetError, NoDatasetError, UnexpectedFileError
 import os, textwrap
 import pandas as pd
 import platform
@@ -97,7 +97,7 @@ class Processor:
     def process(self, **kwargs):
         if not kwargs:
             raise NoDatasetError(textwrap.dedent("""
-                Specify the datasets to be downloaded.
+                Specify the datasets to be cleaned.
                 Accepted: 'paws', 'bcopa', 'xnli', 'xlsum'
             """))
         
@@ -113,13 +113,9 @@ class Processor:
             if key not in dispatch:
                 raise IncorrectDatasetError(f"{key} is not a valid dataset.")
             
-            # args is likely a tuple: (path, sample_count)
-            source_path = args[0]
-            sample = args[1]
-            
             # Call the function with the CORRECT arguments
             # Passing 'key' explicitly to match your definitions
-            dispatch[key](source_path, key, sample)
+            dispatch[key](key, args)
     
     def get_xlsum_100(self):
 
@@ -167,9 +163,9 @@ class Processor:
                 textwrap.dedent(f"The expected file extension for {dataset} is: {expected_ext}")
             ))
         
+    def _clean_paws(self, key, config):
 
-    def _clean_paws(self, source_path, key, sample):
-
+        source_path = config.get("path")
         self._check_extension(source_path, 'csv', 'PAWS')
         
         destination_path = os.path.join(self.clean_dir, f"cleaned_{key}.csv")
@@ -186,15 +182,15 @@ class Processor:
         df_paws = df_paws[mask]
 
         # Sample
-        df_true = df_paws[df_paws['label'] == 1].sample(n=sample, random_state=self.random_seed)
-        df_false = df_paws[df_paws['label'] == 0].sample(n=sample, random_state=self.random_seed)
+        df_true = df_paws[df_paws['label'] == 1].sample(n=config.get('true_sample'), random_state=self.random_seed)
+        df_false = df_paws[df_paws['label'] == 0].sample(n=config.get('false_sample'), random_state=self.random_seed)
 
         df_result = pd.concat([df_true, df_false], ignore_index=True)
         df_result.iloc[:, 0:4].to_csv(destination_path, index=False)
 
+    def _clean_bcopa(self, key, config):
 
-    def _clean_bcopa(self, source_path, key, sample):
-
+        source_path = config.get("path")
         self._check_extension(source_path, 'csv', 'Balanced COPA')
 
         destination_path = os.path.join(self.clean_dir, f"cleaned_{key}.csv")
@@ -212,14 +208,71 @@ class Processor:
         )
 
         df_bcopa = df_bcopa[first_filter_bcopa]
-        df_cause = df_bcopa[df_bcopa['question'] == 'cause'].sample(n=sample, random_state=self.random_seed)
-        df_effect = df_bcopa[df_bcopa['question'] == 'effect'].sample(n=sample, random_state=self.random_seed)
+        df_cause = df_bcopa[df_bcopa['question'] == 'cause'].sample(n=config.get("cause_sample"), random_state=self.random_seed)
+        df_effect = df_bcopa[df_bcopa['question'] == 'effect'].sample(n=config.get("effect_sample"), random_state=self.random_seed)
 
         df_result = pd.concat([df_cause, df_effect], ignore_index=True)
         df_result.iloc[:, 0:7].to_csv(destination_path, index=False)
     
+    def _clean_xlsum(self, key, config):
+        """
+            Clean XL-Sum dataset using Polars.
 
-    def _clean_xlsum(self, source_path, key, sample):
+            Behaviour mirrors the original PySpark version:
+            - reads JSON (ndjson or JSON array)
+            - keeps only rows where len(text) and len(summary) are in [20, 2000]
+            - reproducible sampling using `self.random_seed`
+            - writes result to {self.clean_dir}/{key}.csv
+        """
+        import os
+        import polars as pl
+
+        source_path = config.get("path")
+
+        # keep same extension check as before
+        self._check_extension(source_path, "jsonl", "XL-Sum")
+        destination_path = os.path.join(self.clean_dir, f"cleaned_{key}.csv")
+
+        # Robustly read NDJSON (newline-delimited) first, fallback to JSON array
+        try:
+            df = pl.read_ndjson(source_path)
+        except Exception:
+            df = pl.read_json(source_path)
+
+        # Validate required fields
+        required = {"text", "summary"}
+        if not required.issubset(set(df.columns)):
+            raise ValueError(f"XL-Sum JSON must contain columns {required}. Found: {df.columns}")
+
+       # compute lengths in a version-compatible way
+        str_ns = pl.col("summary").str
+        if hasattr(str_ns, "len_chars"):
+            summary_len_expr = pl.col("summary").str.len_chars().alias("summary_len")
+            text_len_expr = pl.col("text").str.len_chars().alias("text_len")
+        elif hasattr(str_ns, "lengths"):
+            # older polars
+            summary_len_expr = pl.col("summary").str.lengths().alias("summary_len")
+            text_len_expr = pl.col("text").str.lengths().alias("text_len")
+        else:
+            # worst-case fallback (slower): apply Python len
+            summary_len_expr = pl.col("summary").apply(lambda s: len(s) if s is not None else 0).alias("summary_len")
+            text_len_expr = pl.col("text").apply(lambda s: len(s) if s is not None else 0).alias("text_len")
+
+        df = df.with_columns([summary_len_expr, text_len_expr])
+        df = df.filter(
+            (pl.col("summary_len") >= 20) & (pl.col("text_len") >= 20) &
+            (pl.col("summary_len") <= 2000) & (pl.col("text_len") <= 2000)
+        )
+
+        # sample reproducibly
+        n = min(int(config.get("pairs_sample")), df.height)
+        df_sample = df.sample(n=n, seed=self.random_seed)
+
+        # drop helper columns once and write csv
+        df_sample = df_sample.drop(["summary_len", "text_len"])
+        df_sample.write_csv(destination_path)
+
+    def _clean_xlsum_spark(self, key, config):
         """
         Clean XL-Sum dataset.
         
@@ -237,7 +290,7 @@ class Processor:
         import pyspark.sql.functions as F
         from pyspark.sql.functions import rand
         from pyspark.sql.types import StructType, StructField, StringType
-
+        source_path = config.get("path")
         self._check_extension(source_path, 'json', 'XL-Sum') 
         destination_path = os.path.join(self.clean_dir, f"{key}.csv")
 
@@ -260,16 +313,16 @@ class Processor:
         # Reproducible sampling
         df_shuffled = df_xlsum.withColumn("rand_sort_key", rand(seed=self.random_seed))
         df_sorted = df_shuffled.orderBy("rand_sort_key")
-        df_reproducible = df_sorted.limit(sample)
+        df_reproducible = df_sorted.limit(config.get("pairs_sample"))
         df_reproducible = df_reproducible.drop("rand_sort_key", "summary_len", "text_len")
 
         pdf = df_reproducible.toPandas()
         pdf.to_csv(destination_path, index=False)
         
-        print(f"Successfully processed {sample} samples to {destination_path}")
+        print(f"Successfully processed {config.get('pairs_sample')} samples to {destination_path}")
 
-    def _clean_xnli(self, source_path, key, sample):
-
+    def _clean_xnli(self, key, config):
+        source_path = config.get("path")
         self._check_extension(source_path, 'tsv', 'XNLI')
         
         destination_path = os.path.join(self.clean_dir, f"cleaned_{key}.csv")
@@ -293,9 +346,9 @@ class Processor:
         df_xnli_contradiction = df_xnli[df_xnli["gold_label"] == "contradiction"]
         df_xnli_entailment = df_xnli[df_xnli["gold_label"] == "entailment"]
 
-        df_xnli_neutral_sample = df_xnli_neutral.sample(sample, random_state=Processor.random_seed)
-        df_xnli_contradiction_sample = df_xnli_contradiction.sample(sample, random_state=Processor.random_seed)
-        df_xnli_entailment_sample = df_xnli_entailment.sample(sample, random_state=Processor.random_seed)
+        df_xnli_neutral_sample = df_xnli_neutral.sample(config.get("neutral_sample"), random_state=Processor.random_seed)
+        df_xnli_contradiction_sample = df_xnli_contradiction.sample(config.get("contradiction_sample"), random_state=Processor.random_seed)
+        df_xnli_entailment_sample = df_xnli_entailment.sample(config.get("entailment_sample"), random_state=Processor.random_seed)
 
         df_xnli_neutral_contradiction = pd.concat([df_xnli_neutral_sample, df_xnli_contradiction_sample], ignore_index=True)
         df_xnli_neutral_contadiction_entailment = pd.concat([df_xnli_neutral_contradiction, df_xnli_entailment_sample], ignore_index=True)
@@ -306,9 +359,11 @@ class Processor:
 
 def main():
     p = Processor()
-    p.process(xnli=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xnli.tsv", 200))
+    # p.process(xnli=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xnli.tsv", 200))
     # p.process(xlsum=("datasets/raw/xlsum.json", 1000))  # Requires Java + PySpark + Unix
-    p.get_xlsum_100()
+    # p.get_xlsum_100()
+    # p.process(xnli=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xnli.tsv", 200))
+    p.process(xlsum=(r"C:\Users\magan\Desktop\quantifying-translationese\datasets\raw\xlsum.jsonl", 100))
 
 if __name__ == "__main__":
     main()

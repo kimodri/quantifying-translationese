@@ -1,0 +1,401 @@
+id,premise,choice1,choice2,question,label,mirrored
+1283,Nahihirapan ang batang lalaki na makatulog.,Pinailawan niya ang kanyang nightlight.,Nanood siya ng pelikulang nakakatakot.,sanhi,1,1
+207,Pinatalsik ang mga nangungupahan mula sa apartment.,Hindi nila binayaran ang kanilang upa.,Magkasundo sila sa kanilang may-ari.,sanhi,1,0
+1317,Hindi nakapahinga ang lalaki sa umaga.,Nagpunta siya sa kagubatan para mag-kamping.,Nakatulog siya sa kanyang sopa.,sanhi,2,1
+1006,Nanalo ang politiko sa halalan.,Walang bumoto sa kanya.,Nagpatakbo siya ng mga negatibong patalastas sa kampanya.,sanhi,2,1
+170,Lumipad ang alikabok mula sa mesa.,Inalis ko ang mga libro mula sa mesa.,Pinunasan ko ang mesa gamit ang basahan.,sanhi,2,0
+194,Nami-miss ng batang lalaki ang kanyang tahanan.,Umalis siya para magkampo.,Nag-away siya sa kanyang kapatid na babae.,sanhi,1,0
+400,Ang mga sundalo ay nakatago sa palumpong.,May baril sila.,Nakasuot sila ng mga unipormeng pang-kamuflaj.,sanhi,2,0
+262,Ibinunyag ng lalaki ang personal na impormasyon sa therapist.,Nagtitiwala siya sa therapist.,Hindi siya sumang-ayon sa therapist.,sanhi,1,0
+361,Sumailalim ang pasyente sa isang mapanganib na medikal na pamamaraan.,Ang pamamaraan ay magastos.,Inirekomenda ng mga espesyalista ang pamamaraan.,sanhi,2,0
+1480,Hindi na nawawalan ng barya sa bulsa ng lalaki.,Ang kanyang bulsa ay puno ng barya.,Tinahi niya ang butas sa kanyang bulsa.,sanhi,2,1
+317,Kinagat ng mga lamok ang lalaki.,Nakatulog siya sa kanyang sopa.,Nagpunta siya sa kagubatan para mag-kamping.,sanhi,2,0
+149,Pinigil ng drayber ang sasakyan sa gilid ng kalsada.,Napansin niya ang isang sasakyang na-stranded.,Dumaan siya sa isang sangandaan.,sanhi,1,0
+436,Siniyasat ng pulisya ang kotse ng salarin.,Naghahanap sila ng ilegal na droga.,Sinisikap nilang pilitin ang pag-amin.,sanhi,1,0
+129,Matagal ang biyahe., Nagsalita ang drayber sa buong biyahe.,Nagkamali ang drayber sa pagliko.,sanhi,2,0
+305,Tinanggihan ng babae ang pangalawang serbesa.,Pamilyar siya sa bartender.,Siya ang itinalagang tsuper para sa gabing iyon.,sanhi,2,0
+1416,Nakikinig nang may pagkabahala ang nasasakdal.,Sumiklab ang kaguluhan sa silid-hukuman.,Inanunsyo ng hurado ang kanilang hatol.,sanhi,2,1
+1200,Naramdaman ng babae ang matinding pagkapagod.,Hinablot niya ang hawakan ng pinto.,Pinukpok niya ang pinto.,sanhi,2,1
+123,Naging madilim sa loob ng tren.,Dumaan ang tren sa isang lagusan.,Lumihis sa riles ang tren.,sanhi,1,0
+1028,Hindi nabakunahan ang bata ngunit hindi siya nagkasakit.,Tinanggap niya ang bakuna para sa sakit.,Iniiwasan niya ang pagkakalantad sa sakit.,sanhi,2,1
+1004,Nag-unat ang mananakbo.,Plano niyang tumakbo sa kahabaan ng dalampasigan.,Tinaya ng ulat-panghula ang mataas na temperatura.,sanhi,1,1
+333,Wala ang pitaka ng babae.,Naglalaman ito ng maraming basura.,Iniwan niya itong walang pangangasiwa.,sanhi,2,0
+90,Binasa ng batang lalaki nang malakas ang nobela para sa kanyang lolo.,Bingi ang kanyang lolo.,Bingi ang kanyang lolo.,sanhi,2,0
+76,Isinara ng lalaki ang payong.,Bumaba siya sa kotse.,Lumapit siya sa gusali.,sanhi,2,0
+1464,Tinanggal ko ang mga guwantes na goma.,Inaasahan kong linisin ang banyo.,Naghahanda akong hugasan ang aking mga kamay.,sanhi,2,1
+461,Tumawag ang ina ng ambulansya.,Nawala ng anak niyang lalaki ang kanyang pusa.,Nahulog ang anak niyang lalaki mula sa kanyang kama.,sanhi,2,0
+1184,Ang tagapagkaloob ay mukhang labis na nasasabik.,Sinusuportahan niya ang dahilan sa likod ng kanyang donasyon.,Nais niyang mapanatili ang kanyang privacy.,sanhi,1,1
+93,Ang bintana ay hindi malabo.,Ang baso ay mantsado.,Bukas ang mga blinds.,sanhi,1,0
+1119,Natakot ang mga kaibigan ng batang lalaki.,Plano niyang imbitahan ang babae na lumabas.,Malalamig at pawisin ang kanyang mga palad.,sanhi,2,1
+1316,Halos hindi makita ng babae ang kanyang repleksyon.,Naramdaman niyang nahihiya siya.,May mantsa ang salamin.,sanhi,2,1
+1396,Ang nag-i-ski ay nakabalanse gamit lamang ang kanyang katawan.,Nahulog niya ang kanyang mga ski pole.,Nabundol niya ang isang bahagi ng yelo.,sanhi,1,1
+1176,Tumawa ang ama sa telebisyon ng mga bata.,Nanonood ng cartoons ang mga bata.,Oras na para matulog ang mga bata.,sanhi,1,1
+336,Nahulog sa lupa ang siklista.,Tumalbog ang toro sa mangangabayo.,Hinabol ng toro ang sakay.,sanhi,1,0
+1104,Palaging nasa bahay ang binatilyo.,Umaasa siya sa kanyang mga magulang.,Inabuso siya ng kanyang mga magulang.,sanhi,1,1
+1336,Tumakbo ang sakay nang buong bilis.,Tumalbog ang toro sa mangangabayo.,Hinabol ng toro ang sakay.,sanhi,2,1
+388,Ginaya ng batang lalaki ang kanyang nakatatandang kapatid na lalaki.,Hinahangaan ng batang lalaki ang kanyang nakatatandang kapatid na lalaki.,Nakipagbuno ang batang lalaki sa kanyang nakatatandang kapatid na lalaki.,sanhi,1,0
+283,Natakot ang batang lalaki na matulog.,Nanood siya ng pelikulang nakakatakot.,Pinindot niya ang kanyang nightlight.,sanhi,1,0
+454,Nag-tantrum ang batang lalaki.,Ibinahagi niya ang kanyang mga laruan sa kanyang kapatid na lalaki.,Kinuha ng kapatid niya ang kanyang mga laruan.,sanhi,2,0
+1043,Nagpasya ang ehekutibo na kunin ang aplikante.,Hindi pumasa ang aplikante sa pagsusuri ng background.,May karanasan ang aplikante para sa trabaho.,sanhi,2,1
+1237,Itinago ng lalaki ang kanyang mga paa.,Nagkaroon siya ng butas sa kanyang medyas.,Nahulog niya ang martilyo sa kanyang paa.,sanhi,1,1
+273,Napansin ng lalaki ang babae.,Naamoy niya ang pabango niya.,Nakatalikod siya sa kanya.,sanhi,1,0
+1463,Hindi ako gaanong nag-alala na mawala ang susi.,Inihiga ko ang susi sa kandado.,Gumawa ako ng kopya ng susi.,sanhi,2,1
+70,Inayos ng batang lalaki ang radyo.,Nagtutugtog ng rock na musika ang istasyon.,May static ang istasyon.,sanhi,2,0
+1465,Ang mga uri ng hayop ay naging marami.,Nasira ang kanilang tirahan.,Nawala na sa mundo ang kanilang mga mandaragit.,sanhi,2,1
+1489,Kinontak ng babae ang serbisyo ng mga katulong.,Kailangan ng babae na linisin ang kanyang bahay.,Nagplano ang babae na bumili ng isang condo.,sanhi,1,1
+1072,Nasagasaan ng suspek ang pulis.,Sumuway sa pag-aresto ang suspek.,Tumawag ang pulisya para sa karagdagang yunit.,sanhi,2,1
+1462,Tumigil sa pag-awit nang sabay-sabay ang lahat sa sasakyan.,Napatay ang radyo ng kotse.,May lumitaw na usa sa kalsada.,sanhi,1,1
+128,Iniwan ng mga magulang ang kanilang mga anak sa isang tagapag-alaga.,Nagplano sila na ipagdiwang ang kanilang anibersaryo.,Nagsimulang dumalo sa preschool ang kanilang bunsong anak.,sanhi,1,0
+155,Natanggap ng babae ang diploma.,Nag-enroll siya sa kolehiyo.,Nagtapos siya sa kolehiyo.,sanhi,2,0
+21,Natanggap ng babae ang isang tropeo.,Nanalo siya sa paligsahan sa pagbabaybay.,Nakagawa siya ng bagong kaibigan.,sanhi,1,0
+1118,Natutunan ng estudyante ang karamihan sa mga pagkakamali.,Sumagot siya nang pabalik sa guro.,Binigyan ng guro ng grado ang kanyang takdang-aralin.,sanhi,2,1
+1150,Naramdaman ng pasyente ang kaligayahan.,Bumisita ang pamilya ng pasyente sa kanya.,Naayos ang mga sintomas ng pasyente.,sanhi,1,1
+1005,Nagdalang kandila ang mga bisita ng party.,Ito ay isang pagdiriwang ng kaarawan.,Ito ay isang sorpresang pagtitipon.,sanhi,1,1
+300,Nagpasalamat ang lalaki na buhay pa siya.,Nagaling siya sa kanser.,Ang kanyang asawa ay na-diagnose na may kanser.,sanhi,1,0
+119,Nanginginig ang mga kamay ng batang lalaki.,Plano niyang imbitahan ang babae na lumabas.,Malalamig at pawisin ang kanyang mga palad.,sanhi,1,0
+445,Nagsulat ang mamamahayag ng isang talambuhay tungkol sa buhay ng humanitario.,Mahirap para sa mamamahayag na makapanayam ang humanitario.,Naintriga ang mamamahayag sa gawain ng humanitario.,sanhi,2,0
+438,Pakiramdam ng lalaki na obligado siyang dumalo sa kaganapan.,Nangako siya sa kanyang kaibigan na pupunta siya.,Tinanggihan niya ang paanyaya ng kaibigan niyang pumunta.,sanhi,1,0
+485,Ang babae ay naaresto.,Sinasakdal siya sa pananakit.,Nagpacheck-in siya sa rehab.,sanhi,1,0
+1003,Nagulat ang mga babae.,Muling binuksan ang kapehan sa isang bagong lokasyon.,Gusto nilang magkita-kita muli.,sanhi,1,1
+1360,Nakagawa ang tinedyer ng maraming bagong kaibigan.,Sumali siya sa koponang basketball.,Dumaan siya sa biglaang paglaki.,sanhi,1,1
+1187,Naputol ng bata ang kamay niya sa buhangin.,Nagtatayo siya ng kastilyo sa buhangin.,Nangalap siya ng mga kabibe sa buhangin.,sanhi,2,1
+1364,Hindi ako nag-alala na mag-crash ang aking kompyuter.,Ginawa ko ang backup ng aking mga file.,Nag-download ako ng virus.,sanhi,1,1
+1096,Naghanap ng trabaho ang babae.,Nakatanggap siya ng bonus sa sahod.,Na-layoff ang asawa niya.,sanhi,2,1
+385,Natagpuan ng librarian ang aklat sa mga istante.,Humiling ako ng tulong sa librarian.,Na-check out ang libro.,sanhi,1,0
+1411,Hindi natumba ng bowling ball ang kahit isang bowling pin.,Nahulog ng lalaki ang bowling ball sa kanyang paa.,Gumulong ang lalaki ng bowling ball pababa sa daanan ng bowling.,sanhi,1,1
+1193,Itinago ng estudyante ang kanyang marka sa pagsusulit sa kanyang mga kaklase.,Nakatanggap siya ng perpektong marka.,Nagkunwari siyang interesado sa klase.,sanhi,2,1
+1300,Naramdaman ng lalaki na siya ay nalulungkot.,Ang kanyang asawa ay na-diagnose na may kanser.,Nagaling siya sa kanser.,sanhi,1,1
+1021,Hindi na nag-iisa ang babae.,Nakagawa siya ng bagong kaibigan.,Nanalo siya sa paligsahan sa pagbabaybay.,sanhi,1,1
+28,Naging immune ang bata sa sakit.,Tinanggap niya ang bakuna para sa sakit.,Iniiwasan niya ang pagkakalantad sa sakit.,sanhi,1,0
+297,Nagliligo ang lalaki.,Binuksan niya ang isang bagong bar ng sabon.,Basang-basa siya ng pawis dahil sa pag-eehersisyo.,sanhi,2,0
+1180,Pinaghinalaan ng ina na galit ang kanyang anak na lalaki.,Tinanggi siyang makipag-usap sa kanya.,Iniiwasan niyang makipagtitigan sa kanya.,sanhi,1,1
+1117,Nangako akong magbibigay ng tuwirang sagot sa tanong.,Ang tanong ay nagdulot sa akin ng hindi komportableng pakiramdam.,Gusto kong maging tapat.,sanhi,2,1
+1161,Binigyan ng coach ang kanyang manlalaro ng headshake.,Nakakuha ng parusa ang manlalaro.,Nakakuha ng isang puntos ang manlalaro.,sanhi,1,1
+1210,Pinayagan ng mga magulang ang kanilang mga anak na manood ng pelikula.,Ang pelikula ay nirating na R.,Ang pelikula ay animated.,sanhi,2,1
+1394,Pinuri ng ina ang kanyang anak na babae.,Inayos ng anak niyang babae ang mesa sa kusina.,Umubo ang anak niyang babae sa mesa sa kusina.,sanhi,1,1
+1417,Pinindot ng mga bata ang kampanilya sa bahay ng babae.,Dinampakan ng mga bata ang kanyang hardin.,Pinukpok ng mga bata ang bola sa kanyang bakuran.,sanhi,2,1
+184,Humiling ang tagapagkaloob na manatiling hindi kilala.,Sinusuportahan niya ang dahilan sa likod ng kanyang donasyon.,Nais niyang mapanatili ang kanyang privacy.,sanhi,2,0
+350,Humina ang buhay-dagat.,Naglayag ang mga bangka sa karagatan.,Ang langis ay natapon sa karagatan.,sanhi,2,0
+1493,Nakita ng lalaki ang isang bakanteng paradahan.,Nawalan ng oras ang parking meter.,Nag-parallel park siya sa kalsada.,sanhi,2,1
+1385,Sinabi sa akin ng librarian na hindi ko maaaring hiramin ang libro.,Na-check out ang libro.,Humiling ako ng tulong sa librarian.,sanhi,1,1
+1040,Nag-upa ang babae ng isang tagapayo sa ugnayang pampubliko.,Nagpasya siyang tumakbo sa halalan.,Nagpasya siyang kasuhan ang kanyang amo.,sanhi,1,1
+416,Pinukpok ng hukom ang martilyo.,Inanunsyo ng hurado ang kanilang hatol.,Sumiklab ang kaguluhan sa silid-hukuman.,sanhi,2,0
+280,Naging maulap ang salamin ng babae.,Pumasok siya sa sauna.,Siya ay nakahiga sa tabi ng pool.,sanhi,1,0
+243,Ipinagpaliban ng pamilya ang barbecue.,Tinaya ng ulat-pananaw ang mga bagyo.,Ito ay isang pista opisyal na katapusan ng linggo.,sanhi,1,0
+1352,Nahiya ang kostumer sa kahon ng pera.,Nakakuha ng kanyang pansin ang display sa bintana.,Iniwan niya ang kanyang pitaka sa bahay.,sanhi,2,1
+1361,Hindi kayang bayaran ng pasyente ang medikal na pamamaraan.,Ang pamamaraan ay magastos.,Inirekomenda ng mga espesyalista ang pamamaraan.,sanhi,1,1
+1211,Binasa ng babae ang email.,Sinubukan ng nagpadala na manghingi ng pera mula sa kanya.,Humiling ang nagpadala ng tugon mula sa kanya.,sanhi,2,1
+96,Dinala ng babae ang kanyang pamilya sa bakasyon.,Na-layoff ang asawa niya.,Nakatanggap siya ng bonus sa sahod.,sanhi,2,0
+1267,Ang mga liham ay nahampas palabas mula sa aking kahon ng sulat.,Nasira ang takip ng kahon ng sulat.,Nagbakasyon ako nang dalawang linggo.,sanhi,1,1
+5,Ang mga bisita ng party ay nagtago sa likod ng sopa.,Ito ay isang pagdiriwang ng kaarawan.,Ito ay isang sorpresang pagtitipon.,sanhi,2,0
+323,Nakilala ang siyentipiko.,Natuklasan niya ang isang bagong species.,Nakamit niya ang tenyur sa unibersidad.,sanhi,1,0
+40,Nag-upa ng abogado ang babae.,Nagpasya siyang tumakbo sa halalan.,Nagpasya siyang kasuhan ang kanyang amo.,sanhi,2,0
+26,Lumipad nang ligtas ang skydiver hanggang sa lupa.,Binuksan niya ang kanyang parachute.,Lumundag siya palabas ng eroplano.,sanhi,1,0
+420,Tinakbo ng babae ang kanyang daliri sa ilalim ng malamig na tubig.,Nasunog niya ang kanyang daliri sa toaster.,Isinusuot niya ang singsing na diamante sa kanyang daliri.,sanhi,1,0
+1387,Tinawagan ko ang ilang mga ahente ng real estate.,Naghahanap ako ng bagong apartment.,Lumilipat ako mula sa aking apartment.,sanhi,1,1
+1090,Nakipag-ugnayan ang batang lalaki sa kanyang lolo sa pamamagitan ng pagsulat.,Bingi ang kanyang lolo.,Bingi ang kanyang lolo.,sanhi,1,1
+1278,Inimbitahan ng babae ang kapatid niya para sa kape.,Ang babae ay kamukha ng kapatid niya.,Malapit ang babae sa kanyang kapatid na babae.,sanhi,2,1
+1240,Pinahalagahan ang koleksyon ng mga album ng larawan.,Nagbalik-tanaw ang pamilya sa mga larawan.,Nanatili silang hindi nahawakan sa loob ng maraming taon.,sanhi,1,1
+334,Ang babae ay nagkaroon ng amnesia.,Nagkaroon siya ng reaksiyong alerhiya.,Nabangga siya ng kotse.,sanhi,2,0
+1126,Tinapon ng babae ang kanyang mga damit.,Ang mga damit ay punit-punit.,Hindi na kasya sa kanya ang mga damit.,sanhi,1,1
+1241,Nahumaling ako sa pag-uusap ko sa babae.,Ikinukwento ng babae ang isang nakakatawang kuwento.,Lahat ng tao sa silid ay nagsasalita.,sanhi,1,1
+67,Natutunan kong maglaro ng larong pang-board.,Mali ang pagkakasabi ng mga patakaran ng kaibigan ko.,Ipinaliwanag sa akin ng kaibigan ko ang mga patakaran.,sanhi,2,0
+356,Hindi nakapasok sa trabaho ang empleyado.,Nakipag-ugnayan ang kanyang pamilya sa kanya.,May namatay sa kanyang pamilya.,sanhi,2,0
+1466,Napansin ng lalaki na mahilig sa alahas ang babae.,Pinagupitan ng babae ang kanyang buhok.,Ang babae ay nakasuot ng pulseras.,sanhi,2,1
+302,Nag-aatubili ang babae na magpalit ng karera.,Nagtubo siya ng maraming pera sa kanyang kasalukuyang trabaho.,Dumaan siya sa maraming stress sa kanyang kasalukuyang trabaho.,sanhi,1,0
+256,Ang mga kotse ay lumipat sa gilid ng kalsada.,Isang umuungal na ambulansya ang papalapit.,Naging berde ang ilaw trapiko.,sanhi,1,0
+212,Tinanggal ng pulisya ang babae sa listahan ng mga pinaghihinalaan.,Iniimbestigahan siya ng pulisya.,Napatunayan na tama ang kanyang alibi.,sanhi,2,0
+180,Pinaghihinalaan ng ina na nagsisinungaling ang kanyang anak na lalaki.,Tinanggi siyang makipag-usap sa kanya.,Iniiwasan niyang makipagtitigan sa kanya.,sanhi,2,0
+106,Inurong ng kumpanyang parmasyutiko ang gamot.,Nakakuha ng refill ang mga gumagamit sa kanilang mga reseta.,Iniulat ng mga gumagamit ang mga mapanganib na epekto.,sanhi,2,0
+1323,Nagpatuloy ang siyentipiko sa kanyang kasalukuyang pananaliksik.,Nakamit niya ang tenyur sa unibersidad.,Natuklasan niya ang isang bagong species.,sanhi,1,1
+24,Kinansela ng host ang party.,Nag-alala siya na baka magkaroon siya ng trangkaso.,Sigurado siyang may trangkaso siya.,sanhi,2,0
+1305,Nanatili nang huli ang babae sa bar.,Pamilyar siya sa bartender.,Siya ang itinalagang drayber para sa gabing iyon.,sanhi,1,1
+1256,Ang mga kotse ay lumipat sa sangandaan ng kalsada.,Naging berde ang ilaw trapiko.,Isang umuungal na ambulansya ang papalapit.,sanhi,1,1
+1024,Nagpabakuna ang babae.,Sigurado siyang may trangkaso siya.,Nag-alala siya na baka magkaroon siya ng trangkaso.,sanhi,2,1
+1356,Muling nakipag-ugnayan ang babae sa mga malalayong kamag-anak.,Nakipag-ugnayan ang kanyang pamilya sa kanya.,May namatay sa kanyang pamilya.,sanhi,1,1
+150,Pinauwi ng ospital ang pasyente.,Naayos ang mga sintomas ng pasyente.,Bumisita ang pamilya ng pasyente sa kanya.,sanhi,1,0
+1123,Nasira ang loob ng tren.,Lumihis sa riles ang tren.,Dumaan ang tren sa isang lagusan.,sanhi,1,1
+1197,Na-iskedyul muli ang flight ko.,May nakita na mga buhawi sa lugar.,Naantala ako sa seguridad ng paliparan.,sanhi,2,1
+1302,Kamakailan lang ay nagbitiw sa trabaho ang babae.,Nagtubo siya ng maraming pera sa kanyang kasalukuyang trabaho.,Dumaan siya sa maraming stress sa kanyang kasalukuyang trabaho.,sanhi,2,1
+117,Iniiwasan kong magbigay ng tuwirang sagot sa tanong.,Ang tanong ay nagdulot sa akin ng hindi komportableng pakiramdam.,Gusto kong maging tapat.,sanhi,1,0
+158,Tinakpan ng babae ang kanyang mga tainga.,Amoy ng babae ang usok.,Sumigaw nang malakas ang alarma ng sunog.,sanhi,2,0
+1019,Nakilala ko ang tumatawag.,Ipinakilala ng tumatawag ang sarili niya sa akin.,Nagpaalam sa akin ang tumawag.,sanhi,1,1
+182,Nabuo ang isang krater sa buwan.,Isang kometa ang dumaan sa buwan.,Nabangga ng kometa ang buwan.,sanhi,2,0
+10,Nagreklamo ang kostumer sa tagapamahala ng tindahan.,Nagpakita ng bastos na pag-uugali ang sales associate sa kostumer.,Nabawasan ng sales associate ang singil sa customer.,sanhi,1,0
+1301,Hindi kailanman ginamit ng babae ang kanyang credit card.,Natanggap niya ang kanyang buwanang bayarin.,Mas gusto niyang magbayad nang salapi.,sanhi,2,1
+1108,Pinalitan ko ang sahig ng bagong-bagong tile.,Namatak ako ng katas sa sahig.,Ang sahig ay tuluyang nagkaroon ng mantsa.,sanhi,2,1
+1158,Tinakpan ng babae ang kanyang ilong.,Sumigaw nang malakas ang alarma ng sunog.,Amoy ng babae ang usok.,sanhi,2,1
+371,Muling inihalal ng lungsod ang alkalde.,Tinupad ng alkalde ang kanyang mga pangako.,Pinutol ng lungsod ang badyet nito.,sanhi,1,0
+108,Pinunasan ko ang sahig gamit ang papel na tuwalya.,Ang sahig ay permanenteng mantsado.,Namatak ako ng katas sa sahig.,sanhi,2,0
+1026,Nagsimulang mahulog ang skydiver.,Binuksan niya ang kanyang parachute.,Lumundag siya palabas ng eroplano.,sanhi,2,1
+65,Dinala ng pamilya ang kanilang aso sa beterinaryo.,Nasugatan ng aso ang kanyang paa.,Ngumunguya ang aso ng buto.,sanhi,1,0
+369,Ang baso sa mesa ay nabuhos.,Hinila ng bata ang mantel.,Gumuhit ang bata sa mesa.,sanhi,1,0
+1106,Ipinromote ng kumpanyang parmasyutiko ang gamot.,Nakakuha ng refill ang mga gumagamit sa kanilang mga reseta.,Iniulat ng mga gumagamit ang mga mapanganib na epekto.,sanhi,1,1
+407,Nagpasya akong manatili sa bahay ngayong gabi.,Pinilit ako ng mga kaibigan kong lumabas.,Tinaya ng ulat-pananaw ang mga bagyo.,sanhi,2,0
+1376,Nakakuha na naman ng aso ang babae.,Kinata ng aso siya.,Sinalba niya ang isang inabandunang aso.,sanhi,2,1
+200,Naramdaman ng babae ang kuryenteng pagkabigla.,Pinukpok niya ang pinto.,Hinuli niya ang hawakan ng pinto.,sanhi,2,0
+1443,Pinuri ng guro ang dalawang mag-aaral.,Pareho silang nakakuha ng mahusay na grado.,Magkapareho ang kanilang mga sagot sa takdang-aralin.,sanhi,1,1
+143,Sinugod ng guwardiya ang lalaki.,Inabot ng lalaki ang kamay sa kanyang bulsa.,Ipinakita ng lalaki ang isang sandata.,sanhi,2,0
+418,Pinalaya ng mga kidnapper ang bihag.,Tumakas sila mula sa bilangguan.,Tinanggap nila ang pera para sa pantubos.,sanhi,2,0
+241,Nawala ako sa usapan ko sa babae.,Lahat ng tao sa silid ay nagsasalita.,Ikinukwento ng babae ang isang nakakatawang kuwento.,sanhi,1,0
+443,Ang dalawang mag-aaral ay napailalim sa masusing pagsusuri ng guro.,Pareho silang nakakuha ng mahusay na grado.,Magkapareho ang kanilang mga sagot sa takdang-aralin.,sanhi,2,0
+412,Nalaman ng komunidad ang pagkamatay ng lalaki.,Lumabas ang kanyang obituaryo sa pahayagan.,Ipinaglibing siya ng kanyang pamilya sa sementeryo.,sanhi,1,0
+376,Ang babae ay may takot sa mga aso.,Kinata ng aso siya.,Sinalba niya ang isang inabandunang aso.,sanhi,1,0
+240,Ang mga album ng larawan ay nagtipon ng alikabok sa atíp.,Nagbalik-tanaw ang pamilya sa mga larawan.,Nanatili silang hindi nahawakan sa loob ng maraming taon.,sanhi,2,0
+340,Kalma na ang maselan na sanggol.,Pinag-ugoy ng mga magulang ang rattle sa harap ng sanggol.,Pinili ng mga magulang ang pangalan ng sanggol.,sanhi,1,0
+1257,Inamoy ng batang nawalan ng pang-amoy ang bar ng sabon.,Naglabas ang bar ng bango.,Madulas ang bar.,sanhi,1,1
+411,Pinatumba ng bola ng bowling ang mga pin ng bowling.,Gumulong ang lalaki ng bowling ball pababa sa daanan ng bowling.,Nahulog ng lalaki ang bowling ball sa kanyang paa.,sanhi,1,0
+202,Tumalon ako nang kusang-loob dahil sa takot.,Naririnig ko ang mga tao na tumatawa sa katabing silid.,Naramdaman kong may papalapit sa akin mula sa likuran.,sanhi,2,0
+1065,Nadurog ng aso ang kanyang mga ngipin.,Nasugatan ng aso ang kanyang paa.,Ngumunguya ang aso ng buto.,sanhi,2,1
+360,Mas matangkad na ang binatilyo kaysa sa kanyang ama.,Dumaan siya sa biglaang paglaki.,Sumali siya sa koponang basketball.,sanhi,1,0
+1315,Inilagay ng doktor ang ice pack sa binti.,Grabe ang pasa nito.,Grabe itong nahawahan.,sanhi,1,1
+1259,Tinanggal ng sikat na personalidad ang kanyang salaming pang-araw.,Nais niyang iwasan ang pagkilala.,Nais niyang pasalamatan ang kanyang mga tagahanga.,sanhi,2,1
+1182,Hindi nabuo ang krater sa buwan.,Nabangga ng kometa ang buwan.,Isang kometa ang dumaan sa buwan.,sanhi,2,1
+1340,Natanggap ng mga magulang ang sertipiko ng kapanganakan.,Pinili ng mga magulang ang pangalan ng sanggol.,Pinag-ugoy ng mga magulang ang rattle sa harap ng sanggol.,sanhi,1,1
+193,Pinagyabang ng estudyante sa kanyang mga kaklase ang kanyang marka sa pagsusulit.,Nagkunwari siyang interesado sa klase.,Nakatanggap siya ng perpektong marka.,sanhi,2,0
+1460,Nanalo ang lalaki sa paligsahan.,Sinabotahe ang paligsahan.,Pinatakot niya ang kanyang mga kakumpitensya.,sanhi,2,1
+480,Naging ingay-ingay ang bulsa ng lalaki habang naglalakad siya.,Tinahi niya ang butas sa kanyang bulsa.,Ang kanyang bulsa ay puno ng barya.,sanhi,2,0
+1454,May kasama ang batang lalaki sa paglalaro.,Kinuha ng kapatid niya ang kanyang mga laruan.,Ibinahagi niya ang kanyang mga laruan sa kanyang kapatid na lalaki.,sanhi,2,1
+298,Naging itim ang screen ng laptop.,Nawalan ng bisa ang warranty ng laptop.,Naubos ang baterya ng laptop.,sanhi,2,0
+1414,Nakakuha ang babae ng karagdagang kwalipikasyon para sa kanyang trabaho.,Naniniwala siya na kumikilos nang hindi etikal ang kanyang mga nakatataas.,Nangarap siyang humawak ng posisyong ehekutibo sa kumpanya.,sanhi,2,1
+257,Nahulog sa kamay ng batang lalaki ang bar ng sabon.,Madulas ang bar.,Naglabas ang bar ng bango.,sanhi,1,0
+1330,Hindi nakilala ng guwardiya ang magnanakaw.,Ang kamera ng pagmamanman ay hindi nakatutok.,Napansin niya ang ilang kahina-hinalang kilos.,sanhi,1,1
+3,Nagkita ang mga babae para sa kape.,Muling binuksan ang kapehan sa isang bagong lokasyon.,Gusto nilang magkita-kita muli.,sanhi,2,0
+187,Pinuno ng bata ang timba ng buhangin.,Nagtatayo siya ng kastilyong buhangin.,Nangalap siya ng mga kabibe sa buhangin.,sanhi,1,0
+1273,Hindi kailanman napansin ng lalaki ang babae.,Nakatalikod siya sa kanya.,Naamoy niya ang pabango niya.,sanhi,1,1
+330,Inulit ng guwardiya ang video mula sa surveillance.,Ang kamera ng pagmamanman ay hindi nakatutok.,Napansin niya ang ilang kahina-hinalang kilos.,sanhi,2,0
+1194,Naramdaman ng batang lalaki na siya ay pagod.,Nag-away siya sa kanyang kapatid na babae.,Umalis siya para mag-kampo.,sanhi,1,1
+1451,Hindi na ako nagkakaroon ng pantal.,Pinatay ko ang poison ivy sa bakuran ko.,Nasagi ko ang poison ivy sa bakuran ko.,sanhi,1,1
+1427,Hindi ko na-enjoy ang magandang soundtrack ng pelikula.,May isang matangkad na tao na nakaupo sa harap ko.,Ang mag-asawa sa likod ko ay nagbubulungan.,sanhi,2,1
+201,May lipstick ang lalaki sa pisngi niya.,Pinapula ng babae ang mukha niya.,Hinalikan siya ng babae.,sanhi,2,0
+118,Nakakuha ng detensyon ang estudyante.,Sumagot siya nang pabalik sa guro.,Binigyan ng guro ng grado ang kanyang takdang-aralin.,sanhi,1,0
+1036,Mas maaga bumangon ang lalaki.,Gusto niyang patayin ang alarm clock.,Gusto niyang plantsahin ang kanyang pantalon bago pumasok sa trabaho.,sanhi,2,1
+1128,Iniwan ng mga magulang ang kanilang mga anak sa isang guro.,Nagplano sila na ipagdiwang ang kanilang anibersaryo.,Nagsimulang dumalo sa preschool ang kanilang bunsong anak.,sanhi,2,1
+1415,Hindi nakita ng manlalaro ang bola.,Sinubukan ng kanyang kalaban na saluhin ito.,Ibinato ng kakampi niya ito sa kanya.,sanhi,1,1
+176,Pinatay ng ama ang telebisyon ng mga bata.,Oras na para matulog ang mga bata.,Nanonood ng cartoons ang mga bata.,sanhi,1,0
+1288,Nag-enjoy ako sa aking chewing gum.,Naubos ang lasa ng nganga.,Nagbuga ako ng bula gamit ang chewing gum.,sanhi,2,1
+301,Nagsulat ang babae ng tseke para sa kumpanya ng gas.,Natanggap niya ang kanyang buwanang bayarin.,Mas gusto niyang magbayad nang salapi.,sanhi,1,0
+1207,Na-extend ang kontrata sa pag-upa ng mga nangungupahan para sa apartment.,Magkasundo sila sa kanilang may-ari.,Hindi nila binayaran ang kanilang upa.,sanhi,1,1
+1350,Natuklasan ang mga bagong bansa.,Ang langis ay natapon sa karagatan.,Naglayag ang mga bangka sa karagatan.,sanhi,2,1
+1388,Nabali ng batang lalaki ang braso niya.,Hinahangaan ng batang lalaki ang kanyang nakatatandang kapatid na lalaki.,Nakipagbuno ang batang lalaki sa kanyang nakatatandang kapatid na lalaki.,sanhi,2,1
+460,Natalo ang lalaki sa paligsahan.,Sinabotahe ang paligsahan.,Pinatakot niya ang kanyang mga kakumpitensya.,sanhi,1,0
+1105,Nakapasa ako sa panayam sa trabaho.,Inasahan ko ang mga tanong ng tagapanayam.,Nagtanong ang tagapanayam ng mahihirap na mga tanong.,sanhi,1,1
+364,Nag-crash ang kompyuter.,Nag-download ako ng virus.,Ginawa ko ang backup ng aking mga file.,sanhi,1,0
+1129,Ang biyahe ay naging masaya.,Nagsalita ang drayber sa buong biyahe.,Nagkamali ang drayber sa pagliko.,sanhi,1,1
+387,Inimpake ko ang aking mga gamit.,Naghahanap ako ng bagong apartment.,Lumilipat ako mula sa aking apartment.,sanhi,2,0
+1262,Itinago ng lalaki ang personal na impormasyon mula sa therapist.,Nagtitiwala siya sa therapist.,Hindi siya sumang-ayon sa therapist.,sanhi,2,1
+11,Inayos ng babae ang kanyang gripo.,Tumatagas ang gripo.,Pinatay ang gripo.,sanhi,1,0
+1050,Nabundol ng mga bata ang kanilang mga ulo sa kisame.,Lumundag sila sa kama.,Nagkaroon sila ng labanan ng unan.,sanhi,1,1
+36,Agad na tumalon ang lalaki mula sa kama.,Gusto niyang plantsahin ang kanyang pantalon bago pumasok sa trabaho.,Gusto niyang patayin ang alarm clock.,sanhi,2,0
+282,Tinawag ng host ng palabas ng trivia ang kalahok para sa sagot.,Pinindot ng kalahok ang buzzer.,Ang kalahok ay nangunguna.,sanhi,1,0
+237,Nabali ng lalaki ang daliri ng paa niya.,Nagkaroon siya ng butas sa kanyang medyas.,Nahulog niya ang martilyo sa kanyang paa.,sanhi,2,0
+352,Pumasok ang kostumer sa boutique.,Nakakuha ng kanyang pansin ang display sa bintana.,Iniwan niya ang kanyang pitaka sa bahay.,sanhi,1,0
+1206,Nabenta ng kumpanya ang mas maraming produkto.,Nakakuha ang mga produkto nito ng positibong mga pagsusuri mula sa mga mamimili.,Ang ilan sa mga produkto nito ay depektibo ang pagkakagawa.,sanhi,1,1
+316,Tinitigan ng babae ang sarili sa salamin.,Naramdaman niyang nahihiya siya.,May mantsa ang salamin.,sanhi,1,0
+85,Mabagal ang serbisyo sa restawran.,Siksikan ang restawran.,Maraming bakanteng mesa.,sanhi,1,0
+1155,Ang babae ay naglalayong makakuha ng diploma.,Nag-enroll siya sa kolehiyo.,Nagtapos siya sa kolehiyo.,sanhi,1,1
+378,Ang pasyente ay napasok sa koma.,Nagtamo siya ng pinsala sa utak.,Nakaranas siya ng emosyonal na trauma.,sanhi,1,0
+1298,Hindi inaayos ng tagagawa ang screen ng laptop nang maging itim ito.,Nawalan ng bisa ang warranty ng laptop.,Naubos ang baterya ng laptop.,sanhi,1,1
+396,Nadulas ang manlalaro ng ski sa dalisdis.,Nahulog niya ang kanyang mga ski pole.,Nabundol niya ang isang bahagi ng yelo.,sanhi,2,0
+1069,Ang tindahan ay napakasikat.,Ang tindahan ay sumasailalim sa pag-aayos.,Ang may-ari ay tumutulong sa mga customer.,sanhi,2,1
+1145,Nanalo ang hukbo sa labanan.,Mas marami ang kalaban nila.,Sinakop nila ang lungsod.,sanhi,2,1
+172,Nahuli ng guro ang estudyante na ngumunguya ng chewing gum.,Inilura ng estudyante ang chewing gum.,Ang chewing gum ay dumikit sa sapatos ng estudyante.,epekto,1,0
+1494,Naging senile ang babae.,Sinundan siya ng mga potograpo.,Iniiwasan siya ng kanyang pamilya.,epekto,2,1
+1261,Hinila ng pulis ang pulso ng sikat na tao.,Nag-alok ang sikat na personalidad ng suhol sa opisyal.,Inakusahan ng sikat na personalidad ang pulis.,epekto,2,1
+115,Pinawalang-bisa ng tagapagsalita ang katunggali niya sa debate.,Binati ng tagapagsalita ang kanyang kalaban.,Nanalo ang tagapagsalita sa debate.,epekto,2,0
+1296,Isang grupo ng mga kabataan ang tumulong sa pag-oorganisa ng party.,Pinatalsik sila ng host ng party.,Ipinapasok sila ng host ng party.,epekto,2,1
+1286,Nagkaroon ng panic attack ang anak kong babae.,Hinimok ko siyang huminga nang malalim.,Dinala ko siya sa silid-emerhensiya.,epekto,1,1
+1063,Nakakuha ang mga nagbo-boat ng magandang agos.,Ang bangka nila ay dinala ng agos papunta sa pampang.,Na-rescue ang bangka nila.,epekto,1,1
+389,Hinahangad ng babae ang pag-apruba ng kanyang mga magulang.,Tumakas siya mula sa bahay.,Sumunod siya sa mga patakaran ng kanyang magulang.,epekto,2,0
+1293,Maluluwag ang mga dokumento.,Pinagdikit ko sila gamit ang paper clip.,Iningatan ko sila sa isang ligtas na lugar.,epekto,1,1
+41,Nawala ng nangungupahan ang kanyang mga susi sa kanyang apartment.,Binuksan ng kanyang may-ari ng paupahan ang pinto.,Inayos ng kanyang may-ari ng paupahan ang pinto.,epekto,1,0
+188,In-upgrade ng babae ang hardware ng kanyang kompyuter.,Binawi niya ang mga lumang file sa kompyuter.,Nag-install siya ng bagong software sa kompyuter.,epekto,2,0
+1328,Kinailangan ng kaibigan kong magpatingin sa doktor para sa isang pagsusuri sa kalusugan.,Dinala ko sa kanya ang isang kard at mga bulaklak.,Inihatid ko siya sa ospital.,epekto,2,1
+1486,Pumunta ang babae sa presinto ng halalan.,Bumoto siya sa halalan.,Nadiskubre niya ang kinalabasan ng halalan.,epekto,1,1
+1103,Sinuntok ng bata ang bunton ng mga bloke.,Ang bunton ay mas mataas pa kaysa ulo ng batang lalaki.,Ang mga bloke ay nakakalat sa buong alpombra.,epekto,1,1
+220,Ipinakita ng detektib ang kanyang badge sa pulis.,Kinumpiska ng pulis ang badge ng detektib.,Pinayagan ng pulis ang detektib na pumasok sa pinangyarian ng krimen.,epekto,2,0
+132,Inihagis ng babaeng cowboy ang kanyang lasso patungo sa kabayo.,Hinawakan ng lasso ang kabayo.,Tumatakbo ang kabayo papasok sa sabsaban.,epekto,1,0
+1281,Nanalo ang mamimili ng diskwento sa presyo ng item.,Nagpasya siyang bilhin ito.,Tiningnan niya ang presyo nito.,epekto,1,1
+192,Magulo ang mga drawer ng mesa.,Nilock ko nang todo ang mga drawer.,Tinapon ko ang mga hindi kailangang laman.,epekto,2,0
+1092,Hindi nakita ng potograpo ang mukha ng bata.,Mabilis na binago ng potograpo ang postura ng bata.,Agad na kinuhanan ng litratista ang bata.,epekto,1,1
+1020,Naging marumi ang singsing ng babae.,Nahulog sa imburnal ang singsing.,Pinakinis ng babae ang singsing.,epekto,2,1
+1488,Nagkaroon ng malaking pagtatalo ang mag-asawa.,Naghiwalay muna sila ng ilang sandali.,Nagplano sila ng kasal.,epekto,1,1
+486,Binasa ng babae ang pahayagan.,Bumoto siya sa halalan.,Nadiskubre niya ang kinalabasan ng halalan.,epekto,2,0
+1474,Nagkaroon ng malaking baha noong nakaraang taglagas.,Nahulog ang mga dahon mula sa mga puno.,Inilikas ng mga tao ang kanilang mga tahanan.,epekto,2,1
+1173,Hindi naghain ang tagapag-host ng kahit ano sa kanyang mga bisita.,Nagutom ang kanyang mga bisita.,Magagalang ang kanyang mga bisita.,epekto,1,1
+1171,Binitiwan ng motorista ang throttle.,Hinay-hinay na huminto ang motorsiklo.,Sumirit pasulong ang motorsiklo.,epekto,1,1
+208,Nagising ang lalaki na may pananakit ng ngipin.,Hindi siya dumalo sa kanyang appointment sa dentista.,Nagpa-appointment siya sa dentista.,epekto,2,0
+1253,Pumasok ang lalaki sa putik.,Pinagawa niyang baguhin ang kanyang amerikana.,Pinapakinis niya ang kanyang sapatos.,epekto,2,1
+1172,Inihagis ng guro ang chewing gum sa estudyante.,Inilura ng estudyante ang chewing gum.,Ang chewing gum ay dumikit sa sapatos ng estudyante.,epekto,2,1
+1075,Mas maaga pa kaysa sa akala ko.,Malinaw na mali ang oras na ipinapakita ng orasan.,Naglaan ako ng dagdag na oras para maghanda.,epekto,2,1
+113,Nakatanggap ako ng isang pakete sa koreo.,Dinala ko ang pakete sa post office.,Pinukaw ng pakete ang aking kuryosidad.,epekto,2,0
+141,Hinintay kong bukas ang pinto para sa babaeng pumapasok sa likod ko.,Pinasalamatan ako ng babae.,Sumara nang malakas ang pinto.,epekto,1,0
+218,Ang sagot ng estudyante sa pagsusulit ay mali.,Binawasan ng guro ang marka ng estudyante.,Nagdagdag ang guro ng bonus na puntos sa grado ng estudyante.,epekto,1,0
+289,Pininturahan ng batang lalaki ang isang larawan para sa kanyang ina.,Ibinenta ng kanyang ina ang larawan sa isang galeriya.,Ipinako ng kanyang ina ang larawan sa pader.,epekto,2,0
+1013,Natunaw ang nagyelong lawa noong tagsibol.,Naghatid ang mga tao ng mga bangka sa lawa.,Nag-skate ang mga tao sa lawa.,epekto,1,1
+410,Uminom nang labis ang lalaki sa party.,Nagkaroon siya ng pananakit ng ulo kinabukasan.,Kinabukasan ay tumutulo ang kanyang ilong.,epekto,1,0
+186,In-X-ray ng doktor ang braso ng pasyente.,Inilagay niya ang braso ng pasyente sa cast.,Natuklasan niya na nabali ang braso ng pasyente.,epekto,2,0
+1403,Nanalo ang babae sa lotto.,Natanggap niya ang kanyang pensiyon.,Binayaran niya nang buo ang kanyang mortgage.,epekto,2,1
+447,Nahulog ang buhok ng babae sa kanyang mukha.,Bumula siya ng shampoo sa kanyang buhok.,Hinila niya pabalik ang buhok niya gamit ang clip.,epekto,2,0
+127,Ilang mga saksi ng krimen ang nagpatotoo laban sa suspek.,Napawalang-sala ang suspek.,Nahatulan ang suspek.,epekto,2,0
+1012,Ang matandang babae ay tumawag sa telepono.,Ang anak na babae ng babae ay dumating upang linisin ang kanyang bahay.,Ang anak na babae ng babae ay lumipat upang alagaan siya.,epekto,1,1
+355,Punô ng mabahong amoy ang silid.,Sinakmal ko ang ilong ko.,Sinuot ko ang mga guwantes na goma.,epekto,1,0
+313,Tinawag ang babae para sa tungkulin bilang hurado.,Kinontak niya ang kanyang abogado.,Kinansela niya ang kanyang mga appointment.,epekto,2,0
+1289,Hindi na kailangan ng ina ang larawan ng kanyang anak.,Ibinenta ng kanyang ina ang larawan sa isang galeriya.,Ipinako ng kanyang ina ang larawan sa pader.,epekto,1,1
+284,Gusto ng babae na maging doktor.,Bumisita siya sa ospital.,Pumasok siya sa paaralan ng medisina.,epekto,2,0
+1439,Gumawa ang nobya ng listahan ng mga nais.,Naghatid ng mga regalo ang mga bisita sa kasal.,Ipinagpaliban niya ang kasal.,epekto,1,1
+1084,Nagagalit ako habang binabasa ko ang libro.,Hinila ko palabas ang susunod na pahina.,Lumiko ako sa susunod na pahina.,epekto,1,1
+221,Gusto ng babae na mapasaya ang kanyang ina.,Pinitas ng babae ang isang bulaklak para sa kanyang ina.,Kinuha ng batang babae ang mga cookies na inihurno ng kanyang ina.,epekto,1,0
+55,Pinirmahan ng lalaki ang dokumento.,Ipinawalang-bisa ang transaksyon.,Naging opisyal ang transaksyon.,epekto,2,0
+185,Nahiya ang babae sa peklat sa kanyang mukha.,Tinago niya ang peklat gamit ang makeup.,Ipinaliwanag niya sa mga estranghero ang peklat.,epekto,1,0
+254,Mukhang madilim ang mga ulap.,Dinala ko ang payong ko sa trabaho.,Dinala ko ang aking laptop sa trabaho.,epekto,1,0
+1224,Natuklasan ng lalaki na inihayag ng kanyang kaaway ang mga ebidensiyang nagpapatunay laban sa kanya.,Iniiwasan ng lalaki ang kanyang kaaway.,Binintak ng lalaki ang kanyang kaaway.,epekto,1,1
+1115,Natalo ang tagapagsalita ng kanyang katunggali sa debate.,Nanalo ang tagapagsalita sa debate.,Binati ng tagapagsalita ang kanyang kalaban.,epekto,2,1
+1476,Binuksan ko ang pinto ng kariton.,Ang mga bagay sa kariton ay nahulog.,Umiikot pasulong ang mga gulong ng kariton.,epekto,1,1
+475,Nahatulan ang politiko sa pandaraya.,Nagkampanya siya para muling mahalal.,Tinanggal siya sa kanyang tungkulin.,epekto,2,0
+133,Hindi pinansin ng grupo ang pagkakamaling nagawa ng babae.,Nagpaumanhin ang babae.,Nakahinga nang ginhawa ang babae.,epekto,2,0
+260,Pumanaw ang aking lola.,Nagdaos ng reunion ang aking pamilya.,Nagdaos ang aking pamilya ng libing.,epekto,2,0
+75,Tumigil ang orasan sa pagtiktik.,Naglaan ako ng dagdag na oras para maghanda.,Malinaw na mali ang oras na ipinapakita ng orasan.,epekto,2,0
+425,Inamin ng lalaki ang pag-ibig niya sa babae.,Selos ang babae sa kanya.,Tinanggihan siya ng babae.,epekto,2,0
+1452,Natanggap ko na ang kopya ng bagong magasin.,Tinigil ko na ang pagtanggap ng mga bagong isyu.,Tinapon ko ang bagong isyu.,epekto,2,1
+474,Nagbago ang mga panahon mula tag-init patungong tag-lagas.,Nahulog ang mga dahon mula sa mga puno.,Inilikas ng mga tao ang kanilang mga tahanan.,epekto,1,0
+1239,Sumabog ang tangke ng gasolina sa pasilyo ng paaralan.,Ipinagpaliban ng punong-guro ang mga klase ngayong araw.,Sinuspinde ng punong-guro ang mga mag-aaral na sangkot.,epekto,1,1
+1238,Ang lalaki ay walang konsensya.,In manipulahin niya ang kanyang kaibigan.,Inamin niya ang kanyang pagkakamali.,epekto,1,1
+1153,Napansin ng mga magulang ang interes ng kanilang anak na babae sa palakasan.,Hinikayat nila siyang maging isang artista.,Tinuruan nila siya kung paano magbisikleta.,epekto,2,1
+258,Nahulog ang butones ng aking kamiseta.,Tinahi ko muli ang butones.,Idinikit ko muli ang pindutan.,epekto,1,0
+1113,Natanggap ko ang pakete ng isang tao sa koreo.,Dinala ko ang pakete sa post office.,Pinukaw ng pakete ang aking kuryosidad.,epekto,1,1
+33,Itinutok ng mga pulis ang kanilang mga baril sa takas.,Nahulog sa lupa ang takas.,Nahulog ng takas ang kanyang baril.,epekto,2,0
+110,Nalito ako sa lektura ng propesor.,Nagtanong ako ng mga tanong sa propesor.,Nagtuon ako ng pansin sa propesor.,epekto,1,0
+171,Pinaikot ng motorista ang throttle.,Sumirit pasulong ang motorsiklo.,Hinay-hinay na huminto ang motorsiklo.,epekto,1,0
+1014,Ang salarin ay mahirap.,Ipinadala siya pabalik sa bilangguan.,Nanakaw niya ang pera mula sa simbahan.,epekto,2,1
+1318,Hindi nagustuhan ng kapatid na lalaki ng babae ang regalo.,Binuksan ng kapatid niyang lalaki ang regalo.,Tinanggihan ng kapatid niyang lalaki ang regalo.,epekto,2,1
+1220,Ipinakita ng detektib ang kanyang pekeng badge sa pulis.,Kinumpiska ng pulis ang badge ng detektib.,Pinayagan ng pulis ang detektib na pumasok sa pinangyarian ng krimen.,epekto,1,1
+1447,Sinimulan ng babae na hugasan ang kanyang buhok.,Bumula siya ng shampoo sa kanyang buhok.,Hinila niya pabalik ang buhok niya gamit ang isang clip.,epekto,1,1
+1444,Nag-enjoy ang estudyante sa pagluluto.,Dinala niya ang kanyang baon sa paaralan.,Iniwan niya ang kanyang takdang-aralin sa bahay.,epekto,1,1
+1114,Nakita ng surfer ang alon.,Pinagpag niya ang kanyang board papunta sa karagatan.,Dinala siya ng alon sa pampang.,epekto,1,1
+312,Ang babae ay nagkaroon ng impeksyon.,Hinugasan niya ang kanyang mga kamay.,Uminom siya ng mga antibiotiko.,epekto,2,0
+1498,Nabangkarote ang airline.,Kinansela nila ang aking flight.,Nag-alok sila sa akin ng kabayaran.,epekto,1,1
+357,Hinila ng magnet ang paperclip.,Nahulog ang paperclip mula sa magnet.,Ang paperclip ay nakadikit sa magnet.,epekto,2,0
+101,Kinuha ng guro ang talaan ng mga estudyante.,Tinukoy niya ang mga estudyanteng wala.,Nagbigay siya sa kanyang mga estudyante ng biglaang pagsusulit.,epekto,1,0
+358,Hinila ng hardinero ang mga damo.,Nagbunga ng buto ang mga damo.,Lumabas ang mga damo mula sa lupa.,epekto,2,0
+137,Sinabugan ng skunk ng spray ang aso.,Ang aso ay naglabas ng mabahong amoy.,Naglibot ang skunk sa gubat.,epekto,1,0
+1276,Nais ng lalaki na makipagkasundo sa kanyang kaaway.,Idineklara ng lalaki ang tigil-putukan sa kanyang kaaway.,Pinatawan ng kaso ng lalaki ang kanyang kaaway para sa isang krimen.,epekto,1,1
+1033,Pinaputukan ng pulisya ang takas.,Nahulog sa lupa ang takas.,Nahulog ng takas ang kanyang baril.,epekto,1,1
+1039,Pinagabayan ng mananahi ang sinulid sa butas ng karayom.,Ang sinulid ay dumaan sa tela.,Ang sinulid ay nakabalot sa karayom.,epekto,2,1
+1260,Pumasa si lola ko.,Nagdaos ng reunion ang aking pamilya.,Nagdaos ang aking pamilya ng libing.,epekto,1,1
+1217,Ang kumpanya ay naghahanap ng mga lubos na dalubhasang talento.,Inilipat nito ang punong-tanggapan nito sa isang lokasyon sa kanayunan.,Pinataas nito ang mga pagsisikap sa pagmemerkado para sa mga bagong produkto.,epekto,1,1
+1351,Hinipo ko ang yelo.,Ang yelo ay dumikit sa aking mga daliri.,Nawala ang yelo.,epekto,1,1
+351,Tinakbo ko ang yelo sa ilalim ng maligamgam na tubig.,Nawala ang yelo.,Ang yelo ay dumikit sa aking mga daliri.,epekto,1,0
+1258,Nahulog ang pindutan ng aking laptop.,Tinahi ko muli ang butones.,Idinikit ko muli ang pindutan.,epekto,2,1
+242,Naglagay ako ng barya sa washing machine sa laundromat.,Naubusan ako ng sabon panghugas ng damit.,Nagsimula ang makina.,epekto,2,0
+191,Nagkaroon ng relihiyosong paggising ang babae.,Nagsimula siyang pumunta sa simbahan.,Nagsimulang maglakbay sa ibang bansa siya.,epekto,1,0
+1221,Gusto ng babae na mapasaya ang kanyang ina dahil sa kanyang pagsisikap.,Pinitas ng babae ang isang bulaklak para sa kanyang ina.,Kinuha ng babae ang mga cookies na inihurno ng kanyang ina.,epekto,2,1
+383,Gusto ng lalaki na makatipid ng pera.,Binawasan niya ang paggawa ng mga walang-kwentang pagbili.,Nag-withdraw siya ng pera mula sa kanyang savings account.,epekto,1,0
+1034,Sinabi ng pasyente na manhid ang kanyang binti.,Sinuri ng nars ang kanyang mga reflex.,Binigyan siya ng nars ng IV.,epekto,1,1
+1225,Gusto ng babae na umakyat sa tuktok ng slide.,Dumulas siya pababa sa slide.,Umakyat siya sa slide nang gumagapang.,epekto,2,1
+1127,Walang sinumang saksi sa krimen ang nagpatotoo laban sa suspek.,Nahatulan ang suspek.,Napawalang-sala ang suspek.,epekto,2,1
+252,Itinulak ng batang lalaki ang kanyang kapatid na babae.,Naglaro sila ng taguan.,Ipinagtataksil siya ng kapatid niyang babae.,epekto,2,0
+34,Ang pasyente ay na-dehydrate.,Binigyan siya ng nars ng IV.,Sinuri ng nars ang kanyang mga reflex.,epekto,1,0
+390,Bumangga ang trak sa motorsiklo sa tulay.,Namatay ang motorista.,Gumuho ang tulay.,epekto,1,0
+54,Hinipo ng kusinero ang mga sangkap sa mangkok.,Ang mga sangkap ay pinaghalo.,Natunaw ang mga sangkap.,epekto,1,0
+1401,Umiinit nang paulit-ulit ang mukha ng lalaki.,Ang inidoro ay napuno ng tubig.,Daloy ang tubig mula sa bibig ng timba.,epekto,1,1
+1215,Maling-maling ang mga pahayag ng manghuhula.,Maraming mga customer ang humiling ng refund.,Marami siyang mga suki na bumabalik.,epekto,1,1
+228,Ang kotse ay mukhang marumi.,Dinala ito ng may-ari para ipintura.,Dinala ng may-ari ito sa car wash.,epekto,2,0
+338,Isinagawa ng siyentipiko ang isang eksperimento.,Gumawa siya ng pekeng datos.,Pinagtibay niya ang kanyang teorya.,epekto,2,0
+1188,Nais ng babae na ibenta ang kanyang hardware ng kompyuter.,Nag-install siya ng bagong software sa kompyuter.,Binawi niya ang mga lumang file sa kompyuter.,epekto,2,1
+1483,Hindi kailanman nahuli ang mga magnanakaw ng alahas.,Ang ninakaw na alahas ay naibalik sa mga may-ari nito.,Kinuwenta ang halaga ng mga ninakaw na alahas.,epekto,2,1
+1098,Naramdaman ng babae na nahihilo siya.,Naalala niya ang kanyang pagkabata.,Naalala niyang inumin ang kanyang gamot.,epekto,2,1
+1219,Ipinakita ng babae ang hindi magandang asal.,Tinapon niya ang kanyang napkin matapos kumain.,Inilagay niya ang kanyang napkin sa kandungan bago kumain.,epekto,1,1
+1029,Pinakulo ang katas ng ubas.,Ang katas ay naubos.,Ang katas ay naging alak.,epekto,1,1
+14,Lumabag ang salarin sa kanyang parol.,Ipinadala siya pabalik sa bilangguan.,Nanakaw niya ang pera mula sa simbahan.,epekto,1,0
+473,Nagbigay ang guro ng takdang-aralin sa mga mag-aaral.,Nagpalitan ng sulat ang mga estudyante.,Nagreklamo ang mga estudyante.,epekto,2,0
+324,Huminto ang kotse sa tawiran ng mga naglalakad.,Tumawid sa kalsada ang naglalakad.,Ang naglalakad ay naghintay sa bangketa.,epekto,1,0
+1140,Gabi na sa isang tahimik na kapitbahayan.,Umakda ang alarma sa seguridad.,Natutulog ang mga may-ari ng bahay.,epekto,2,1
+1052,Gusto ng mga may-ari ng bahay ang kanilang mga kapitbahay.,Nagtayo sila ng bakod sa paligid ng kanilang ari-arian.,Nag-host sila ng barbeque sa kanilang bakuran.,epekto,2,1
+1037,Mahalaga ang mga papel.,Inilagay ko sila sa pagkakasunod-sunod ayon sa alpabeto.,Gumawa ako ng mga kopya nila.,epekto,2,1
+1429,Nauuhaw ang babae.,Kinuha ng kanyang ama ang kanyang panghimagas.,Sinabi ng kanyang ama sa kanya na inumin ang kanyang gatas.,epekto,2,1
+446,Sinuwag ng lalaki ang mga awtoridad ng simbahan.,Siya ay pinalayas sa simbahan.,Nagbigay siya ng pera sa simbahan.,epekto,1,0
+92,Napangiti ng potograpo ang bata.,Agad na kinuhanan ng litratista ang bata.,Mabilis na binago ng potograpo ang postura ng bata.,epekto,1,0
+1255,Ang pasahero sa eroplano ay gumawa ng nakakaabalaing ingay.,Nabagsak ang eroplano.,Nagkamali ang piloto.,epekto,2,1
+22,Gusto ng date ng babae na magmukhang isang ginoo.,Binuksan niya ang pinto para sa kanya.,Tinanong niya siya kung gusto niya ng sushi.,epekto,1,0
+1313,Gusto ng babae ng diborsiyo. ,Kinansela niya ang kanyang mga appointment.,Kinontak niya ang kanyang abogado.,epekto,2,1
+399,Nasira ang relo ng lalaki.,Nag-antay siya sa hintuan ng bus.,Tinanong niya ang isang estranghero kung ano ang oras.,epekto,2,0
+1130,Pinalitan ang produkto.,Naging lipas na ang produkto.,Nakilala ng mga mamimili ang produkto.,epekto,1,1
+1227,Sumunod ang bata sa kanyang mga magulang.,Yinakap siya ng kanyang mga magulang.,Pinaparusahan siya ng kanyang mga magulang.,epekto,1,1
+61,Inihagis ng lalaki ang kaniyang walang laman na lata sa kalsada.,Pinagmulta siya dahil sa pagtatapon ng basura.,Sinuguran siya mula sa likuran.,epekto,1,0
+444,Nagmamadali ang estudyante na makarating sa paaralan nang nasa oras.,Iniwan niya ang kanyang takdang-aralin sa bahay.,Dinala niya ang kanyang baon sa paaralan.,epekto,1,0
+159,Hinukay ng arkeologo ang lugar.,Binasa niya ang kasaysayan ng site.,Naghukay siya ng mga sinaunang artipakto.,epekto,2,0
+1234,Ipinatupad ng punong-guro ang kodigo ng karangalan.,Ang mga estudyante ay pinalayas sa paaralan.,Nagprotesta ang mga estudyante sa desisyon.,epekto,1,1
+1284,Gusto ng babae na magpatingin sa doktor.,Pumasok siya sa paaralan ng medisina.,Bumisita siya sa ospital.,epekto,2,1
+1377,Nagpasya akong maging mas malusog.,Dumalo ako sa isang klase ng yoga.,Bumili ako ng mga prutas at gulay.,epekto,1,1
+1475,Ang politiko ay napakasikat.,Tinanggal siya sa kanyang posisyon.,Nagkampanya siya para muling mahalal.,epekto,2,1
+1252,Natagpuan ng batang lalaki ang kanyang kapatid na babae.,Naglaro sila ng taguan.,Ipinagtataksil siya ng kapatid niyang babae.,epekto,1,1
+140,Isang magnanakaw ang pumasok sa bahay.,Natutulog ang mga may-ari ng bahay.,Umakda ang alarma sa seguridad.,epekto,2,0
+1111,Itinuring na angkop para sa mga bata ang aklat.,Pinilit ng mga guro ang mga estudyante na basahin ito.,Ipinagbawal ito ng mga paaralan sa kanilang mga aklatan.,epekto,1,1
+1446,Ang lalaki ay matagal nang miyembro ng simbahan.,Nagbigay siya ng pera sa simbahan.,Siya ay pinalayas sa simbahan.,epekto,1,1
+142,Naging maulap ang salamin sa banyo.,Naglagay ng makeup ang babae.,Pinagana ng babae ang bentilador.,epekto,2,0
+1142,Nalinaw ang salamin sa banyo.,Pinagana ng babae ang bentilador.,Naglagay ng makeup ang babae.,epekto,2,1
+321,Kailangan ng lalaki ng mga barya para mapuno ang parking meter.,Naghahabol siya ng barya sa mga tao sa kalye.,Naghanap siya sa ilalim ng mga upuan ng kotse niya ng maliliit na barya.,epekto,2,0
+111,Itinuring na hindi angkop para sa mga bata ang aklat.,Ipinagbawal ito ng mga paaralan sa kanilang mga aklatan.,Pinilit ng mga guro ang mga estudyante na basahin ito.,epekto,1,0
+39,Ipinasok ng mananahi ang karayom na may sinulid sa tela.,Ang sinulid ay dumaan sa tela.,Ang sinulid ay nakabalot sa karayom.,epekto,1,0
+60,Nagbigay ang madla ng standing ovation sa banda.,Muling lumitaw ang banda sa entablado.,Nagpirma ng mga autograph ang banda.,epekto,1,0
+1374,Magaling na hinarap ng lalaki ang trahedya.,Tinanggi siyang magsalita tungkol dito.,Madali lang niyang nalampasan iyon.,epekto,2,1
+1110,Nainteres ako sa lektura ng propesor.,Nagtuon ako ng pansin sa propesor.,Nagtanong ako ng mga tanong sa propesor.,epekto,1,1
+406,Pinagdudahan ko ang panghihikayat ng nagbebenta.,Tinanggihan ko ang alok niya.,Kumbinsido niya akong bilhin ang produkto.,epekto,1,0
+222,Nagsimulang umiyak ang paslit.,Kinuha ng kanyang mga magulang ang kanyang laruan.,Binigyan siya ng kanyang mga magulang ng laruan.,epekto,2,0
+1191,Nais ng babae na baguhin ang kanyang kapaligiran.,Nagsimulang maglakbay sa ibang bansa siya.,Nagsimula siyang pumunta sa simbahan.,epekto,1,1
+296,Isang grupo ng mga kabataan ang sumali sa party nang walang paanyaya.,Pinatalsik sila ng host ng party.,Ipinapasok sila ng host ng party.,epekto,1,0
+134,Nakasalubong ng babae ang isang hindi pamilyar na salita sa kanyang aklat-aralin.,Hinahanap niya ang kahulugan ng salitang iyon sa diksyunaryo.,Inihagis niya ang aklat-aralin sa kabilang dulo ng silid.,epekto,1,0
+1425,Ipinakita ng lalaki sa babae ang kanyang bagong kotse.,Tinanggihan siya ng babae.,Selos ang babae sa kanya.,epekto,2,1
+1392,Hindi nanalo ang manlalangoy sa karera.,Natalo ang koponan niya sa paligsahan.,Tumanggap siya ng gintong medalya.,epekto,1,1
+429,Tumanggi ang batang babae na kainin ang kanyang mga gulay.,Sinabi ng kanyang ama sa kanya na inumin ang kanyang gatas.,Kinuha ng kanyang ama ang kanyang panghimagas.,epekto,2,0
+224,Natuklasan ng lalaki ang nakasasangkot na ebidensya laban sa kanyang kaaway.,Iniiwasan ng lalaki ang kanyang kaaway.,Binintak ng lalaki ang kanyang kaaway.,epekto,2,0
+1477,Kumbinsido ng lobista ang pangulo na masama ang panukalang batas para sa negosyo.,Binitela ng pangulo ang panukalang batas.,Ipinasa ng lehislatura ang panukalang batas.,epekto,1,1
+326,Nabuwal ang mga tuhod ko sa hagdan.,Nasalo ko ang sarili ko sa bakod.,Naluwag ang raling mula sa pader.,epekto,1,0
+1319,Karamihan sa mga miyembro ay hindi nakasali.,Naantala ang pagpupulong.,Nagsimula ang pagpupulong.,epekto,1,1
+341,Naglagay ako ng mga piraso ng yelo sa mainit na sopas.,Naging makapal ang sopas.,Napalamig na ang sopas.,epekto,2,0
+318,Ibinigay ng babae sa kanyang kapatid na lalaki ang isang regalo.,Binuksan ng kapatid niyang lalaki ang regalo.,Tinanggihan ng kapatid niyang lalaki ang regalo.,epekto,1,0
+1196,Sumigaw ang batang lalaki ng kanyang sagot sa kanyang ina.,Sinabi ng kanyang ina sa kanya na magsalita nang malakas.,Sinabi ng kanyang ina sa kanya na bumulung.,epekto,2,1
+1060,Nag-antay ang madla sa rock band sa paliparan.,Nagpirma ng mga autograph ang banda.,Muling lumitaw ang banda sa entablado.,epekto,1,1
+452,Nawalan ng bisa ang aking subscription sa magasin.,Tinapon ko ang bagong isyu.,Tinigil ko na ang pagtanggap ng mga bagong isyu.,epekto,2,0
+402,Nakakita ang babae ng insekto sa kanyang cereal.,Nawalan siya ng gana sa pagkain.,Bumuhos siya ng gatas sa mangkok.,epekto,1,0
+1321,Kamakailan lang ay nawalan ng trabaho ang mahirap na lalaki.,Naghanap siya sa ilalim ng mga upuan ng kotse niya ng maliliit na barya.,Naghahabol siya ng barya sa mga tao sa kalye.,epekto,2,1
+173,Inihain ng tagapag-host ang hapunan sa kanyang mga bisita.,Magagalang ang kanyang mga bisita.,Nagutom ang kanyang mga bisita.,epekto,1,0
+1406,Napakagaling ng pitch ng salesman.,Kumbinsido niya akong bilhin ang produkto.,Tinanggihan ko ang alok niya.,epekto,1,1
+286,Nagkaroon ng atake sa allergy ang anak kong babae.,Dinala ko siya sa silid-emerhensiya.,Hinimok ko siyang huminga nang malalim.,epekto,1,0
+1186,Natuklasan ng doktor na nabali ang braso ng pasyente.,Natuklasan niya na nabali ang braso ng pasyente.,Inilagay niya ang braso ng pasyente sa cast.,epekto,2,1
+472,Lumapag sa ilog ang sanga ng puno.,Lalong tumindi ang agos ng ilog.,Ang sanga ay lumipat pababa ng ilog.,epekto,2,0
+1484,Sa wakas ay nagwakas na ang karahasan sa politika sa bansa.,Maraming mamamayan ang lumipat sa kabisera.,Maraming mamamayan ang naghanap ng kanlungan sa ibang teritoryo.,epekto,1,1
+453,Ibinunyag ng detektib ang isang anomalya sa kaso.,Ipinakansela niya ang kanyang teorya.,Tinapos niya ang kanyang teorya.,epekto,1,0
+238,Nagkaroon ang lalaki ng pag-atake ng konsensya.,In manipulahin niya ang kanyang kaibigan.,Inamin niya ang kanyang pagkakamali.,epekto,2,0
+423,Inilagay ko ang aking mga kamay sa ilalim ng umaagos na gripo.,Tumalsik ang tubig sa mukha ko.,Ang sabon ay nagbanlaw sa aking mga kamay.,epekto,2,0
+1312,Ang babae ay magluluto na.,Uminom siya ng mga antibiotiko.,Hinugasan niya ang kanyang mga kamay.,epekto,2,1
+225,Itinulak ng babae ang sarili mula sa tuktok ng tobogan.,Dumulas siya pababa sa slide.,Umakyat siya sa slide nang gumagapang.,epekto,1,0
+1308,Nag-aalala ang babae kung mahuhuli siya.,Tinanggal ng babae ang kanyang sweater.,Tumingin ang babae sa kanyang relo.,epekto,2,1
+12,Ang matandang babae ay nagkaroon ng stroke.,Ang anak na babae ng babae ay dumating upang linisin ang kanyang bahay.,Ang anak na babae ng babae ay lumipat para alagaan siya.,epekto,2,0
+1185,Tinanong ang babae tungkol sa peklat sa kanyang mukha.,Tinago niya ang peklat gamit ang makeup.,Ipinaliwanag niya sa mga estranghero ang peklat.,epekto,2,1
+1254,Na-block ang cloud computer.,Dinala ko ang payong ko sa trabaho.,Dinala ko ang aking laptop sa trabaho.,epekto,2,1
+1322,May sapat na pera ang kostumer para sa souvenir.,Nakipagtawaran siya sa nagbebenta.,Ibinenta ng nagbebenta ito sa kanya.,epekto,2,1
+189,Nag-perform ang babae sa isang sayaw na pagtatanghal.,Dumating ang kanyang mga magulang upang manood ng recital.,Ipinakita ng kanyang mga magulang sa kanya kung paano sumayaw.,epekto,1,0
+1389,Kinamumuhian ng babae ang kanyang mga magulang.,Sumunod siya sa mga patakaran ng kanyang magulang.,Tumakas siya mula sa bahay.,epekto,2,1
+477,Kumbinsido ng lobista ang lehislatura na suportahan ang panukalang batas.,Binitela ng pangulo ang panukalang batas.,Ipinasa ng lehislatura ang panukalang batas.,epekto,2,0
+1192,Binuksan ang mga drawer ng buerau.,Tinapon ko ang mga hindi kailangang laman.,Nilock ko nang todo ang mga drawer.,epekto,2,1
+114,Nahuli ng surfer ang alon.,Pinagpag niya ang kanyang board papunta sa karagatan.,Dinala siya ng alon sa pampang.,epekto,2,0
+52,Hindi gusto ng mga may-ari ng bahay ang kanilang mga mausisang kapitbahay.,Nagtayo sila ng bakod sa paligid ng kanilang ari-arian.,Nag-host sila ng barbeque sa kanilang bakuran.,epekto,1,0
+1132,Hindi tumama ng lassong tinapon ng babaeng cowboy sa kabayo.,Tumatakbo ang kabayo papasok sa sabsaban.,Hinawakan ng lasso ang kabayo.,epekto,1,1
+421,Maling pagbaybay ng estudyante ang salita.,Pinaalis siya ng guro.,Tinama siya ng guro.,epekto,2,0
+1162,Inihagis ko ang bola pasulong.,Tumama ang bola sa kisame.,Gumulong ang bola sa ibabaw ng lupa.,epekto,2,1
+1397,Gusto ng lalaki na gumawa ng tala.,Kinuha ng lalaki ang panulat mula sa kanyang bulsa.,Isinuot ng lalaki ang kanyang salamin.,epekto,1,1
+281,Nagtaka ang mamimili tungkol sa presyo ng bagay.,Nagpasya siyang bilhin ito.,Tiningnan niya ang presyo nito.,epekto,2,0
+1208,Gumising nang huli ang lalaki.,Hindi siya dumalo sa kanyang appointment sa dentista.,Nagpa-appointment siya sa dentista.,epekto,1,1
+261,Pinahinto ng pulis ang sikat na tao.,Inakusahan ng sikat na personalidad ang pulis.,Nag-alok ang sikat na personalidad ng suhol sa opisyal.,epekto,2,0
+329,Pinindot ng DJ ang musika.,Nagsimulang sumayaw ang mga tao.,Umalis ang mga tao sa party.,epekto,1,0
+1073,Dinala ng mga awtoridad ang kaso makalipas ang maraming taon.,Itinago nila sa publiko ang pangalan ng biktima.,Nahirapan ang biktima na maalala ang mga detalye tungkol sa krimen.,epekto,2,1
+1469,Isang lumang minahan ng karbon ang ginawang isang magandang parke.,Nagsimula ang mga tagapangalaga ng kalikasan ng isang petisyon.,Nag-prodyus ang mga tagapangalaga ng kalikasan ng isang dokumentaryo.,epekto,2,1
+1107,Tiningnan ng lalaki ang kanyang listahan.,Napagtanto niya na maaga pa siya.,Napagtanto niya na nakalimutan niya ang isang bagay.,epekto,2,1
+1355,Naghanda ako para linisin ang silid.,Sinuot ko ang mga guwantes na goma.,Sinakmal ko ang ilong ko.,epekto,1,1
+1133,Na-offend ang grupo sa pagkakamaling nagawa ng babae.,Nagpaumanhin ang babae.,Nakahinga nang ginhawa ang babae.,epekto,1,1
+272,Ipinagkanulo ng babae ang kanyang kaibigan.,Pinutol ng kaibigan niya ang pakikipag-ugnayan sa kanya.,Nagpadala ang kaibigan niya ng isang greeting card sa kanya.,epekto,1,0
+112,Nakiusap ang lalaki na patawarin siya.,Nagbiruan ang babae sa kanya.,Nainawaan siya ng babae.,epekto,2,0
+1228,Mukhang sinulidahan ng susi ang kotse.,Dinala ito ng may-ari para ipinta.,Dinala ng may-ari ito sa car wash.,epekto,1,1
+27,Naging iritable ang paslit.,Inayos ng kanyang ina ang kanyang buhok sa dalawang pigtail.,Pinahiga ng kanyang ina ang anak para matulog ng sandali.,epekto,2,0

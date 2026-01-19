@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block title %}Quantify{% endblock %}
+
+{% block content %}
+<div id="loading-overlay">
+    <div class="spinner"></div>
+    <div class="loading-text">Processing Data...</div>
+    <div class="loading-subtext">This may take a few moments. Please do not close this window.</div>
+</div>
+
+<div class="upload-wrapper">
+    
+    <h1 class="page-title">Upload your documents</h1>
+
+    <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data" class="upload-box">
+        <div class="upload-dashed-area">
+            
+            <input type="file" id="file-upload" name="file" multiple hidden>
+
+            <label for="file-upload" class="upload-label">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="12" y1="18" x2="12" y2="12"></line>
+                    <line x1="9" y1="15" x2="12" y2="12"></line>
+                    <line x1="15" y1="15" x2="12" y2="12"></line>
+                </svg>
+
+                <div class="choose-btn">
+                    <span>CHOOSE FILES</span>
+                    <span class="arrow">▼</span>
+                </div>
+                
+                <p class="drop-text">or drop files here</p>
+            </label>
+
+            <div id="file-list-display" style="margin-top: 15px; color: white; text-align: center;"></div>
+
+            <button type="submit" id="quantify-btn" class="quantify-submit-btn" style="display: none;">
+                Quantify
+            </button>
+
+        </div>
+    </form>
+</div>
+
+<script>
+    const fileInput = document.getElementById('file-upload');
+    const fileListDisplay = document.getElementById('file-list-display');
+    const quantifyBtn = document.getElementById('quantify-btn');
+    const uploadForm = document.getElementById('upload-form');
+    const loadingOverlay = document.getElementById('loading-overlay'); 
+    
+    // 2. FIXED: Define dropText so the script doesn't crash
+    const dropText = document.querySelector('.drop-text'); 
+
+    // This acts as our "storage"
+    const dataTransfer = new DataTransfer();
+
+    fileInput.addEventListener('change', function() {
+        const newFiles = Array.from(this.files);
+        
+        newFiles.forEach(file => {
+            // Prevent duplicates
+            const fileExists = Array.from(dataTransfer.files).some(existing => 
+                existing.name === file.name && existing.size === file.size
+            );
+
+            if (!fileExists) {
+                dataTransfer.items.add(file);
+            }
+        });
+
+        // Sync input with new data
+        fileInput.files = dataTransfer.files;
+        renderFileList();
+    });
+
+    function renderFileList() {
+        if (dataTransfer.files.length > 0) {
+            fileListDisplay.innerHTML = '<p><strong>Selected Files:</strong></p>';
+            
+            const list = document.createElement('ul');
+            list.style.listStyle = 'none';
+            list.style.padding = '0';
+
+            Array.from(dataTransfer.files).forEach((file, index) => {
+                const item = document.createElement('li');
+                item.style.marginBottom = '8px';
+                item.style.display = 'flex';
+                item.style.alignItems = 'center';
+                item.style.justifyContent = 'center';
+                item.style.gap = '10px';
+
+                const textSpan = document.createElement('span');
+                textSpan.textContent = `${file.name}`;
+                
+                const removeBtn = document.createElement('span');
+                removeBtn.textContent = '❌';
+                removeBtn.style.cursor = 'pointer';
+                removeBtn.style.fontSize = '0.8rem';
+                removeBtn.title = 'Remove this file';
+                
+                removeBtn.onclick = function() {
+                    removeFile(index);
+                };
+
+                item.appendChild(textSpan);
+                item.appendChild(removeBtn);
+                list.appendChild(item);
+            });
+            
+            fileListDisplay.appendChild(list);
+            
+            quantifyBtn.style.display = 'inline-block';
+            
+            // This line works now because we defined dropText above
+            if(dropText) dropText.style.display = 'none'; 
+
+        } else {
+            fileListDisplay.innerHTML = '';
+            quantifyBtn.style.display = 'none';
+            if(dropText) dropText.style.display = 'block';
+        }
+    }
+
+    uploadForm.addEventListener('submit', function(event) {
+        if (dataTransfer.files.length > 0) {
+            // This will now work because the HTML element actually exists
+            if(loadingOverlay) loadingOverlay.style.display = 'flex';
+        }
+    });
+    
+    function removeFile(indexToRemove) {
+        const newDataTransfer = new DataTransfer();
+        
+        Array.from(dataTransfer.files).forEach((file, index) => {
+            if (index !== indexToRemove) {
+                newDataTransfer.items.add(file);
+            }
+        });
+
+        dataTransfer.items.clear();
+        Array.from(newDataTransfer.files).forEach(file => dataTransfer.items.add(file));
+        fileInput.files = dataTransfer.files;
+
+        renderFileList();
+    }
+</script>
+{% endblock %}
