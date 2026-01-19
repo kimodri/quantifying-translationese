@@ -1,6 +1,6 @@
 import requests, textwrap, os
 from tqdm import tqdm
-from Errors import NoDatasetError, IncorrectDatasetError
+from .Errors import NoDatasetError, IncorrectDatasetError
 
 
 class Extractor:
@@ -18,6 +18,7 @@ class Extractor:
             os.makedirs(self.download_dir)
 
     def extract(self, *args):
+        print(f"Arguments passed: {args}")
         if len(args) < 1:
             raise NoDatasetError(textwrap.dedent(
                 """
@@ -68,7 +69,7 @@ class Extractor:
                             bar.update(size)
                     
                     print(f"Download complete: {output_path}")
-                    return output_path
+                    # return output_path
 
                 except requests.exceptions.HTTPError as err:
                     print(f"HTTP Error: {err}")

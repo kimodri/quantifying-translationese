@@ -189,6 +189,147 @@ nav a {
     transform: scale(1.05);
 }
 
+/* GET DATA PAGE */
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.section-label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Container to hold Path and Seed side-by-side */
+.form-row-split {
+    display: flex;
+    gap: 20px; /* Space between the two inputs */
+    align-items: flex-start;
+}
+
+/* Path gets 3 parts of the space */
+.path-input-group {
+    flex: 3;
+    margin-bottom: 0; /* Remove bottom margin to align perfectly */
+}
+
+/* Seed gets 1 part of the space */
+.seed-input-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* Responsive: Stack them on small mobile screens */
+@media (max-width: 600px) {
+    .form-row-split {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-group {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.help-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Text Inputs */
+.text-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+/* Dataset Items */
+.dataset-item {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.dataset-item:last-child {
+    border-bottom: none;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    transform: scale(1.5); /* Make checkbox bigger */
+}
+
+.checkbox-wrapper label {
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
+}
+
+/* Dynamic Fields Area */
+.dynamic-fields {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-top: 10px;
+    margin-left: 25px; /* Indent to show hierarchy */
+    border-left: 3px solid #448aff; /* Blue accent line */
+    border-radius: 4px;
+}
+
+.field-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    max-width: 400px;
+}
+
+.field-row label {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.field-row input[type="number"] {
+    padding: 5px;
+    width: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Anuimations */
 nav a:hover {
     color: #ff9900;                /* Changes color on hover */

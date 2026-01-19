@@ -1,10 +1,142 @@
 {% extends "layout.html" %}
 
-{% block title %}Extraction{% endblock %}
+{% block title %}Get Data{% endblock %}
 
-{% block content%}
+{% block content %}
+<div id="loading-overlay">
+    <div class="spinner"></div>
+    <div class="loading-text">Extracting and Processing Data...</div>
+    <div class="loading-subtext">This may take a few moments. Please do not close this window.</div>
+</div>
 
+<div class="upload-wrapper">
+    <h1 class="page-title">Dataset Collection</h1>
 
+    <form id="getdata-form" action="/getdata" method="POST" class="upload-box" style="text-align: left; background: white; border: 1px solid #ddd;">
+        
+        <div class="form-row-split">
+            <div class="form-group path-input-group">
+                <label class="section-label">Local Output Path (Required)</label>
+                <input type="text" name="local_path" class="text-input" placeholder="e.g., C:/datasets/output/" required>
+                <p class="help-text">Folder where datasets will be saved.</p>
+            </div>
 
+            <div class="form-group seed-input-group">
+                <label class="section-label">Random Seed</label>
+                <input type="number" name="random_seed" class="text-input" placeholder="42" value="42">
+                <p class="help-text">For reproducibility.</p>
+            </div>
+        </div>
 
+        <hr>
+
+        <label class="section-label">Select Datasets:</label>
+        
+        <div class="dataset-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check-paws" name="datasets" value="paws" onchange="toggleFields('paws')">
+                <label for="check-paws">PAWS (Paraphrase Adversaries from Word Scrambling)</label>
+            </div>
+            <div id="fields-paws" class="dynamic-fields" style="display: none;">
+                <div class="field-row">
+                    <label>True Sample:</label>
+                    <input type="number" name="paws_true" placeholder="200">
+                </div>
+                <div class="field-row">
+                    <label>False Sample:</label>
+                    <input type="number" name="paws_false" placeholder="200">
+                </div>
+            </div>
+        </div>
+
+        <div class="dataset-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check-bcopa" name="datasets" value="bcopa" onchange="toggleFields('bcopa')">
+                <label for="check-bcopa">BCOPA (Balanced COPA)</label>
+            </div>
+            <div id="fields-bcopa" class="dynamic-fields" style="display: none;">
+                <div class="field-row">
+                    <label>Cause Sample:</label>
+                    <input type="number" name="bcopa_cause" placeholder="200">
+                </div>
+                <div class="field-row">
+                    <label>Effect Sample:</label>
+                    <input type="number" name="bcopa_effect" placeholder="200">
+                </div>
+            </div>
+        </div>
+
+        <div class="dataset-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check-xnli" name="datasets" value="xnli" onchange="toggleFields('xnli')">
+                <label for="check-xnli">XNLI (Cross-Lingual NLI)</label>
+            </div>
+            <div id="fields-xnli" class="dynamic-fields" style="display: none;">
+                <div class="field-row">
+                    <label>Contradiction Sample:</label>
+                    <input type="number" name="xnli_contradiction" placeholder="150">
+                </div>
+                <div class="field-row">
+                    <label>Entailment Sample:</label>
+                    <input type="number" name="xnli_entailment" placeholder="150">
+                </div>
+                <div class="field-row">
+                    <label>Neutral Sample:</label>
+                    <input type="number" name="xnli_neutral" placeholder="150">
+                </div>
+            </div>
+        </div>
+
+        <div class="dataset-item">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="check-xlsum" name="datasets" value="xlsum" onchange="toggleFields('xlsum')">
+                <label for="check-xlsum">XLSUM (Summarization)</label>
+            </div>
+            <div id="fields-xlsum" class="dynamic-fields" style="display: none;">
+                <div class="field-row">
+                    <label>Summary Pairs Sample:</label>
+                    <input type="number" name="xlsum_pairs" placeholder="200">
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <button type="submit" class="quantify-submit-btn">Download Data</button>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // --- 1. CONFIGURATION ---
+    const getdataForm = document.getElementById('getdata-form');
+    const loadingOverlay = document.getElementById('loading-overlay');
+
+    // --- 2. DYNAMIC FIELDS LOGIC ---
+    function toggleFields(datasetName) {
+        const checkbox = document.getElementById('check-' + datasetName);
+        const fieldsDiv = document.getElementById('fields-' + datasetName);
+        const inputs = fieldsDiv.querySelectorAll('input');
+
+        if (checkbox.checked) {
+            fieldsDiv.style.display = 'block';
+            inputs.forEach(input => input.required = true);
+        } else {
+            fieldsDiv.style.display = 'none';
+            inputs.forEach(input => {
+                input.required = false;
+                input.value = '';
+            });
+        }
+    }
+
+    // --- 3. LOADING WHEEL LOGIC (Simple version) ---
+    if (getdataForm) {
+        getdataForm.addEventListener('submit', function(event) {
+            // Show the overlay immediately when the user clicks Submit.
+            // It will stay visible until the page refreshes or the download prompts.
+            loadingOverlay.style.display = 'flex';
+        });
+    }
+</script>
 {% endblock %}
