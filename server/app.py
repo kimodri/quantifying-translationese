@@ -167,6 +167,12 @@ def get_data():
 
         return f"Request Received! Saving to {local_path}. Check terminal for details."
 
-
+@app.route("/translate", methods=['GET', 'POST'])
+def translate():
+    if request.method == "GET":
+        return render_template("translate.html")
+    else:
+        pass
+    
 if __name__ == "__main__":
     app.run(debug=True)

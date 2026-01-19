@@ -3,9 +3,7 @@ from pathlib import Path
 from typing import List
 import pandas as pd
 from Errors import MissingKeysError, ExtraKeysError, NoDatasetError
-
-#TODO:
-# Handle XL-Sum differenly, XL-Sum is not even here yet
+from tqdm import tqdm
 
 class Translator:
 
@@ -13,8 +11,8 @@ class Translator:
 
     def __init__(self, translate_dir="../datasets_sample_translated/"):
         self.translate_dir = translate_dir
-        if not os.path.exists(self.download_dir):
-            os.makedirs(self.download_dir)
+        if not os.path.exists(self.translate_dir):
+            os.makedirs(self.translate_dir)
 
     @staticmethod
     def _validate_args(args, expected):
@@ -62,7 +60,7 @@ class Translator:
 
         translated_texts = []
 
-        for i in range(0, len(source_texts), batch_size):
+        for i in tqdm(range(0, len(source_texts), batch_size), desc="Translating"):
             batch = source_texts[i : i + batch_size]
             batch_result = self._google_translate(key, batch)
 
@@ -70,7 +68,7 @@ class Translator:
         
         return translated_texts
 
-    def google_translate(self, key, batch_size=100, **kwargs):
+    def google_translate(self, key, batch_size=20, **kwargs):
         
         if not kwargs:
             raise NoDatasetError(textwrap.dedent("""
@@ -93,7 +91,7 @@ class Translator:
             df_paws['sentence1'] = pd.Series(translated_sentence1)
             df_paws['sentence2'] = pd.Series(translated_sentence2)
 
-            df_paws.to_csv("../datasets_sample/translated/google_translated_paws.csv", index=False)
+            df_paws.to_csv(os.path.join(self.translate_dir, "google_translated_paws.csv"), index=False)
 
         if 'bcopa' in datasets:
             df_bcopa = pd.read_csv(kwargs['bcopa'])
@@ -109,7 +107,7 @@ class Translator:
             df_bcopa['choice1'] = pd.Series(translated_choice1)
             df_bcopa['choice2'] = pd.Series(translated_choice2)
 
-            df_bcopa.to_csv("../datasets_sample/translated/google_translated_bcopa.csv", index=False)
+            df_bcopa.to_csv(os.path.join(self.translate_dir, "google_translated_bcopa.csv"), index=False)
 
 
         if 'xnli' in datasets:
@@ -123,10 +121,21 @@ class Translator:
             df_xnli['sentence1'] = pd.Series(translated_sentence1)
             df_xnli['sentence2'] = pd.Series(translated_sentence2)
 
-            df_xnli.to_csv("../datasets_sample/translated/google_translated_xnli.csv", index=False)
+            df_xnli.to_csv(os.path.join(self.translate_dir, "google_translated_xnli.csv"), index=False)
 
 
-        # TODO: XLSUM
+        if 'xlsum' in datasets:
+            df_xlsum = pd.read_csv(kwargs['xlsum'])
+            xlsum_text = df_xlsum["text"].to_list()
+            xlsum_summary = df_xlsum["summary"].to_list()
+
+            translated_text = self._google_batching(key, xlsum_text, batch_size=5)
+            translated_summary = self._google_batching(key, xlsum_summary, batch_size=5)
+
+            df_xlsum['text'] = pd.Series(translated_text)
+            df_xlsum['summary'] = pd.Series(translated_summary)
+
+            df_xlsum.to_csv(os.path.join(self.translate_dir, "google_translated_xlsum.csv"), index=False)
 
     @staticmethod
     def _azure_translate(texts: List[str], key: str, region: str, endpoint: str) -> list:
@@ -165,7 +174,7 @@ class Translator:
         
         result_texts = []
 
-        for i in range(0, len(source_texts), batch_size):
+        for i in tqdm(range(0, len(source_texts), batch_size), desc="Translating"):
             batch = source_texts[i : i + batch_size]
             attempt = 0
             while True:
@@ -219,7 +228,7 @@ class Translator:
             df_paws['sentence1'] = pd.Series(translated_sentence1)
             df_paws['sentence2'] = pd.Series(translated_sentence2) 
 
-            df_paws.to_csv("../datasets_sample/translated/azure_translated_paws.csv", index=False)
+            df_paws.to_csv(os.path.join(self.translate_dir, "azure_translated_paws.csv"), index=False)
 
         if 'bcopa' in datasets:
             df_bcopa = pd.read_csv(kwargs['bcopa'])
@@ -235,7 +244,7 @@ class Translator:
             df_bcopa['choice1'] = pd.Series(translated_choice1)
             df_bcopa['choice2'] = pd.Series(translated_choice2)
 
-            df_bcopa.to_csv("../datasets_sample/translated/azure_translated_bcopa.csv", index=False)
+            df_bcopa.to_csv(os.path.join(self.translate_dir, "azure_translated_bcopa.csv"), index=False)
 
         if 'xnli' in datasets:
             df_xnli = pd.read_csv(kwargs['xnli'])
@@ -248,15 +257,202 @@ class Translator:
             df_xnli['sentence1'] = pd.Series(translated_sentence1)
             df_xnli['sentence2'] = pd.Series(translated_sentence2)
 
-            df_xnli.to_csv("../datasets_sample/translated/azure_translated_xnli.csv", index=False)
+            df_xnli.to_csv(os.path.join(self.translate_dir, "azure_translated_xnli.csv"), index=False)
 
+        if 'xlsum' in datasets:
+            df_xlsum = pd.read_csv(kwargs['xlsum'])
+            xlsum_text = df_xlsum["text"].to_list()
+            xlsum_summary = df_xlsum["summary"].to_list()
 
-        # TODO: XLSUM
+            translated_text = self._azure_batching(key, xlsum_text, batch_size=10)
+            translated_summary = self._azure_batching(key, xlsum_summary, batch_size=10)
+
+            df_xlsum['text'] = pd.Series(translated_text)
+            df_xlsum['summary'] = pd.Series(translated_summary)
+
+            df_xlsum.to_csv(os.path.join(self.translate_dir, "azure_translated_xlsum.csv"), index=False)
+
+    def _deepl_translate(self, texts, translator, batch_size=20):
+        translations = []
+
+        for i in tqdm(range(0, len(texts), batch_size), desc="Translating"):
+            batch = texts[i : i + batch_size]
+            
+            result_objects = translator.translate_text(batch, target_lang="TL")
+
+            batch_strings = [r.text for r in result_objects]
+
+            translations.extend(batch_strings)
+
+        return translations
 
     def deepl_translate(self, key, **kwargs):
-        pass 
+        import deepl
+        translator = deepl.Translator(key)
 
-    def opus_translate(self, key, **kwargs):
-        pass
+        if not kwargs:
+            raise NoDatasetError(textwrap.dedent("""
+                Specify the datasets to be translated.
+                Accepted: 'paws', 'bcopa', 'xnli', 'xlsum'
+            """))
+        
+        # Check if the given datasets are all accepted
+        datasets = kwargs.keys()
+        self._validate_args(datasets, Translator.ACCEPTED_DATASETS)
+        
+        # Translate the given datasets
+        if 'paws' in datasets:
+            df_paws = pd.read_csv(kwargs['paws'])
+            sentence1 = df_paws['sentence1'].to_list()
+            sentence2 = df_paws['sentence2'].to_list()
+
+            translated_sentence1 = self._deepl_translate(sentence1, translator)
+            translated_sentence2 = self._deepl_translate(sentence2, translator)
+            
+            df_paws['sentence1'] = pd.Series(translated_sentence1)
+            df_paws['sentence2'] = pd.Series(translated_sentence2) 
+
+            df_paws.to_csv(os.path.join(self.translate_dir, "deepl_translated_xlsum.csv"), index=False)
+            print("PAWS successfully translated!")
+
+        if 'bcopa' in datasets:
+            df_bcopa = pd.read_csv(kwargs['bcopa'])
+            premise = df_bcopa['premise'].to_list()
+            choice1 = df_bcopa['choice1'].to_list()
+            choice2 = df_bcopa['choice2'].to_list()
+
+            translated_premise = self._deepl_translate(premise, translator)
+            translated_choice1 = self._deepl_translate(choice1, translator)
+            translated_choice2 = self._deepl_translate(choice2, translator)
+
+            df_bcopa['premise'] = pd.Series(translated_premise)
+            df_bcopa['choice1'] = pd.Series(translated_choice1)
+            df_bcopa['choice2'] = pd.Series(translated_choice2)
+
+            df_bcopa.to_csv(os.path.join(self.translate_dir, "deepl_translated_bcopa.csv"), index=False)
+            print("Succesfully translated BCOPA")
+
+        if 'xnli' in datasets:
+            df_xnli = pd.read_csv(kwargs['xnli'])
+            xnli_sentence1 = df_xnli["sentence1"].to_list()
+            xnli_sentence2 = df_xnli["sentence2"].to_list()
+
+            translated_sentence1 = self._deepl_translate(xnli_sentence1, translator)
+            translated_sentence2 = self._deepl_translate(xnli_sentence2, translator)
+    
+            df_xnli['sentence1'] = pd.Series(translated_sentence1)
+            df_xnli['sentence2'] = pd.Series(translated_sentence2)
+
+            df_xnli.to_csv(os.path.join(self.translate_dir, "deepl_translated_xnli.csv"), index=False)
+            print("Successfully translated XNLI")
+
+        if 'xlsum' in datasets:
+            df_xlsum = pd.read_csv(kwargs['xlsum'])
+            xlsum_text = df_xlsum["text"].to_list()
+            xlsum_summary = df_xlsum["summary"].to_list()
+
+            translated_text = self._deepl_translate(xlsum_text, translator, batch_size=10)
+            translated_summary = self._deepl_translate(xlsum_summary, translator, batch_size=10)
+
+            df_xlsum['text'] = pd.Series(translated_text)
+            df_xlsum['summary'] = pd.Series(translated_summary)
+
+            df_xlsum.to_csv(os.path.join(self.translate_dir, "deepl_translated_xlsum.csv"), index=False)
+            print("Succesfully translated XLSUM!")
+
+    def _opus_translate(self, sentences, tokenizer, model, batch_size=20):
+        translations = []
+        for i in tqdm(range(0, len(sentences), batch_size), desc="Translating"):
+            batch = sentences[i:i+batch_size]
+            inputs = tokenizer(batch, return_tensors="pt", padding=True, truncation=True)
+            outputs = model.generate(**inputs)
+            decoded = tokenizer.batch_decode(outputs, skip_special_tokens=True)
+            translations.extend(decoded)
+
+        return translations
+        
+    def opus_translate(self, **kwargs):
+       
+        from transformers import MarianMTModel, MarianTokenizer
+        model_name = "Helsinki-NLP/opus-mt-en-tl"
+        tokenizer = MarianTokenizer.from_pretrained(model_name)
+        model = MarianMTModel.from_pretrained(model_name)
+
+        if not kwargs:
+            raise NoDatasetError(textwrap.dedent("""
+                Specify the datasets to be translated.
+                Accepted: 'paws', 'bcopa', 'xnli', 'xlsum'
+            """))
+        
+        # Check if the given datasets are all accepted
+        datasets = kwargs.keys()
+        self._validate_args(datasets, Translator.ACCEPTED_DATASETS)
+        
+        # Translate the given datasets
+        if 'paws' in datasets:
+            df_paws = pd.read_csv(kwargs['paws'])
+            sentence1 = df_paws['sentence1'].to_list()
+            sentence2 = df_paws['sentence2'].to_list()
+
+            translated_sentence1 = self._opus_translate(sentence1, tokenizer, model)
+            translated_sentence2 = self._opus_translate(sentence2, tokenizer, model)
+            
+            df_paws['sentence1'] = pd.Series(translated_sentence1)
+            df_paws['sentence2'] = pd.Series(translated_sentence2) 
+
+            df_paws.to_csv(os.path.join(self.translate_dir, "opus_translated_paws.csv"), index=False)
+            print("PAWS successfully translated!")
+
+        if 'bcopa' in datasets:
+            df_bcopa = pd.read_csv(kwargs['bcopa'])
+            premise = df_bcopa['premise'].to_list()
+            choice1 = df_bcopa['choice1'].to_list()
+            choice2 = df_bcopa['choice2'].to_list()
+
+            translated_premise = self._opus_translate(premise, tokenizer, model)
+            translated_choice1 = self._opus_translate(choice1, tokenizer, model)
+            translated_choice2 = self._opus_translate(choice2, tokenizer, model)
+
+            df_bcopa['premise'] = pd.Series(translated_premise)
+            df_bcopa['choice1'] = pd.Series(translated_choice1)
+            df_bcopa['choice2'] = pd.Series(translated_choice2)
+
+            df_bcopa.to_csv(os.path.join(self.translate_dir, "opus_translated_bcopa.csv"), index=False)
+            print("BCOPA successfully translated!")
+
+        if 'xnli' in datasets:
+            df_xnli = pd.read_csv(kwargs['xnli'])
+            xnli_sentence1 = df_xnli["sentence1"].to_list()
+            xnli_sentence2 = df_xnli["sentence2"].to_list()
+
+            translated_sentence1 = self._opus_translate(xnli_sentence1, tokenizer, model)
+            translated_sentence2 = self._opus_translate(xnli_sentence2, tokenizer, model)
+    
+            df_xnli['sentence1'] = pd.Series(translated_sentence1)
+            df_xnli['sentence2'] = pd.Series(translated_sentence2)
+
+            df_xnli.to_csv(os.path.join(self.translate_dir, "opus_translated_xnli.csv"), index=False)
+            print("XNLI successfully translated!")
+
+        if 'xlsum' in datasets:
+            df_xlsum = pd.read_csv(kwargs['xlsum'])
+            xlsum_text = df_xlsum["text"].to_list()
+            xlsum_summary = df_xlsum["summary"].to_list()
+
+            translated_text = self._opus_translate(xlsum_text, tokenizer, model, batch_size=10)
+            translated_summary = self._opus_translate(xlsum_summary, tokenizer, model, batch_size=10)
+
+            df_xlsum['text'] = pd.Series(translated_text)
+            df_xlsum['summary'] = pd.Series(translated_summary)
+
+            df_xlsum.to_csv(os.path.join(self.translate_dir, "opus_translated_xlsum.csv"), index=False)
+            print("Successfully translated XLSUM!")
+
+if __name__ == "__main__":
+    translator = Translator(r"C:\Users\magan\Desktop\quantifying-translationese\translation_sample")
+    translator.opus_translate(
+        # key="AIzaSyDfQv2OFUQrX2zQ-qfT6pxEVtPzowmtiV4", 
+        bcopa=r"C:\Users\magan\Desktop\quantifying-translationese\datasets\cleaned\cleaned_bcopa.csv"
+    )
 
     
