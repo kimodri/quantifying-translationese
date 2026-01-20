@@ -8,100 +8,86 @@
     <div class="loading-text">Translating Documents...</div>
     <div class="loading-subtext">This process may take some time depending on file size.</div>
 </div>
-
-<div class="upload-wrapper">
-    
-    <h1 class="page-title">Translate Documents</h1>
-
-    <form id="translate-form" action="/translate" method="POST" enctype="multipart/form-data" class="upload-box">
+<div class="translate-main-container">
+    <div class="upload-wrapper">
         
-        <div class="settings-area">
+        <h1 class="page-title">Translate Documents</h1>
+
+        <form id="translate-form" action="/translate" method="POST" enctype="multipart/form-data" class="upload-box">
             
-            <div class="setting-group">
-                <label for="model-select" class="white-label">Select Translation Model:</label>
-                <select id="model-select" name="model" class="styled-input">
-                    <option value="opus" selected>Helsinki-NLP Opus (Free / Offline)</option>
-                    <option value="google">Google Translate API</option>
-                    <option value="azure">Azure Translator</option>
-                    <option value="deepl">DeepL API</option>
-                </select>
-            </div>
-
-            <div id="api-key-group" class="setting-group" style="display: none;">
-                <label for="api-key-input" class="white-label">Enter API Key:</label>
-                <input type="password" id="api-key-input" name="api_key" class="styled-input" placeholder="Paste your API key here...">
-            </div>
-
-        </div>
-
-        <div class="upload-dashed-area">
-            
-            <input type="file" id="file-upload" name="file" multiple hidden>
-
-            <label for="file-upload" class="upload-label">
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="12" y1="18" x2="12" y2="12"></line>
-                    <line x1="9" y1="15" x2="12" y2="12"></line>
-                    <line x1="15" y1="15" x2="12" y2="12"></line>
-                </svg>
-
-                <div class="choose-btn">
-                    <span>CHOOSE FILES</span>
-                    <span class="arrow">▼</span>
-                </div>
+            <div class="settings-area">
                 
-                <p class="drop-text">or drop files here</p>
-            </label>
+                <div class="setting-group">
+                    <label for="local-path" class="white-label">Local Output Path (Required):</label>
+                    <input type="text" id="local-path" name="local_path" class="styled-input" placeholder="e.g., C:/datasets/translated_output/" required>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 5px;">Folder where translated files will be saved.</p>
+                </div>
 
-            <div id="file-list-display" style="margin-top: 15px; color: white; text-align: center;"></div>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.3); margin: 20px 0;">
 
-            <button type="submit" id="translate-btn" class="quantify-submit-btn" style="display: none;">
-                Translate
-            </button>
+                <div class="setting-group">
+                    <label for="model-select" class="white-label">Select Translation Model:</label>
+                    <select id="model-select" name="model" class="styled-input">
+                        <option value="opus" selected>Helsinki-NLP Opus</option>
+                        <option value="google">Google Translate</option>
+                        <option value="azure">Azure Translate</option>
+                        <option value="deepl">DeepL Translate</option>
+                    </select>
+                </div>
 
-        </div>
-    </form>
+                <div id="simple-api-group" class="setting-group" style="display: none;">
+                    <label for="api-key-input" class="white-label">Enter API Key:</label>
+                    <input type="password" id="api-key-input" name="api_key" class="styled-input" placeholder="Paste your API key here...">
+                </div>
+
+                <div id="azure-group" class="setting-group" style="display: none;">
+                    <div style="margin-bottom: 10px;">
+                        <label for="azure-key" class="white-label">Azure Key:</label>
+                        <input type="password" id="azure-key" name="azure_key" class="styled-input" placeholder="Paste Azure Key...">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label for="azure-region" class="white-label">Azure Region:</label>
+                        <input type="text" id="azure-region" name="azure_region" class="styled-input" placeholder="e.g., eastus">
+                    </div>
+                    <div>
+                        <label for="azure-endpoint" class="white-label">Azure Endpoint:</label>
+                        <input type="text" id="azure-endpoint" name="azure_endpoint" class="styled-input" placeholder="e.g., https://api.cognitive.microsofttranslator.com">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="upload-dashed-area">
+                
+                <input type="file" id="file-upload" name="file" multiple hidden>
+
+                <label for="file-upload" class="upload-label">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                        <line x1="9" y1="15" x2="12" y2="12"></line>
+                        <line x1="15" y1="15" x2="12" y2="12"></line>
+                    </svg>
+
+                    <div class="choose-btn">
+                        <span>CHOOSE FILES</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    
+                    <p class="drop-text">or drop files here</p>
+                </label>
+
+                <div id="file-list-display" style="margin-top: 15px; color: white; text-align: center;"></div>
+
+                <button type="submit" id="translate-btn" class="quantify-submit-btn" style="display: none;">
+                    Translate
+                </button>
+
+            </div>
+        </form>
+    </div>
 </div>
-
-<style>
-    /* Settings Area (Top part of blue box) */
-    .settings-area {
-        margin-bottom: 20px;
-        text-align: left;
-        padding: 0 10px;
-    }
-
-    .setting-group {
-        margin-bottom: 15px;
-    }
-
-    .white-label {
-        color: white;
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
-        font-size: 0.95rem;
-    }
-
-    /* Inputs styled to look good on Blue Background */
-    .styled-input {
-        width: 100%;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        background-color: rgba(255, 255, 255, 0.95);
-        font-size: 1rem;
-        box-sizing: border-box; /* Fixes width padding issues */
-    }
-
-    .styled-input:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
-    }
-</style>
-
 <script>
     // --- 1. DOM ELEMENTS ---
     const fileInput = document.getElementById('file-upload');
@@ -111,34 +97,51 @@
     const loadingOverlay = document.getElementById('loading-overlay');
     const dropText = document.querySelector('.drop-text');
     
-    // Elements for API Key Logic
+    // Elements for Settings Logic
     const modelSelect = document.getElementById('model-select');
-    const apiKeyGroup = document.getElementById('api-key-group');
-    const apiKeyInput = document.getElementById('api-key-input');
+    
+    // Simple API Group (Google/DeepL)
+    const simpleApiGroup = document.getElementById('simple-api-group');
+    const simpleApiKeyInput = document.getElementById('api-key-input');
 
-    // --- 2. API KEY TOGGLE LOGIC ---
+    // Azure Group
+    const azureGroup = document.getElementById('azure-group');
+    const azureKeyInput = document.getElementById('azure-key');
+    const azureRegionInput = document.getElementById('azure-region');
+    const azureEndpointInput = document.getElementById('azure-endpoint');
+
+
+    // --- 2. MODEL SELECTION LOGIC ---
     modelSelect.addEventListener('change', function() {
         const selectedModel = this.value;
         
-        // List of models that require an API key
-        const paidModels = ['google', 'azure', 'deepl'];
+        // Reset Everything First
+        simpleApiGroup.style.display = 'none';
+        simpleApiKeyInput.required = false;
+        
+        azureGroup.style.display = 'none';
+        azureKeyInput.required = false;
+        azureRegionInput.required = false;
+        azureEndpointInput.required = false;
 
-        if (paidModels.includes(selectedModel)) {
-            // Show Field
-            apiKeyGroup.style.display = 'block';
-            // Make it required so user can't submit without it
-            apiKeyInput.required = true;
-        } else {
-            // Hide Field
-            apiKeyGroup.style.display = 'none';
-            // Remove requirement
-            apiKeyInput.required = false;
-            apiKeyInput.value = ''; // Optional: Clear the key
+        // Apply Logic based on selection
+        if (selectedModel === 'google' || selectedModel === 'deepl') {
+            // Show Simple API Key
+            simpleApiGroup.style.display = 'block';
+            simpleApiKeyInput.required = true;
+        } 
+        else if (selectedModel === 'azure') {
+            // Show Azure Fields
+            azureGroup.style.display = 'block';
+            azureKeyInput.required = true;
+            azureRegionInput.required = true;
+            azureEndpointInput.required = true;
         }
+        // 'opus' does nothing (stays hidden)
     });
 
 
-    // --- 3. FILE UPLOAD LOGIC (Same as Quantify) ---
+    // --- 3. FILE UPLOAD LOGIC ---
     const dataTransfer = new DataTransfer();
 
     fileInput.addEventListener('change', function() {
@@ -203,7 +206,7 @@
         renderFileList();
     }
 
-    // --- 4. SUBMIT EVENT (Show Loading Wheel) ---
+    // --- 4. SUBMIT EVENT ---
     translateForm.addEventListener('submit', function(event) {
         if (dataTransfer.files.length > 0) {
             loadingOverlay.style.display = 'flex';
@@ -211,4 +214,4 @@
     });
 
 </script>
-{% endblock %}
+{% endblock %}s

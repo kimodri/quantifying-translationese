@@ -1,8 +1,8 @@
-import os, requests, time, textwrap
+import os, requests, time, textwrap, json
 from pathlib import Path
 from typing import List
 import pandas as pd
-from Errors import MissingKeysError, ExtraKeysError, NoDatasetError
+from .Errors import MissingKeysError, ExtraKeysError, NoDatasetError
 from tqdm import tqdm
 
 class Translator:
@@ -92,6 +92,7 @@ class Translator:
             df_paws['sentence2'] = pd.Series(translated_sentence2)
 
             df_paws.to_csv(os.path.join(self.translate_dir, "google_translated_paws.csv"), index=False)
+            print("Successfully translated PAWS!")
 
         if 'bcopa' in datasets:
             df_bcopa = pd.read_csv(kwargs['bcopa'])
@@ -108,7 +109,7 @@ class Translator:
             df_bcopa['choice2'] = pd.Series(translated_choice2)
 
             df_bcopa.to_csv(os.path.join(self.translate_dir, "google_translated_bcopa.csv"), index=False)
-
+            print("Successfully translated BCOPA!")
 
         if 'xnli' in datasets:
             df_xnli = pd.read_csv(kwargs['xnli'])
@@ -122,7 +123,7 @@ class Translator:
             df_xnli['sentence2'] = pd.Series(translated_sentence2)
 
             df_xnli.to_csv(os.path.join(self.translate_dir, "google_translated_xnli.csv"), index=False)
-
+            print("Successfully translated XNLI!")
 
         if 'xlsum' in datasets:
             df_xlsum = pd.read_csv(kwargs['xlsum'])
@@ -136,10 +137,13 @@ class Translator:
             df_xlsum['summary'] = pd.Series(translated_summary)
 
             df_xlsum.to_csv(os.path.join(self.translate_dir, "google_translated_xlsum.csv"), index=False)
+            print("Successfully translated XLSUM!")
+
+    import json
 
     @staticmethod
     def _azure_translate(texts: List[str], key: str, region: str, endpoint: str) -> list:
-        """Translate a list of texts to Filipino using Azure Translator."""
+        """Translate a list of texts to Filipino using Azure Translator (debug mode)."""
         url = f"{endpoint.rstrip('/')}/translate"
         params = {"api-version": "3.0", "from": "en", "to": "fil"}
         headers = {
@@ -149,18 +153,26 @@ class Translator:
         }
         payload = [{"Text": text} for text in texts]
 
-        response = requests.post(url, params=params, headers=headers, json=payload)
+        # Debugging output (mask key)
+        masked_key = key[:4] + "..." + key[-4:] if key else "<no-key>"
+        print("DEBUG: POST", url)
+        print("DEBUG: params:", params)
+        print("DEBUG: headers:", {k: (masked_key if k == "Ocp-Apim-Subscription-Key" else v) for k, v in headers.items()})
+        print("DEBUG: payload sample:", payload[:1])
 
+        response = requests.post(url, params=params, headers=headers, json=payload)
+        print("DEBUG: status_code:", response.status_code)
+        print("DEBUG: response.text (first 1000 chars):", response.text[:1000])
+
+        # Try to parse JSON, otherwise raise with full response
         try:
             response_json = response.json()
         except Exception:
-            print("Non-JSON response:")
-            print(response.text[:500])
-            raise
+            raise RuntimeError(f"Non-JSON response: status={response.status_code} text={response.text[:2000]}")
 
-        if isinstance(response_json, dict) and "error" in response_json:
-            # Bubble up API errors (e.g., rate limits) for the caller to handle
-            raise RuntimeError(response_json)
+        if response.status_code != 200:
+            # Surface both code and body to help debug (do not mask)
+            raise RuntimeError({"status_code": response.status_code, "body": response_json})
 
         try:
             translations = [item["translations"][0]["text"] for item in response_json]
@@ -169,6 +181,7 @@ class Translator:
             print("Unexpected response structure:", e)
             print(response_json)
             raise
+
     
     def _azure_batching(self, key, source_texts:list, batch_size=20):
         
@@ -229,6 +242,7 @@ class Translator:
             df_paws['sentence2'] = pd.Series(translated_sentence2) 
 
             df_paws.to_csv(os.path.join(self.translate_dir, "azure_translated_paws.csv"), index=False)
+            print("Successfully translated PAWS!")
 
         if 'bcopa' in datasets:
             df_bcopa = pd.read_csv(kwargs['bcopa'])
@@ -245,6 +259,7 @@ class Translator:
             df_bcopa['choice2'] = pd.Series(translated_choice2)
 
             df_bcopa.to_csv(os.path.join(self.translate_dir, "azure_translated_bcopa.csv"), index=False)
+            print("Successfully translated BCOPA!")
 
         if 'xnli' in datasets:
             df_xnli = pd.read_csv(kwargs['xnli'])
@@ -258,6 +273,7 @@ class Translator:
             df_xnli['sentence2'] = pd.Series(translated_sentence2)
 
             df_xnli.to_csv(os.path.join(self.translate_dir, "azure_translated_xnli.csv"), index=False)
+            print("Successfully translated XNLI!")
 
         if 'xlsum' in datasets:
             df_xlsum = pd.read_csv(kwargs['xlsum'])
@@ -271,6 +287,7 @@ class Translator:
             df_xlsum['summary'] = pd.Series(translated_summary)
 
             df_xlsum.to_csv(os.path.join(self.translate_dir, "azure_translated_xlsum.csv"), index=False)
+            print("Successfully translated XLSUM!")
 
     def _deepl_translate(self, texts, translator, batch_size=20):
         translations = []
@@ -312,7 +329,7 @@ class Translator:
             df_paws['sentence1'] = pd.Series(translated_sentence1)
             df_paws['sentence2'] = pd.Series(translated_sentence2) 
 
-            df_paws.to_csv(os.path.join(self.translate_dir, "deepl_translated_xlsum.csv"), index=False)
+            df_paws.to_csv(os.path.join(self.translate_dir, "deepl_translated_paws.csv"), index=False)
             print("PAWS successfully translated!")
 
         if 'bcopa' in datasets:
@@ -450,9 +467,32 @@ class Translator:
 
 if __name__ == "__main__":
     translator = Translator(r"C:\Users\magan\Desktop\quantifying-translationese\translation_sample")
-    translator.opus_translate(
-        # key="AIzaSyDfQv2OFUQrX2zQ-qfT6pxEVtPzowmtiV4", 
-        bcopa=r"C:\Users\magan\Desktop\quantifying-translationese\datasets\cleaned\cleaned_bcopa.csv"
-    )
+    # translator.google_translate(
+    #     key="", 
+    #     # paws=r"C:\Users\magan\Desktop\quantifying-translationese\datasets\cleaned\cleaned_paws.csv",
+    #     # bcopa=r"C:\Users\magan\Desktop\quantifying-translationese\datasets\cleaned\cleaned_bcopa.csv",
+    #     xnli=r"C:\Users\magan\Desktop\quantifying-translationese\datasets\cleaned\cleaned_xnli.csv",
+    #     # xlsum=r"C:\Users\magan\Desktop\quantifying-translationese\datasets\cleaned\cleaned_xlsum.csv"
+    # )
 
+    # azure_cred = {"key": "", "region": "", "endpoint": ""}
+
+    # translator.azure_translate(
+    #     azure_cred, 
+    #     paws=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_paws.csv",
+    #     bcopa=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_bcopa.csv",
+    #     xnli=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_xnli.csv",
+    #     xlsum=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_xlsum.csv"
+    # )
+
+    # translator.deepl_translate(
+    #     key="",
+    #     paws=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_paws.csv",
+    #     bcopa=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_bcopa.csv",
+    #     xnli=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_xnli.csv",
+    #     xlsum=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_xlsum.csv"
+    # )
     
+    translator.opus_translate(
+        xlsum=r"C:\Users\magan\Desktop\quantifying-translationese\halved\halved_xlsum.csv"
+    )

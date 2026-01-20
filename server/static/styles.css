@@ -1,29 +1,37 @@
-/* General reset to remove default margins */
+html, body{
+    height: 100%;
+}
+
 body {
+    background-color: F3DDE8;
+    display: flex;
     margin: 0;
     font-family: Arial, sans-serif;
+    flex-direction: column;
 }
 
 /* Nav container styling */
 nav {
     display: flex;
-    justify-content: space-between; /* This pushes the H1 and UL to opposite ends */
-    align-items: center;            /* Vertically centers the items */
+    justify-content: space-between; 
+    align-items: center;           
     padding: 1rem 2rem;
-    background-color: #333;
+    background-color: #D28CB0;
     color: white;
+    padding: 1.5rem 1.5rem;
 }
 
 /* Remove default H1 margins */
 nav h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-family: "Montserrat", "Noto Sans", "Roboto";
 }
 
 /* Style the link list */
 nav ul {
-    display: flex;                 /* Makes the list items horizontal */
-    list-style: none;              /* Removes bullet points */
+    display: flex;           
+    list-style: none;              
     margin: 0;
     padding: 0;
 }
@@ -31,6 +39,8 @@ nav ul {
 /* Space between the individual links */
 nav li {
     margin-left: 20px;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', 'Noto Sans', 'Roboto';
 }
 
 /* Link styling */
@@ -40,32 +50,41 @@ nav a {
     font-weight: bold;
 }
 
-/* Main contents */
-/* The Main Container */
+/* Landing Page */
 .hero-container {
-    display: flex;              /* Enables side-by-side layout */
-    justify-content: space-between; /* Pushes content to edges */
-    align-items: center;        /* Vertically centers text and button */
     
-    padding: 4rem 5%;           /* Spacing: 4rem top/bottom, 5% left/right */
-    min-height: 60vh;           /* Makes the section tall (60% of viewport height) */
+    flex: 1;
+    display: flex;              
+    justify-content: space-between; 
+    align-items: center;          
+
+    padding: 4rem 5%;  
     
-    /* Background Setup */
-    background-color: #f4f4f4;  /* Fallback color */
-    /* background-image: url('path-to-your-image.jpg'); */ /* Uncomment this later */
-    background-size: cover;     /* Ensures image covers whole area */
-    background-position: center;
+    background-color: #F3DDE8; 
+    background: linear-gradient(
+        to right,
+        #F3DDE8,
+        #D28CB0
+    );
 }
 
 /* The Left Side (Text) */
 .info {
-    flex-basis: 50%;            /* Takes up 50% of the width */
-    color: #333;                /* Change to white if using a dark background image */
+    flex-basis: 70%;            
+    color: #333;   
+    margin-top: -10rem;            
 }
 
 .info h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 5.5rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", "Noto Sans";
+    letter-spacing: 3px;
+}
+
+.indent{
+    display: inline-block;
+    padding-left: 40px;
 }
 
 .info p {
@@ -75,45 +94,125 @@ nav a {
 
 /* The Right Side (Button Area) */
 .quantify {
-    flex-basis: 40%;            /* Takes up 40% of the width */
+    flex-basis: 30%;       
     display: flex;
-    justify-content: flex-end;  /* Aligns button to the right */
+    justify-content: flex-end; 
+    padding-right: 5%;
+    width: 100%;
 }
 
 /* The Big Button */
 .quantify button {
-    padding: 1.5rem 3rem;       /* Big padding for a big button */
-    font-size: 1.5rem;          /* Large text */
+    width: 80%;
+    padding: 2rem 3rem;       
+    font-size: 1.5rem;          
     font-weight: bold;
     cursor: pointer;
     
-    background-color: #007bff;  /* Blue accent color */
+    background-color: #A83D73;  
     color: white;
     border: none;
-    border-radius: 8px;         /* Rounded corners */
-    transition: transform 0.2s, background-color 0.2s; /* Smooth animation */
+    border-radius: 8px;       
+    transition: transform 0.2s, background-color 0.2s; 
+    width: 120%;
+    margin-right: 10%;
+    letter-spacing: 1px;
+
+    box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+
 }
 
-/* Button Hover Effect */
 .quantify button:hover {
-    background-color: #0056b3;  /* Darker blue on hover */
-    transform: scale(1.05);     /* Slightly grows on hover */
+    background-color: #8C2F5E;  /* Darker blue on hover */
+    transform: scale(1.2);     /* Slightly grows on hover */
 }
 
+/* Get Data Page Container */
+.get-data-main-container {
+    display: flex;
+    flex-direction: column; /* Ensures content stacks (Title on top of Wrapper) */
+    flex: 1;                /* Fills the space between Nav and Footer */
+    align-items: center;    /* Centers the 900px wrapper horizontally */
+    justify-content: flex-start; /* Starts content at the top */
+    background-color: #F9DDEB;
+    padding: 2rem 1rem;     /* Adds breathing room */
+}
 
-/* upload */
-/* Container for the whole page section */
-.upload-wrapper {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-    font-family: Arial, sans-serif;
+/* Specific Wrapper Override for Get Data Page */
+/* This targets ONLY the upload wrapper inside the get-data container */
+.get-data-main-container .upload-wrapper {
+    width: 100%;
+    max-width: 900px;       /* Keeps it wide (900px) as you requested */
     text-align: center;
+    padding: 0 1rem;
+    box-sizing: border-box; /* Prevents padding from breaking width */
 }
+
 
 .page-title {
     margin-bottom: 2rem;
     color: #333;
+    font-family: 'Noto Sans', 'Roboto';
+}
+
+
+/* Translate Page */
+.translate-main-container {
+    display: flex;
+    flex-direction: column; /* Ensures content stacks (Title on top of Wrapper) */
+    flex: 1;                /* Fills the space between Nav and Footer */
+    align-items: center;    /* Centers the 900px wrapper horizontally */
+    justify-content: flex-start; /* Starts content at the top */
+    background-color: #F9DDEB;
+    padding: 2rem 1rem;     /* Adds breathing room */
+}
+
+/* Specific Wrapper Override for Get Data Page */
+/* This targets ONLY the upload wrapper inside the get-data container */
+.translate-main-container .upload-wrapper {
+    width: 100%;
+    max-width: 900px;       /* Keeps it wide (900px) as you requested */
+    text-align: center;
+    padding: 0 1rem;
+    box-sizing: border-box; /* Prevents padding from breaking width */
+}
+
+
+/* Settings Area (Top part of blue box) */
+.settings-area {
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.setting-group {
+    margin-bottom: 15px;
+}
+
+.white-label {
+    color: white;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+/* Inputs styled to look good on Blue Background */
+.styled-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    box-sizing: border-box; /* Fixes width padding issues */
+}
+
+.styled-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
 /* --- The Blue Box --- */
@@ -138,6 +237,7 @@ nav a {
 
 /* --- The Interactables --- */
 .upload-label {
+    margin-top: 15px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -169,9 +269,33 @@ nav a {
     font-size: 0.9rem;
 }
 
+/* --- Quantify Page Layout --- */
+
+.quantify-main-container {
+    display: flex;
+    flex-direction: column; /* Ensures content stacks (Title on top of Wrapper) */
+    flex: 1;                /* Fills the space between Nav and Footer */
+    align-items: center;    /* Centers the 900px wrapper horizontally */
+    justify-content: flex-start; /* Starts content at the top */
+    background-color: #F9DDEB;
+    padding: 2rem 1rem;     /* Adds breathing room */
+}
+
+/* Specific Wrapper Override for Get Data Page */
+/* This targets ONLY the upload wrapper inside the get-data container */
+.quantify-main-container .upload-wrapper {
+    width: 100%;
+    max-width: 900px;       /* Keeps it wide (900px) as you requested */
+    text-align: center;
+    padding: 0 1rem;
+    box-sizing: border-box; /* Prevents padding from breaking width */
+}
+
 /* The "Quantify" Submit Button */
 .quantify-submit-btn {
-    background-color: #28a745; /* Green */
+    
+    background-color: #A83D73;
+    margin-bottom: 15px;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -185,7 +309,7 @@ nav a {
 }
 
 .quantify-submit-btn:hover {
-    background-color: #218838; /* Darker green */
+    background-color: #8C2F5E; 
     transform: scale(1.05);
 }
 
@@ -327,12 +451,17 @@ nav a {
 
 
 
+footer {
+    text-align: center;
+    margin-top: auto; /* This pushes the footer to the very bottom */
+    width: 100%;      /* Ensure footer spans full width */
+}
 
 
 
 /* Anuimations */
 nav a:hover {
-    color: #ff9900;                /* Changes color on hover */
+    color: #CFEC9D;                /* Changes color on hover */
 }
 
 /* --- Loading Overlay --- */

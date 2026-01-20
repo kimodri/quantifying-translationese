@@ -1,0 +1,11 @@
+,id,premise,choice1,choice2,question,label,mirrored
+0,1283,The boy was struggling to fall asleep.,He turned on his nightlight.,He watched a horror movie.,cause,1,1
+1,207,The tenants were evicted from the apartment.,They neglected to pay their rent.,They got along with their landlord.,cause,1,0
+2,1317,The man felt unrested in the morning.,He went camping in the woods.,He fell asleep on his couch.,cause,2,1
+3,1006,The politician won the election.,No one voted for him.,He ran negative campaign ads.,cause,2,1
+4,170,The dust came off the desk.,I removed the books from the desk.,I wiped the desk with a cloth.,cause,2,0
+5,194,The boy felt homesick.,He went away to camp.,He bickered with his sister.,cause,1,0
+6,400,The soldiers were concealed in the brush.,They were armed with rifles.,They wore camouflage uniforms.,cause,2,0
+7,262,The man revealed personal information to the therapist.,He trusted the therapist.,He disagreed with the therapist.,cause,1,0
+8,361,The patient underwent the risky medical procedure.,The procedure was costly.,Specialists recommended the procedure.,cause,2,0
+9,1480,The man did not lose coins in his pocket anymore.,His pocket was filled with coins.,He sewed the hole in his pocket.,cause,2,1

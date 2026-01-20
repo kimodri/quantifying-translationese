@@ -1,0 +1,11 @@
+Unnamed: 0,id,premise,choice1,choice2,question,label,mirrored
+0,1283,Ang bata ay nahihirapang makatulog.,Binuksan niya ang kaniyang liwanag sa gabi.,Nanood siya ng isang pelikulang horror.,cause,1,1
+1,207,Ang mga nangungupahan ay pinaalis sa apartment.,Hindi nila nabayaran ang kanilang upa.,Nakasundo nila ang kanilang kasera.,cause,1,0
+2,1317,Ang lalaki ay naligalig sa umaga.,Nagkamping siya sa kakahuyan.,Siya'y nakatulog sa kaniyang higaan.,cause,2,1
+3,1006,Nanalo ang politiko sa halalan.,Walang bumoto para sa kaniya.,Siya'y naglabas ng negatibong mga anunsiyo sa kampanya.,cause,2,1
+4,170,Ang alikabok ay nahulog sa mesa.,Inalis ko ang mga aklat sa mesa.,Pinahid ko ang mesa sa pamamagitan ng isang tela.,cause,2,0
+5,194,Ang bata ay nakaramdam ng pananabik na umuwi.,Siya'y nagtungo sa kampo.,Nagalit siya sa kaniyang kapatid na babae.,cause,1,0
+6,400,Ang mga sundalo ay itinago sa pinsel.,Sila'y nasasandatahan ng mga riple.,Nakasuot sila ng unipormeng pangbalatkayo.,cause,2,0
+7,262,Isiniwalat ng lalaki ang personal na impormasyon sa therapist.,Nagtiwala siya sa therapist.,Hindi siya sang - ayon sa terapis.,cause,1,0
+8,361,Ang pasyente ay sumailalim sa mapanganib na paraan ng paggamot.,Ang pamamaraan ay magastos.,Inirekomenda ng mga dalubhasa ang pamamaraang ito.,cause,2,0
+9,1480,Ang lalaki ay hindi na nawalan ng mga barya sa kaniyang bulsa.,Ang kaniyang bulsa ay punô ng mga barya.,Itinahi niya ang butas sa kaniyang bulsa.,cause,2,1

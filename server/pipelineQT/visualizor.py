@@ -16,8 +16,7 @@ def generate_charts(data):
 
     # Iterate through each top-level dataset (e.g., 'bcopa', 'paws')
     for dataset_name, segments in data.items():
-        
-        # 1. Flatten the data for this specific dataset
+
         rows = []
         for segment_key, counts in segments.items():
             # Clean the segment name (e.g., 'tags_premise' -> 'Premise')
@@ -36,10 +35,9 @@ def generate_charts(data):
         if not rows:
             continue
 
-        # 2. Create DataFrame
+
         df = pd.DataFrame(rows)
 
-        # 3. Create the Plotly Figure
         # We use a Stacked Bar chart to compare Ayos within each segment
         fig = px.bar(
             df,
@@ -54,8 +52,7 @@ def generate_charts(data):
                 "Ambiguous": "#95A5A6"            # Grey (if it appears)
             }
         )
-        
-        # 4. Refine Layout
+
         fig.update_layout(
             barmode='stack', 
             xaxis_title=None, # Clean look
@@ -70,7 +67,6 @@ def generate_charts(data):
         figures[dataset_name] = fig
 
     return figures
-
 
 
 def _read_json(path):

@@ -1,19 +1,23 @@
-from flask import Flask, render_template, request 
+from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 import os
 from pipelineQT.Tagger import Tagger 
 from pipelineQT import visualizor
 from pipelineQT.Processor import Processor
 from pipelineQT.Extractor import Extractor
+from pipelineQT.Translator import Translator
 
 app = Flask(__name__)
 
 # CONFIGURATION
-UPLOAD_FOLDER = '../uploaded_docs' 
+UPLOAD_FOLDER = '../uploaded_4_analysis' 
+UPLOAD_TRANSLATE_FOLDER = '../uploaded_4_translate'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_TRANSLATE_FOLDER'] = UPLOAD_TRANSLATE_FOLDER
 
 # Create the folder immediately if it doesn't exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(UPLOAD_TRANSLATE_FOLDER, exist_ok=True)
 
 @app.route('/')
 def index():
@@ -172,7 +176,69 @@ def translate():
     if request.method == "GET":
         return render_template("translate.html")
     else:
-        pass
-    
+        if 'file' not in request.files:
+            return 'No file part in the request', 400
+        
+        files = request.files.getlist('file')
+
+        keys = []
+        saved_files = []
+        full_path = []
+        for file in files:
+            # Check if user submitted an empty part
+            if file.filename == '':
+                continue
+                
+            if file:
+                # preventing security issues like directory traversal
+                filename = secure_filename(file.filename)
+                
+                # Save to the defined folder
+                file_path = os.path.join(app.config['UPLOAD_TRANSLATE_FOLDER'], filename)
+                full_path.append(file_path)
+                file.save(file_path)
+                
+                saved_files.append(filename)
+                print(f"Saved: {filename}")
+                keys.append(filename)
+
+            print(full_path)
+            files_dict = {
+                path.split("_")[-1].split(".")[0]: path
+                for path in full_path
+            }
+            print(files_dict)
+
+        local_path = request.form.get("local_path")
+        machine_translator = request.form.get("model")
+        api_key = request.form.get("api_key", "")
+        azure_region = request.form.get("azure_region", "")
+        azure_endpoint = request.form.get("azure_endpoint", "")
+
+        # Initialize an object
+        translator = Translator(local_path)
+
+        if machine_translator == "opus":
+            translator.opus_translate(**files_dict)
+
+        elif machine_translator == "azure":
+            azure_cred = {
+                "key": api_key,
+                "region": azure_region, 
+                "endpoint": azure_endpoint, 
+            }
+
+            translator.azure_translate(azure_cred, **files_dict) 
+        
+        elif machine_translator == "google":
+            translator.google_translate(key=api_key, **files_dict)
+
+        else:
+            translator.deepl_translate(key=api_key, **files_dict)
+        
+        return redirect(url_for('quantify'))
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
