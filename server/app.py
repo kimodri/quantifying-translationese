@@ -10,13 +10,14 @@ from pipelineQT.Translator import Translator
 app = Flask(__name__)
 
 # CONFIGURATION
-UPLOAD_FOLDER = '../uploaded_docs' 
-UPLOAD_TRANSLATE_FOLDER = '../uploaded_translate'
+UPLOAD_FOLDER = '../uploaded_4_analysis' 
+UPLOAD_TRANSLATE_FOLDER = '../uploaded_4_translate'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['UPLOAD_TRANSLATE_FOLDER'] = UPLOAD_TRANSLATE_FOLDER
 
 # Create the folder immediately if it doesn't exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(UPLOAD_TRANSLATE_FOLDER, exist_ok=True)
 
 @app.route('/')
 def index():
