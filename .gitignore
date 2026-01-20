@@ -9,3 +9,6 @@ uploaded_docs/
 *.log
 translation_sample/
 translation/
+halved/
+translated_web/
+uploaded_translate/

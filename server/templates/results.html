@@ -3,18 +3,21 @@
 {% block title %}Analysis Results{% endblock %}
 
 {% block content %}
-<div class="results-container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+<div class="results-main-container">
     
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+    <div class="header-row">
         <h1>Analysis Results</h1>
-        <a href="/" style="text-decoration: none; color: #007bff; font-weight: bold;">← Analyze More Files</a>
+        <a href="/" class="back-link">← Analyze More Files</a>
     </div>
 
     {% if charts %}
         {% for dataset_name, chart_html in charts.items() %}
             <div class="chart-card">
-                {{ chart_html | safe }}
+                <h3 style="margin-top: 0; color: #444;">{{ dataset_name }}</h3>
                 
+                <div class="chart-wrapper">
+                    {{ chart_html | safe }}
+                </div>
             </div>
         {% endfor %}
     {% else %}
@@ -26,13 +29,67 @@
 </div>
 
 <style>
+    /* 1. Main Container Styling */
+    .results-main-container {
+        width: 70%;              /* Takes up 95% of screen width */
+        max-width: 1600px;       /* Cap it at 1600px (much wider than 1000px) */
+        margin: 2rem auto;       /* Centers the container */
+        padding: 0 1rem;
+        
+        /* Layout & Footer Logic */
+        display: flex;
+        flex-direction: column;
+        flex: 1;                 /* Pushes footer to the bottom */
+    }
+
+    /* 2. Header Row Styling */
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .back-link {
+        text-decoration: none;
+        color: #A83D73;         /* Matches your Quantify button theme */
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: #8C2F5E;
+    }
+
+    /* 3. Card Styling */
     .chart-card {
         background: white;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        padding: 20px;
+        padding: 25px;           /* Slightly more padding for breathing room */
         margin-bottom: 30px;
         border: 1px solid #eee;
+        
+        /* Ensure the card fills the wide container */
+        width: 100%;             
+        box-sizing: border-box;
+    }
+
+    /* 4. Chart Wrapper */
+    /* Forces the inner chart HTML to respect the card width */
+    .chart-wrapper {
+        width: 100%;
+        overflow-x: auto; /* Adds scrollbar if chart is absolutely massive */
+    }
+
+    .no-data {
+        text-align: center;
+        padding: 4rem;
+        background: rgba(255,255,255,0.5);
+        border-radius: 12px;
+        color: #666;
+        font-size: 1.2rem;
     }
 </style>
 {% endblock %}
