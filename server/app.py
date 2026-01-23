@@ -169,7 +169,7 @@ def get_data():
         processor.process(**config)
 
 
-        return f"Request Received! Saving to {local_path}. Check terminal for details."
+        return redirect(url_for('translate'))
 
 @app.route("/translate", methods=['GET', 'POST'])
 def translate():
